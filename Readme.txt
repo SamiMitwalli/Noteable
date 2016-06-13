@@ -13,3 +13,7 @@ webapp.war		includes: all modules except "Noteable"
 
 USED SERVER IN DEVELOPMENT:
 WILDFLY 10.0
+
+MAVEN-BUG:
+-Persistence Schicht muss vor jedem Compile-Vorgang einmal gecleaned werden.
+Auch wenn Parent versucht das Projekt zu compilen!

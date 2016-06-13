@@ -1,34 +1,49 @@
 package com.webtech2.project.persistence;
 
 import javax.persistence.*;
+
 import java.util.Set;
 
 /**
+ *
  * Created by Sami Mitwalli on 06.06.2016.
  */
 @Entity
 public class Note {
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Id
     private Long                id;
     private String              title;          //Title of the Note
     private String              description;    //Short Description of the Note
     private String              content;        //Content of the Note
-    private User                owner;          //Id of Owner
-    private Set<Group>          group;          //Id of Group
+    //private User                owner;          //Id of Owner
+    //private Set<Group>          group;          //Id of Group
 
     public Note(){}
+
+    public Note(String title, String description, String content){
+        this.title          = title;
+        this.description    = description;
+        this.content        = content;
+    }
+
+    public Note(Long id, String title, String description, String content){
+        this.id             = id;
+        this.title          = title;
+        this.description    = description;
+        this.content        = content;
+    }
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(final Long id) {
         this.id = id;
     }
 
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
     public void setTitle(String title) {
@@ -36,7 +51,7 @@ public class Note {
     }
 
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
     public void setDescription(String description) {
@@ -44,28 +59,29 @@ public class Note {
     }
 
     public String getContent() {
-        return content;
+        return this.content;
     }
 
     public void setContent(String content) {
         this.content = content;
     }
-
+/*
     @ManyToOne
     public User getOwner() {
-        return owner;
+        return this.owner;
     }
 
     public void setOwner(User owner) {
         this.owner = owner;
     }
-
-    @ManyToMany(mappedBy = "note")
+*/
+    /*@ManyToMany(mappedBy = "note")
     public Set<Group> getGroup() {
-        return group;
+        return this.group;
     }
 
     public void setGroup(Set<Group> group) {
         this.group = group;
     }
+*/
 }
