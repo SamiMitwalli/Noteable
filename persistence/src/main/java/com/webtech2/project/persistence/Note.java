@@ -1,8 +1,7 @@
 package com.webtech2.project.persistence;
 
 import javax.persistence.*;
-
-import java.util.Set;
+import java.util.List;
 
 /**
  *
@@ -16,8 +15,10 @@ public class Note {
     private String              title;          //Title of the Note
     private String              description;    //Short Description of the Note
     private String              content;        //Content of the Note
-    //private User                owner;          //Id of Owner
-    //private Set<Group>          group;          //Id of Group
+    @ManyToOne
+    private User                owner;          //Owner of the Note
+    @ManyToMany
+    private List<Groups>         groups;          //Id of Group
 
     public Note(){}
 
@@ -65,8 +66,7 @@ public class Note {
     public void setContent(String content) {
         this.content = content;
     }
-/*
-    @ManyToOne
+
     public User getOwner() {
         return this.owner;
     }
@@ -74,14 +74,13 @@ public class Note {
     public void setOwner(User owner) {
         this.owner = owner;
     }
-*/
-    /*@ManyToMany(mappedBy = "note")
-    public Set<Group> getGroup() {
-        return this.group;
+
+    public List<Groups> getGroups() {
+        return this.groups;
     }
 
-    public void setGroup(Set<Group> group) {
-        this.group = group;
+    public void setGroups(List<Groups> groups) {
+        this.groups = groups;
     }
-*/
+
 }
