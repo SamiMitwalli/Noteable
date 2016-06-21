@@ -7,16 +7,19 @@ var app = angular.module("myApp", ["ngRoute"]);
 app.config(function($routeProvider) {
     $routeProvider
         .when("/todo", {
-            templateUrl : "templates/todo.html"
+            templateUrl : "templates/todo.html",
+            controller : "NoteCtrl"
         })
         .when("/register", {
-            templateUrl : "templates/register.html"
+            templateUrl : "templates/register.html",
+            controller : "registerCtrl"
         })
         .when("/test", {
             template : "<h1>Banana</h1><p>Bananas contain around 75% water.</p>"
         })
         .otherwise({
-            templateUrl : "templates/login.html"
+            templateUrl : "templates/login.html",
+            controller : "loginCtrl"
         });
 });
 
@@ -25,7 +28,12 @@ app.config(function($routeProvider) {
 });*/
 
 
-app.controller('NoteCtrl', function($scope) {
+app.controller('NoteCtrl', function($scope,$http) {
+
+    $http.get("resources/NoteResource/resttest")
+        .success(function (data) {
+            $scope.restful = data;
+        });
 
     $scope.notes = [
         {
@@ -39,5 +47,13 @@ app.controller('NoteCtrl', function($scope) {
             status: "offen",
             user: "Testuser"}
     ];
+
+});
+
+app.controller('registerCtrl', function($scope) {
+
+});
+
+app.controller('loginCtrl', function($scope) {
 
 });
