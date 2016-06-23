@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html>
+
 <head>
     <title>ToDo-o-matic</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -10,30 +11,38 @@
     <link rel="stylesheet" href="css/xeditable.min.css">
 
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-
     <script src="js/angular.min.js"></script>
-    <script src="js/ctrl/test.js"></script>
-<!--    <script src="js/ctrl/Routing.js"></script>-->
-    <script src="js/xeditable.min.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+
+    <script>
+        var app = angular.module("myApp", ["ngRoute"]);
+        app.config(function($routeProvider) {
+            $routeProvider
+                    .when("/", {
+                        templateUrl : "test.html"
+                    })
+                    .when("/register", {
+                        templateUrl : "register.html"
+                    });
+        });
+    </script>
 
 
 </head>
-<body>
+<body ng-app="myApp">
 
 <!-- Fixed navbar -->
 <div ng-include="'templates/header.html'"></div>
+
 <input type="text" ng-model="search">
 <p>Du suchst gerade nach: {{search}}</p>
 
 <div class="container theme-showcase" role="main">
 
-
-
-    <div ng-include="'templates/todo.html'"></div>
-    <div ng-include="'templates/register.html'"></div>
-
-
 </div>
+
+<div ng-view></div>
 
 
 </body>
