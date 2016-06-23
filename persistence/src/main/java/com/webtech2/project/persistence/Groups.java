@@ -11,7 +11,7 @@ import java.util.List;
 public class Groups {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Id
-    private long            id;         //Id of the Group
+    private Long            id;         //Id of the Group
     private String          groupName;  //Name of the Group
     @ManyToMany(mappedBy = "groups")
     private List<Notes>      notes;     //Accessable Notes
