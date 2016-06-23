@@ -58773,4 +58773,7 @@ umserver</columns>
       </foreign-key>
     </database-model>
   </data-source>
+  <data-source name="noteable/Hibernate" uuid="74e7b461-2876-4187-b989-905672239ca9">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>

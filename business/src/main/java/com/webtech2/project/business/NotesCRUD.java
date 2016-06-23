@@ -161,16 +161,6 @@ public class NotesCRUD extends JAXRS {
     }
     public Notes read(Long id){
         this.init();
-        /*
-        CriteriaBuilder builder = emFactory.getCriteriaBuilder();
-
-        CriteriaQuery<Notes> query = builder.createQuery(Notes.class);
-        Root<Notes> root = query.from(Notes.class);
-        query.select(root);
-        query.where(builder.equal(root.get("id"), id));
-
-        Notes note = em.createQuery(query).getSingleResult();
-        */
         Notes note = em.find(Notes.class, id);
         this.commit();
         this.shutdown();

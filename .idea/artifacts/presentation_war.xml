@@ -2,7 +2,7 @@
   <artifact type="war" name="presentation:war">
     <output-path>$PROJECT_DIR$/presentation/target</output-path>
     <root id="archive" name="presentation-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="presentation:war exploded" />
+      <element id="artifact" artifact-name="webapp" />
     </root>
   </artifact>
 </component>
