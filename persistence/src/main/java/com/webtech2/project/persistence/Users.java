@@ -49,15 +49,15 @@ public class Users {
         return groups;
     }
 
-    public void setGroup(List<Groups> groups) {
+    public void setGroups(List<Groups> groups) {
         this.groups = groups;
     }
 
-    public List<Notes> getNote() {
+    public List<Notes> getNotes() {
         return notes;
     }
 
-    public void setNote(List<Notes> notes) {
+    public void setNotes(List<Notes> notes) {
         this.notes = notes;
     }
 }

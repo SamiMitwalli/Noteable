@@ -36,19 +36,19 @@ public class Groups {
         this.groupName = groupName;
     }
 
-    public List<Notes> getNote() {
+    public List<Notes> getNotes() {
         return notes;
     }
 
-    public void setNote(List<Notes> notes) {
+    public void setNotes(List<Notes> notes) {
         this.notes = notes;
     }
 
-    public List<Users> getUser() {
+    public List<Users> getUsers() {
         return users;
     }
 
-    public void setUser(List<Users> users) {
+    public void setUsers(List<Users> users) {
         this. users =  users;
     }
 }
