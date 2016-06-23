@@ -126,7 +126,7 @@ public class NotesCRUD extends JAXRS {
         Long result = this.delete(id);
         return result;
     }
-    /*Only For Admin use*/
+    /*Only For Admin use untested*/
     @GET
     @Path("/deleteAll")
     @Produces(MediaType.TEXT_PLAIN)
