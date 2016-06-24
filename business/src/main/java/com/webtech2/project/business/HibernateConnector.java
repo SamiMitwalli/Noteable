@@ -9,7 +9,7 @@ import javax.persistence.PersistenceContext;
  *
  * Created by Sami Mitwalli on 20.06.2016.
  */
-public class JAXRS {
+public class HibernateConnector {
     @PersistenceContext
     EntityManager em;
     EntityManagerFactory emFactory;

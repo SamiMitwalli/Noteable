@@ -16,7 +16,7 @@ import java.util.List;
  *
  */
 @Path("/Users")
-public class UsersCRUD extends JAXRS{
+public class UsersCRUD extends HibernateConnector{
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
@@ -26,7 +26,7 @@ public class UsersCRUD extends JAXRS{
 
     /*REST*/
     @POST
-    @Path("/createNote")
+    @Path("/createUser")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public Long createUser(JsonObject obj){
@@ -37,9 +37,9 @@ public class UsersCRUD extends JAXRS{
         user.setLoginName(obj.get("loginName").toString());
         user.setPassword(obj.get("password").toString());
         // NotesCRUD notesCRUD = new NotesCRUD();
-      //  user.setNotes(notesCRUD.read(Long.parseLong(""+obj.get("notes").toString())));
-        //GroupsCRUD groupsCRUD = new GroupsCRUD();
-        //user.setGroups(groupsCRUD.read(Long.parseLong(obj.get("groups").toString())));
+        // user.setNotes(notesCRUD.read(Long.parseLong(""+obj.get("notes"))));
+        // GroupsCRUD groupsCRUD = new GroupsCRUD();
+        // user.setGroups(groupsCRUD.read(Long.parseLong(obj.get("groups").toString())));
 
         return this.create(user);
     }

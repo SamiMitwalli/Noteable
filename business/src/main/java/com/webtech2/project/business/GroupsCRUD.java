@@ -17,7 +17,7 @@ import java.util.List;
 
 // bisher ohne tests
 @Path("/Groups")
-public class GroupsCRUD extends JAXRS{
+public class GroupsCRUD extends HibernateConnector{
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
@@ -27,7 +27,7 @@ public class GroupsCRUD extends JAXRS{
 
     /*REST*/
     @POST
-    @Path("/createNote")
+    @Path("/createGroup")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public Long createGroup(JsonObject obj){
@@ -45,19 +45,19 @@ public class GroupsCRUD extends JAXRS{
         return this.create(group);
     }
     @GET
-    @Path("/readUser/{id}")
+    @Path("/readGroup/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Groups readGroupByID(@PathParam("id") long id){
         return this.read(id);
     }
     @POST
-    @Path("/readUser")
+    @Path("/readGroup")
     @Produces(MediaType.APPLICATION_JSON)
     public Groups readGroup (long id){
         return this.read(id);
     }
     @POST
-    @Path("/updateUser")
+    @Path("/updateGroup")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public long Groups(JsonObject obj){

@@ -17,7 +17,7 @@ import java.util.List;
  *
  */
 @Path("/Notes")
-public class NotesCRUD extends JAXRS {
+public class NotesCRUD extends HibernateConnector {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
