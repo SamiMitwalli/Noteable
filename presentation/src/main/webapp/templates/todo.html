@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="css/xeditable.min.css">
+
+<div class="page-header">
+    <h1>To-Do</h1>
+</div>
+
+<div ng-controller="NoteCtrl">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Notiz</th>
+            <th>Status</th>
+            <th>User</th>
+            <th>Bearbeiten</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="note in notes">
+            <td>{{note.id}}</td>
+            <td><span editable-text="note.text" e-name="text" e-form="rowform" onbeforesave="" e-required>
+          {{ note.text || 'empty' }}
+        </span></td>
+            <td><span editable-text="note.status" e-name="text" e-form="rowform" onbeforesave="" e-required>
+          {{ note.status || 'empty' }}
+        </span></td>
+            <td>{{note.user}}</td>
+            <td>
+                <!-- form -->
+                <form editable-form name="rowform" onbeforesave="saveUser($data, user.id)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == user">
+                    <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
+                        save
+                    </button>
+                    <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">
+                        cancel
+                    </button>
+                </form>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <br><br><br><br>
+
+    {{restful}}
+
+
+</div>
