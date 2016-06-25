@@ -2,6 +2,7 @@ package com.webtech2.project.business;
 
 import com.webtech2.project.persistence.*;
 
+import javax.ejb.Stateless;
 import javax.json.JsonObject;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -106,7 +107,6 @@ public class GroupsCRUD extends HibernateConnector{
             this.init();
             this.em.persist(group);
             this.commit();
-            this.shutdown();
             return group.getId();
         }
         else {
@@ -117,7 +117,6 @@ public class GroupsCRUD extends HibernateConnector{
         this.init();
         Groups group = em.find(Groups.class, id);
         this.commit();
-        this.shutdown();
         return group;
     }
     public List<Groups> readAll(){
@@ -130,7 +129,6 @@ public class GroupsCRUD extends HibernateConnector{
 
         List<Groups> groups = em.createQuery(query).getResultList();
         this.commit();
-        this.shutdown();
         return groups;
     }
     public Long update(Groups group){
@@ -138,7 +136,6 @@ public class GroupsCRUD extends HibernateConnector{
             this.init();
             this.em.merge(group);
             this.commit();
-            this.shutdown();
             return group.getId();
         }
         else {
@@ -151,11 +148,9 @@ public class GroupsCRUD extends HibernateConnector{
         if(group!=null) {
             this.em.remove(group);
             this.commit();
-            this.shutdown();
             return group.getId();
         }
         else {
-            this.shutdown();
             return null;
         }
     }

@@ -3,6 +3,7 @@ package com.webtech2.project.business;
 
 import com.webtech2.project.persistence.Notes;
 
+import javax.ejb.Stateless;
 import javax.json.*;
 import javax.json.JsonObject;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -25,7 +26,7 @@ public class NotesCRUD extends HibernateConnector {
         return "NotesCRUD is working!";
     }
 
-    /*FEHLER IM JSON PARSEN BEKANNT. DA NUR FÜR TEST=>IRRELEVANT*/
+    /*FEHLER IM JSON PARSEN DURCH POSTGRES BEKANNT. DA NUR FÜR TEST=>IRRELEVANT*/
     @GET
     @Path("/CRUDTEST")
     @Produces(MediaType.TEXT_PLAIN)
@@ -152,7 +153,6 @@ public class NotesCRUD extends HibernateConnector {
             this.init();
             this.em.persist(note);
             this.commit();
-            this.shutdown();
             return note.getId();
         }
         else {
@@ -163,7 +163,6 @@ public class NotesCRUD extends HibernateConnector {
         this.init();
         Notes note = em.find(Notes.class, id);
         this.commit();
-        this.shutdown();
         return note;
     }
     public List<Notes> readAll(){
@@ -176,7 +175,6 @@ public class NotesCRUD extends HibernateConnector {
 
         List<Notes> notes = em.createQuery(query).getResultList();
         this.commit();
-        this.shutdown();
         return notes;
     }
     public Long update(Notes note){
@@ -184,7 +182,6 @@ public class NotesCRUD extends HibernateConnector {
             this.init();
             this.em.merge(note);
             this.commit();
-            this.shutdown();
             return note.getId();
         }
         else {
@@ -197,11 +194,9 @@ public class NotesCRUD extends HibernateConnector {
         if(note!=null) {
             this.em.remove(note);
             this.commit();
-            this.shutdown();
             return note.getId();
         }
         else {
-            this.shutdown();
             return null;
         }
     }
