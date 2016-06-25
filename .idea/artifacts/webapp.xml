@@ -5,7 +5,6 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="presentation" />
-          <element id="jpa-descriptors" facet="persistence/jpa/JPA" />
         </element>
         <element id="directory" name="lib">
           <element id="archive" name="business-1.0-SNAPSHOT.jar">
