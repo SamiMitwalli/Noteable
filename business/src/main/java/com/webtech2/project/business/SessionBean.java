@@ -14,11 +14,8 @@ import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateful;
-import javax.enterprise.context.SessionScoped;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
+import javax.json.JsonObject;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -28,10 +25,23 @@ import javax.ws.rs.core.MediaType;
 @Path("/access")
 public class SessionBean {
     private static final transient Logger log = LoggerFactory.getLogger(SessionBean.class);
+    UsersCRUD usersCRUD;
 
     SecurityManager securityManager;
     Subject currentUser;
     Session session;
+
+    @POST
+    @Path("register")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public long register(JsonObject obj){
+        usersCRUD = new UsersCRUD();
+        log.info("registering new user");
+        long id = usersCRUD.createUser(obj);
+        log.info("registered user "+id);
+        return id;
+    }
 
     @POST
     @Path("login")
