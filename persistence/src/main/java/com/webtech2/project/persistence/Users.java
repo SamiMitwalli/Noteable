@@ -1,6 +1,7 @@
 package com.webtech2.project.persistence;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
@@ -12,7 +13,9 @@ public class Users {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Id
     private Long                id;
+    @NotNull
     private String              loginName;      //Username
+    @NotNull
     private String              password;       //Password
     @OneToMany(mappedBy = "owner")
     private List<Notes>         notes;           //created Notes of the User
