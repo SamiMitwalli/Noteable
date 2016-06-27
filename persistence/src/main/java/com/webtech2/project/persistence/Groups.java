@@ -9,18 +9,18 @@ import java.util.List;
  */
 @Entity
 public class Groups {
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Id
-    private long            id;         //Id of the Group
+    private Long            id;         //Id of the Group
     private String          groupName;  //Name of the Group
     @ManyToMany(mappedBy = "groups")
-    private List<Note>      note;       //Accessable Notes
+    private List<Notes>      notes;     //Accessable Notes
     @ManyToMany(mappedBy = "groups")
-    private List<User>      user;       //Users of the Group
+    private List<Users>      users;     //Users of the Group
 
     public Groups(){}
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -36,19 +36,19 @@ public class Groups {
         this.groupName = groupName;
     }
 
-    public List<Note> getNote() {
-        return note;
+    public List<Notes> getNotes() {
+        return notes;
     }
 
-    public void setNote(List<Note> note) {
-        this.note = note;
+    public void setNotes(List<Notes> notes) {
+        this.notes = notes;
     }
 
-    public List<User> getUser() {
-        return user;
+    public List<Users> getUsers() {
+        return users;
     }
 
-    public void setUser(List<User> user) {
-        this.user = user;
+    public void setUsers(List<Users> users) {
+        this. users =  users;
     }
 }

@@ -1,84 +1,23 @@
-<!DOCTYPE html>
-<html ng-app>
+<html>
 <head>
-  <title>Noteable</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-  <!-- Latest compiled and minified JavaScript -->
-
-
-
+    <title>Angular 2 QuickStart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('app').catch(function(err){ console.error(err); });
+    </script>
 </head>
-<body style="padding-top: 50px;">
-  <div>
-    <!--LOGO-->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <!--Mobile-Navigation-->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <!--Toggle-Symbol-->
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Notes</a>
-          <!--NOTE-SEARCH-->
-          <form class="navbar-left" role="search" style="padding-top:7px;">
-            <div>
-              <input type="text" class="form-control" placeholder="Search for Notes" ng-model="search" style="display:inline;width:auto;margin:0;">
-              <button type="submit" class="btn btn-default">
-                <span class="glyphicon glyphicon-search"></span>
-              </button>
-            </div>
-          </form>
-        </div>
-        <!--NAVIGATION-CONTENT-->
-        <div class="collapse navbar-collapse" id="nav1">
-
-
-
-  <!--OPTIONS-->
-  <ul class="nav navbar-nav navbar-right">
-    <li class="active"><a href="#">Sign Up <span class="sr-only">(current)</span></a></li>
-    <li><a href="#">Login</a></li>
-    <li><a href="#">Notes</a></li>
-  </ul>
-  </div>
-  </div>
-  </nav>
-
-  </div>
-
-  <div class="container">
-
-    <div class="Jumbotron">
-      <h1><span class="label label-default">Suche:{{search}}</span></h1>
-    </div>
-
-    <!--form method="POST" action="resources/NoteResource/addNote">
-      <button class="btn btn-default" type="submit" value="Submit">RESTful-Service(POST)</button>
-    </form-->
-
-    <a href="resources/NoteResource" class="btn btn-default">RESTful-Service(GET)</a>
-    <a href="resources/NoteResource/CRUDTEST" class="btn btn-default">CRUD-TEST</a>
-    <a href="resources/NoteResource/getAll" class="btn btn-default">Get-All</a>
-    <a href="resources/NoteResource/deleteAll" class="btn btn-default">Delete-All</a>
-  </div>
-
-  <div class="container">
-    <h1 class="Jumbotron">ANGULAR:</h1>
-    <button class="btn btn-default">Add Note</button>
-    <button class="btn btn-default">Delete Note</button>
-  </div>
-
+<!-- 3. Display the application -->
+<body>
+<my-app>Loading...</my-app>
 </body>
 </html>
