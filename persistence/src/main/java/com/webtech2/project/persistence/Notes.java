@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 /**
- *
+ * Nur noch ID, content, owner
  * Created by Sami Mitwalli on 06.06.2016.
  */
 @Entity
@@ -12,13 +12,13 @@ public class Notes {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Id
     private Long                id;
-    private String              title;           //Title of the Note
-    private String              description;     //Short Description of the Note
+    //private String              title;           //Title of the Note
+    //private String              description;     //Short Description of the Note
     private String              content;         //Content of the Note
     @ManyToOne
     private Users               owner;           //Owner of the Note
-    @ManyToMany
-    private List<Groups>        groups;          //Id of Group
+    //@ManyToMany
+    //private List<Groups>        groups;          //Id of Group
 
     public Notes(){}
 
@@ -29,7 +29,7 @@ public class Notes {
     public void setId(final Long id) {
         this.id = id;
     }
-
+/**
     public String getTitle() {
         return this.title;
     }
@@ -45,7 +45,7 @@ public class Notes {
     public void setDescription(String description) {
         this.description = description;
     }
-
+ **/
     public String getContent() {
         return this.content;
     }
@@ -61,7 +61,7 @@ public class Notes {
     public void setOwner(Users owner) {
         this.owner = owner;
     }
-
+/**
     public List<Groups> getGroups() {
         return this.groups;
     }
@@ -69,5 +69,5 @@ public class Notes {
     public void setGroups(List<Groups> groups) {
         this.groups = groups;
     }
-
+**/
 }
