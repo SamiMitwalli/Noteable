@@ -1,0 +1,11 @@
+<div *ngIf="todo">
+  <h2>ToDo bearbeiten!</h2>
+  <hr>
+  <div>
+    <label>id: </label>{{todo.id}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="hero.name" placeholder="name" />
+  </div>
+  <button (click)="goBack()">Back</button>
+</div>

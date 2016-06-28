@@ -14,6 +14,9 @@ var dashboard_component_1 = require('./dashboard.component');
 var heroes_component_1 = require('./heroes.component');
 var hero_detail_component_1 = require('./hero-detail.component');
 var hero_service_1 = require('./hero.service');
+var todo_component_1 = require('./todo.component');
+var login_component_1 = require('./login.component');
+var register_component_1 = require('./register.component');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Tour of Heroes';
@@ -21,8 +24,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h1>{{title}}</h1>\n    <nav>\n      <a [routerLink]=\"['Dashboard']\">Dashboard</a>\n      <a [routerLink]=\"['Heroes']\">Heroes</a>\n    </nav>\n    <router-outlet></router-outlet>\n  ",
-            styleUrls: ['app/app.component.css'],
+            templateUrl: '/templates/header.html',
+            //  styleUrls: ['app/app.component.css'],
             directives: [router_deprecated_1.ROUTER_DIRECTIVES],
             providers: [
                 router_deprecated_1.ROUTER_PROVIDERS,
@@ -31,10 +34,20 @@ var AppComponent = (function () {
         }),
         router_deprecated_1.RouteConfig([
             {
+                path: '/login',
+                name: 'Login',
+                component: login_component_1.LoginComponent,
+                useAsDefault: true
+            },
+            {
                 path: '/dashboard',
                 name: 'Dashboard',
-                component: dashboard_component_1.DashboardComponent,
-                useAsDefault: true
+                component: dashboard_component_1.DashboardComponent
+            },
+            {
+                path: '/register',
+                name: 'Register',
+                component: register_component_1.RegisterComponent
             },
             {
                 path: '/detail/:id',
@@ -45,6 +58,11 @@ var AppComponent = (function () {
                 path: '/heroes',
                 name: 'Heroes',
                 component: heroes_component_1.HeroesComponent
+            },
+            {
+                path: '/todo',
+                name: 'Todo',
+                component: todo_component_1.TodoComponent
             }
         ]), 
         __metadata('design:paramtypes', [])
