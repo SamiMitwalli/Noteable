@@ -37,9 +37,9 @@ public class NotesCRUD extends HibernateConnector {
         Long id;
 
         obj = Json.createObjectBuilder()
-                .add("title","A")
+              //  .add("title","A")
                 .add("content", "B")
-                .add("description","C")
+             //   .add("description","C")
                 .build();
 
         id = this.createNote(obj);
@@ -49,7 +49,7 @@ public class NotesCRUD extends HibernateConnector {
         obj = this.pojo2Json(note);
         result+="2. Reading created Note:\n"+obj+"\n";
 
-        note.setTitle("UPDATE");
+        note.setContent("UPDATE");
         obj = this.pojo2Json(note);
         id = this.updateNote(obj);
         result+="3. Updating created Note: "+id+"\n";
@@ -76,11 +76,11 @@ public class NotesCRUD extends HibernateConnector {
         /* NOT ALLOWED IN CREATION
         note.setId(Long.parseLong(""+obj.get("id")));
          */
-        note.setTitle(obj.get("title").toString());
+    //    note.setTitle(obj.get("title").toString());
         note.setContent(obj.get("content").toString());
-        note.setDescription(obj.get("description").toString());
-        //UsersCRUD usersCRUD = new UsersCRUD();
-        //note.setOwner(usersCRUD.read(Long.parseLong(""+obj.get("owner").toString())));
+    //    note.setDescription(obj.get("description").toString());
+        UsersCRUD usersCRUD = new UsersCRUD();
+        note.setOwner(usersCRUD.read(Long.parseLong(""+obj.get("owner").toString())));
         //GroupsCRUD groupsCRUD = new GroupsCRUD();
         //note.setGroups(groupsCRUD.read(Long.parseLong(obj.get("groups").toString())));
 
@@ -108,11 +108,11 @@ public class NotesCRUD extends HibernateConnector {
     public Long updateNote(JsonObject obj){
         Notes note = new Notes();
         note.setId(Long.parseLong(""+obj.get("id")));
-        note.setTitle(obj.get("title").toString());
+     //   note.setTitle(obj.get("title").toString());
         note.setContent(obj.get("content").toString());
-        note.setDescription(obj.get("description").toString());
-        //UsersCRUD usersCRUD = new UsersCRUD();
-        //note.setOwner(usersCRUD.read(Long.parseLong(""+obj.get("owner").toString())));
+    //    note.setDescription(obj.get("description").toString());
+        UsersCRUD usersCRUD = new UsersCRUD();
+        note.setOwner(usersCRUD.read(Long.parseLong(""+obj.get("owner").toString())));
         //GroupsCRUD groupsCRUD = new GroupsCRUD();
         //note.setGroups(groupsCRUD.read(Long.parseLong(obj.get("groups").toString())));
 
@@ -207,9 +207,9 @@ public class NotesCRUD extends HibernateConnector {
         if(note!=null) {
             JsonObject obj = Json.createObjectBuilder()
                     .add("id", note.getId())
-                    .add("title", ""+note.getTitle())
+                    //.add("title", ""+note.getTitle())
                     .add("content", ""+note.getContent())
-                    .add("description", ""+note.getDescription())
+                   // .add("description", ""+note.getDescription())
                     .build();
             return obj;
         }
