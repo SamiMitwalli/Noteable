@@ -13,10 +13,13 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#register">Registrieren</a></li>
-                <li><a href="#test">Contact</a></li>
-                <li><a href="#todo">To-Do</a></li>
+                <li><a [routerLink]="['Todo']">ToDo</a></li>
+                <li><a [routerLink]="['Dashboard']">Dashboard</a></li>
+                <li><a [routerLink]="['Heroes']">Heroes</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
+<div class="container theme-showcase" role="main">
+<router-outlet></router-outlet>
+</div>
