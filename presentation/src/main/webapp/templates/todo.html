@@ -5,14 +5,15 @@
 <div class="row">
     <div class="col-lg-8">
         <div class="input-group input-group-lg">
-            <input type="text" class="form-control input-lg" id="search-church" placeholder="Neue ToDo">
+            <input [(ngModel)]="content" type="text" class="form-control input-lg" id="search-church" placeholder="Neue ToDo">
       <span class="input-group-btn">
-        <button class="btn btn-default btn-lg" type="submit">Hinzufügen</button>
+        <button class="btn btn-default btn-lg" (click) = "addNote()">Hinzufügen</button>
       </span>
         </div>
     </div>
 </div>
 <br>
+<button (click) = "holeNotizen()">Notizen </button>
 <div class="container">
     <table class="table table-hover">
         <thead>
@@ -25,9 +26,14 @@
         </thead>
         <tbody>
         <tr *ngFor="let todo of todos">
-            <td>{{todo.id}}</td>
+
+            <!--<td>{{todo.id}}</td>
             <td>{{todo.text}}</td>
-            <td>{{todo.owner}}</td>
+            <td>{{todo.owner}}</td>-->
+
+            <td>{{todo.Name}}</td>
+            <td>{{todo.City}}</td>
+            <td>{{todo.Country}}</td>
             <td class="text-right">
                 <button type="button" class="btn btn-default">
                     <span class="glyphicon glyphicon-pencil"></span> Bearbeiten
@@ -40,7 +46,6 @@
         </tbody>
     </table>
 </div>
-
 <script src="../node_modules/bootbox/bootbox.min.js"></script>
 
 <script>

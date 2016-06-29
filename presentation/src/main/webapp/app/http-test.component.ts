@@ -4,10 +4,9 @@ import {HTTPTestService} from "./http-test.service";
 @Component({
     selector: 'http-test',
     template : `
-  
         <ul>
         <li *ngFor="let note of getData">
-        Titel : {{note.title}}, UserId: {{note.userId}}
+        Titel : {{note.Name}}, UserId: {{note.City}}
 </li>
 </ul>
     `,
@@ -20,12 +19,13 @@ export class HTTPTestComponent
 
 
     constructor(private _httpService: HTTPTestService){
-
-        this._httpService.getNotes("http://jsonplaceholder.typicode.com/todos").subscribe(
-            data => this.getData = data,
-            error => alert("Something went wrong"),
-            () => console.log("Finished ")
-        );
-
+        this.update();
+    }
+    update(){
+        this._httpService.getNotes('./citys.json').subscribe(
+        data => this.getData = data,
+        error => alert(error),
+        () => console.log("Finished ")
+    );
     }
 }

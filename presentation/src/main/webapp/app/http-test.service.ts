@@ -28,4 +28,51 @@ export class HTTPTestService
                 headers:headers
             }).map(res => res.json());
     }
+    newNote(Id:number,content:string,owner:string) {
+        var neu = [{"Id":Id,"Content":content,"Owner":owner}];
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+       return this._http
+            .post('/resources/Notes/createNote',
+                neu, {
+                    headers: headers
+                })
+            .map(response => response.text());
+          /*  .subscribe(
+                response => this.storeToken(response.id_token),
+                this.logError,
+                () => console.log('Authentication Complete')
+            );*/
+    }
+    deleteAll(url:string)
+    {
+        return this._http.get(url).map(res => res.text());
+    }
+    deleteNote(id:number)
+    {
+        var neu = id;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        return this._http
+            .post('/resources/Notes/deleteNote',
+                neu, {
+                    headers: headers
+                })
+            .map(response => response.text());
+    }
+    updateNote(Id:number,content:string,owner:string)
+    {
+        var neu = [{"Id":Id,"Content":content,"Owner":owner}];
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        return this._http
+            .post('/resources/Notes/updateNote',
+                neu, {
+                    headers: headers
+                })
+            .map(response => response.text());
+    }
 }
