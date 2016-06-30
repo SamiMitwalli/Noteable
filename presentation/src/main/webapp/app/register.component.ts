@@ -14,13 +14,23 @@ export class RegisterComponent {
     password1:string;
     password2:string;
     currentId:number;
-    samepw:boolean;
 
 
     constructor(private _httpService: HTTPTestService){
+
+    }
+
+    createUser()
+    {
         if(this.password1 === this.password2)
+         {
+                 this._httpService.newUser(this.loginName,this.password1).subscribe(
+                     response => this.currentId = parseInt(response)
+                 );
+         }
+        else
         {
-            alert (this.password1);
+            alert("Die Eingegebenen Passwörter stimmen nicht überein oder sind leer !!");
         }
     }
 }

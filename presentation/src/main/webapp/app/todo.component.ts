@@ -57,6 +57,9 @@ export class TodoComponent {
     }*/
     
     update(){
+        
+        //TODO Restschnittstelle ansteuern
+        
         this._httpService.getNotes("http://jsonplaceholder.typicode.com/todos").subscribe(
             data => this.todos = data,
             error => alert("Something went wrong"),
@@ -76,7 +79,7 @@ export class TodoComponent {
     {
         //TODO Wie weiß ich ob ich Admin bin ?
         
-        this._httpService.deleteAll("/resources/Notes/deleteAll").subscribe(
+        this._httpService.deleteAllNotes().subscribe(
             data => this.response = data,
             error => this.error=error,
             () => console.log("Success")
@@ -97,7 +100,7 @@ export class TodoComponent {
 
         //Beispiel:
 
-        this._httpService.updateNote(1,this.content ,"Philipp").subscribe(
+        this._httpService.updateNote(1,this.content ,"Test").subscribe(
             response => this.response=response);
         this.update();
         alert(this.response);

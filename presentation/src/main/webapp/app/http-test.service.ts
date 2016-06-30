@@ -15,7 +15,19 @@ export class HTTPTestService
         // Hier get Anfrgae zur kommunikation mit der Restschnittstelle
         return this._http.get(url).map(res => res.json());
     }
+    readNote(id:number)
+    {
+        var neu = id;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
 
+        return this._http
+            .post('/resources/Notes/readNote',
+                neu, {
+                    headers: headers
+                })
+            .map(response => response.text());
+    }
     postJSON()
     {
         var json = JSON.stringify({var1:'Test',var2:3});
@@ -31,7 +43,7 @@ export class HTTPTestService
     newNote(Id:number,content:string,owner:string) {
         var neu = [{"Id":Id,"Content":content,"Owner":owner}];
         var headers = new Headers();
-        headers.append('Content-Type', 'application/json');
+        headers.append('Content-Type', 'application/text');
 
        return this._http
             .post('/resources/Notes/createNote',
@@ -39,21 +51,20 @@ export class HTTPTestService
                     headers: headers
                 })
             .map(response => response.text());
-          /*  .subscribe(
-                response => this.storeToken(response.id_token),
-                this.logError,
-                () => console.log('Authentication Complete')
-            );*/
     }
-    deleteAll(url:string)
+    deleteAllNotes()
     {
-        return this._http.get(url).map(res => res.text());
+        return this._http.get("/resources/Notes/deleteAll").map(res => res.text());
+    }
+    readAllNotes()
+    {
+        return this._http.get("/resources/Notes/readAll").map(res => res.text());
     }
     deleteNote(id:number)
     {
         var neu = id;
         var headers = new Headers();
-        headers.append('Content-Type', 'application/json');
+        headers.append('Content-Type', 'application/text');
 
         return this._http
             .post('/resources/Notes/deleteNote',
@@ -66,7 +77,7 @@ export class HTTPTestService
     {
         var neu = [{"Id":Id,"Content":content,"Owner":owner}];
         var headers = new Headers();
-        headers.append('Content-Type', 'application/json');
+        headers.append('Content-Type', 'application/text');
 
         return this._http
             .post('/resources/Notes/updateNote',
@@ -79,10 +90,63 @@ export class HTTPTestService
     {
         var neu = [{"loginName":username,"password":password}];
         var headers = new Headers();
-        headers.append('Content-Type', 'application/json');
+        headers.append('Content-Type', 'application/text');
 
         return this._http
-            .post('/resources/Users/createUser',
+            .post('/resources/access/register',
+                neu, {
+                    headers: headers
+                })
+            .map(response => response.text());
+    }
+    updateUser(id:number,loginName:string,password:string)
+    {
+        var neu = [{"id":id,"loginName":loginName,"password":password}];
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/text');
+
+        return this._http
+            .post('/resources/Users/updateUser',
+                neu, {
+                    headers: headers
+                })
+            .map(response => response.text());
+    }
+
+    deleteUser(id:number)
+    {
+        var neu = id;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/text');
+
+        return this._http
+            .post('/resources/Users/updateUser',
+                neu, {
+                    headers: headers
+                })
+            .map(response => response.text());
+    }
+    readUser(id:number)
+    {
+        var neu = id;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/text');
+
+        return this._http
+            .post('/resources/Users/readUser',
+                neu, {
+                    headers: headers
+                })
+            .map(response => response.text());
+    }
+    login(username:string,password:string,remember:boolean)
+    {
+        var neu = username+','+password+','+remember;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/text');
+
+        return this._http
+            .post('/resources/access/login',
                 neu, {
                     headers: headers
                 })
