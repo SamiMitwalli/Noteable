@@ -60,7 +60,7 @@ export class TodoComponent {
         
         //TODO Restschnittstelle ansteuern
         this._httpService.readNote(this.currentId).subscribe(
-            response => this.response = response
+            response => this.todos = response
         );
     }
     addNote()

@@ -37,7 +37,7 @@ export class HTTPTestService
                 neu, {
                     headers: headers
                 })
-            .map(response => response.text());
+            .map(response => response.json());
     }
 
     updateNote(Id:number,content:string,owner:string)
@@ -70,7 +70,7 @@ export class HTTPTestService
 
     readAllNotes()
     {
-        return this._http.get("/resources/Notes/readAll").map(res => res.text());
+        return this._http.get("/resources/Notes/readAll").map(res => res.json());
     }
 
     deleteAllNotes()
@@ -157,8 +157,9 @@ export class HTTPTestService
 
     getNotes(url:string) //  Get anfrage
     {
-        //TODO Hier get Anfrgae zur kommunikation mit der Restschnittstelle
+        
         return this._http.get(url).map(res => res.json());
+        
     }
 
     postJSON()
