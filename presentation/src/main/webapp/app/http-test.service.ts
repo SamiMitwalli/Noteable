@@ -10,11 +10,22 @@ export class HTTPTestService
     constructor(private _http:Http)
     {}
 
-    getNotes(url:string) //  Get anfrage
+    // METHODEN FÜR NOTES
+
+    newNote(Id:number,content:string,owner:string)
     {
-        // Hier get Anfrgae zur kommunikation mit der Restschnittstelle
-        return this._http.get(url).map(res => res.json());
+        var neu = [{"Id":Id,"Content":content,"Owner":owner}];
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/text');
+
+        return this._http
+            .post('/resources/Notes/createNote',
+                neu, {
+                    headers: headers
+                })
+            .map(response => response.text());
     }
+
     readNote(id:number)
     {
         var neu = id;
@@ -28,51 +39,7 @@ export class HTTPTestService
                 })
             .map(response => response.text());
     }
-    postJSON()
-    {
-        var json = JSON.stringify({var1:'Test',var2:3});
-        var params = 'json=' + json;
-        var headers = new Headers();
-        headers.append('Content-Type','application/x-www-form-urlencoded');
 
-        return this._http.post('http://validate.jsontest.com',
-        params,{
-                headers:headers
-            }).map(res => res.json());
-    }
-    newNote(Id:number,content:string,owner:string) {
-        var neu = [{"Id":Id,"Content":content,"Owner":owner}];
-        var headers = new Headers();
-        headers.append('Content-Type', 'application/text');
-
-       return this._http
-            .post('/resources/Notes/createNote',
-                neu, {
-                    headers: headers
-                })
-            .map(response => response.text());
-    }
-    deleteAllNotes()
-    {
-        return this._http.get("/resources/Notes/deleteAll").map(res => res.text());
-    }
-    readAllNotes()
-    {
-        return this._http.get("/resources/Notes/readAll").map(res => res.text());
-    }
-    deleteNote(id:number)
-    {
-        var neu = id;
-        var headers = new Headers();
-        headers.append('Content-Type', 'application/text');
-
-        return this._http
-            .post('/resources/Notes/deleteNote',
-                neu, {
-                    headers: headers
-                })
-            .map(response => response.text());
-    }
     updateNote(Id:number,content:string,owner:string)
     {
         var neu = [{"Id":Id,"Content":content,"Owner":owner}];
@@ -86,6 +53,33 @@ export class HTTPTestService
                 })
             .map(response => response.text());
     }
+
+    deleteNote(id:number)
+    {
+        var neu = id;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/text');
+
+        return this._http
+            .post('/resources/Notes/deleteNote',
+                neu, {
+                    headers: headers
+                })
+            .map(response => response.text());
+    }
+
+    readAllNotes()
+    {
+        return this._http.get("/resources/Notes/readAll").map(res => res.text());
+    }
+
+    deleteAllNotes()
+    {
+        return this._http.get("/resources/Notes/deleteAll").map(res => res.text());
+    }
+
+    // METHODEN FÜR USERS
+
     newUser(username:string,password:string)
     {
         var neu = [{"loginName":username,"password":password}];
@@ -99,6 +93,21 @@ export class HTTPTestService
                 })
             .map(response => response.text());
     }
+
+    readUser(id:number)
+    {
+        var neu = id;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        return this._http
+            .post('/resources/Users/readUser',
+                neu, {
+                    headers: headers
+                })
+            .map(response => response.json());
+    }
+    
     updateUser(id:number,loginName:string,password:string)
     {
         var neu = [{"id":id,"loginName":loginName,"password":password}];
@@ -120,25 +129,15 @@ export class HTTPTestService
         headers.append('Content-Type', 'application/text');
 
         return this._http
-            .post('/resources/Users/updateUser',
+            .post('/resources/Users/deleteUser',
                 neu, {
                     headers: headers
                 })
             .map(response => response.text());
     }
-    readUser(id:number)
-    {
-        var neu = id;
-        var headers = new Headers();
-        headers.append('Content-Type', 'application/text');
 
-        return this._http
-            .post('/resources/Users/readUser',
-                neu, {
-                    headers: headers
-                })
-            .map(response => response.text());
-    }
+    // METHODEN FÜR DIE AUTHENTIFIKATION
+    
     login(username:string,password:string,remember:boolean)
     {
         var neu = username+','+password+','+remember;
@@ -148,8 +147,31 @@ export class HTTPTestService
         return this._http
             .post('/resources/access/login',
                 neu, {
-                    headers: headers
+                    
                 })
             .map(response => response.text());
     }
+
+
+    // METHODEN ZUM TESTEN
+
+    getNotes(url:string) //  Get anfrage
+    {
+        //TODO Hier get Anfrgae zur kommunikation mit der Restschnittstelle
+        return this._http.get(url).map(res => res.json());
+    }
+
+    postJSON()
+    {
+        var json = JSON.stringify({var1:'Test',var2:3});
+        var params = 'json=' + json;
+        var headers = new Headers();
+        headers.append('Content-Type','application/x-www-form-urlencoded');
+
+        return this._http.post('http://validate.jsontest.com',
+            params,{
+                headers:headers
+            }).map(res => res.json());
+    }
+
 }
