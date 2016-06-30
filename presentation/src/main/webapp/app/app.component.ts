@@ -56,5 +56,5 @@ import {HTTPTestComponent} from "./http-test.component";
 ])
 
 export class AppComponent {
-  title = 'Tour of Heroes';
+  title = 'Noteable';
 }

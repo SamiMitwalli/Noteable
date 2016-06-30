@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import {HTTPTestService} from "./http-test.service";
+import { HTTPTestService } from "./http-test.service";
 
 export class Todo {
-    id: number;
-    text: string;
-    owner: string;
+    id:number;
+    text:string;
+    owner:string;
 }
 
-/*const TODOS: Todo[] = [
+const TODOS: Todo[] = [
     { id: 1, text: 'Mr. Nice' , owner: 'User1' },
     { id: 2, text: 'Narco'    , owner: 'User1' },
     { id: 3, text: 'Bombasto' , owner: 'User1' },
@@ -17,11 +17,11 @@ export class Todo {
     { id: 7, text: 'Dynama'   , owner: 'User1' },
     { id: 8, text: 'Dr IQ'    , owner: 'User1' },
     { id: 9, text: 'Magma'    , owner: 'User1' }
-];*/
+];
 
 @Component({
     selector: 'todo',
-    templateUrl : 'templates/todo.html',
+    templateUrl: 'templates/todo.html',
     providers:[HTTPTestService]
 })
 
@@ -34,13 +34,30 @@ export class TodoComponent {
     error:string;
     currentId:number;
 
+    newTodo:string;
+/*    todos = TODOS;*/
 
     constructor(private _httpService: HTTPTestService){
         this.update();
+        this.newTodo = '';
     }
+
+/*    showEditDialog() {
+        bootbox.prompt({
+            title: 'What is your real name?',
+            value: 'Hallo',
+            callback: function (result) {
+                if (result === null) {
+                    Example.show('Prompt dismissed');
+                } else {
+                    Example.show('Hi <b>' + result + '</b>');
+                }
+            }
+        })
+    }*/
     
     update(){
-        this._httpService.getNotes("/citys.json").subscribe(
+        this._httpService.getNotes("http://jsonplaceholder.typicode.com/todos").subscribe(
             data => this.todos = data,
             error => alert("Something went wrong"),
             () => console.log("Finished ")
