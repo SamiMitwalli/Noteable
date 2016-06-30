@@ -24,6 +24,9 @@ public class HibernateConnector {
 
     /*PERSISTENCE INIT,COMMIT*/
     public void init(){
+        /*Nötig?*/
+        if(emFactory==null)
+            emFactory = Persistence.createEntityManagerFactory("noteable");
         em = emFactory.createEntityManager();
         em.getTransaction().begin();
     }

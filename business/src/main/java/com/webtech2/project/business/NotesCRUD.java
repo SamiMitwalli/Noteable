@@ -2,6 +2,8 @@ package com.webtech2.project.business;
 
 
 import com.webtech2.project.persistence.Notes;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 
 import javax.ejb.Stateless;
 import javax.json.*;
@@ -68,6 +70,7 @@ public class NotesCRUD extends HibernateConnector {
     /*REST-SERVICES*/
     @POST
     @Path("/createNote")
+    @RequiresAuthentication
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public Long createNote(JsonObject obj){
@@ -89,6 +92,7 @@ public class NotesCRUD extends HibernateConnector {
     }
     @GET
     @Path("/readNote/{id}")
+    @RequiresAuthentication
     @Produces(MediaType.APPLICATION_JSON)
     public Notes readNote(@PathParam("id") long id){
         Notes result = this.read(id);
@@ -96,6 +100,7 @@ public class NotesCRUD extends HibernateConnector {
     }
     @POST
     @Path("/readNote")
+    @RequiresAuthentication
     @Produces(MediaType.APPLICATION_JSON)
     public Notes readNote2(long id){
         Notes result = this.read(id);
@@ -103,6 +108,7 @@ public class NotesCRUD extends HibernateConnector {
     }
     @POST
     @Path("/updateNote")
+    @RequiresAuthentication
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public Long updateNote(JsonObject obj){
@@ -121,6 +127,7 @@ public class NotesCRUD extends HibernateConnector {
     }
     @POST
     @Path("/deleteNote")
+    @RequiresAuthentication
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
     public Long deleteNote(Long id){
@@ -130,6 +137,8 @@ public class NotesCRUD extends HibernateConnector {
     /*Only For Admin use untested*/
     @GET
     @Path("/deleteAll")
+    @RequiresAuthentication
+    @RequiresRoles("admin")
     @Produces(MediaType.TEXT_PLAIN)
     public String deleteAllNotes(){
         List<Notes> allNotes = this.readAll();
@@ -141,6 +150,8 @@ public class NotesCRUD extends HibernateConnector {
     }
     @GET
     @Path("/readAll")
+    @RequiresAuthentication
+    @RequiresRoles("admin")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Notes> readAllNotes(){
         List<Notes> result = this.readAll();

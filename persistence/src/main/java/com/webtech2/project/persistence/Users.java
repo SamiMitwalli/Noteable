@@ -9,6 +9,7 @@ import java.util.List;
  * Created by Sami Mitwalli on 06.06.2016.
  */
 @Entity
+@Table(name="users")
 public class Users {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Id
@@ -17,6 +18,7 @@ public class Users {
     private String              loginName;      //Username
     @NotNull
     private String              password;       //Password
+    private String              role;
     @OneToMany(mappedBy = "owner")
     private List<Notes>         notes;           //created Notes of the User
     @ManyToMany
@@ -62,5 +64,14 @@ public class Users {
 
     public void setNotes(List<Notes> notes) {
         this.notes = notes;
+    }
+
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

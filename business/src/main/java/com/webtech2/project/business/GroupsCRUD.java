@@ -1,6 +1,8 @@
 package com.webtech2.project.business;
 
 import com.webtech2.project.persistence.*;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 
 import javax.ejb.Stateless;
 import javax.json.JsonObject;
@@ -29,6 +31,7 @@ public class GroupsCRUD extends HibernateConnector{
     /*REST*/
     @POST
     @Path("/createGroup")
+    @RequiresAuthentication
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public Long createGroup(JsonObject obj){
@@ -47,18 +50,21 @@ public class GroupsCRUD extends HibernateConnector{
     }
     @GET
     @Path("/readGroup/{id}")
+    @RequiresAuthentication
     @Produces(MediaType.APPLICATION_JSON)
     public Groups readGroupByID(@PathParam("id") long id){
         return this.read(id);
     }
     @POST
     @Path("/readGroup")
+    @RequiresAuthentication
     @Produces(MediaType.APPLICATION_JSON)
     public Groups readGroup (long id){
         return this.read(id);
     }
     @POST
     @Path("/updateGroup")
+    @RequiresAuthentication
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public long Groups(JsonObject obj){
@@ -75,6 +81,7 @@ public class GroupsCRUD extends HibernateConnector{
     // only admin?
     @POST
     @Path("/deleteGroup")
+    @RequiresAuthentication
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
     public Long deleteGroup(Long id) {
@@ -83,6 +90,8 @@ public class GroupsCRUD extends HibernateConnector{
     /*Only For Admin use*/
     @GET
     @Path("/deleteAll")
+    @RequiresAuthentication
+    @RequiresRoles("admin")
     @Produces(MediaType.TEXT_PLAIN)
     public String deleteAllNotes(){
         List<Groups> allGroups = this.readAll();
@@ -94,6 +103,8 @@ public class GroupsCRUD extends HibernateConnector{
     }
     @GET
     @Path("/readAll")
+    @RequiresAuthentication
+    @RequiresRoles("admin")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Groups> readAllNotes(){
         return this.readAll();

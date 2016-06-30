@@ -1,15 +1,15 @@
 package com.webtech2.project.business;
 
 import com.webtech2.project.persistence.*;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 
-import javax.ejb.Stateless;
 import javax.json.JsonObject;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import javax.xml.registry.infomodel.User;
 import java.util.List;
 
 /**
@@ -32,15 +32,11 @@ public class UsersCRUD extends HibernateConnector{
     @Produces(MediaType.TEXT_PLAIN)
     public Long createUser(JsonObject obj){
         Users user = new Users();
-        /* NOT ALLOWED IN CREATION
-        note.setId(Long.parseLong(""+obj.get("id")));
-         */
-        user.setLoginName(obj.get("loginName").toString());
-        user.setPassword(obj.get("password").toString());
-        // NotesCRUD notesCRUD = new NotesCRUD();
-        // user.setNotes(notesCRUD.read(Long.parseLong(""+obj.get("notes"))));
-        // GroupsCRUD groupsCRUD = new GroupsCRUD();
-        // user.setGroups(groupsCRUD.read(Long.parseLong(obj.get("groups").toString())));
+
+        user.setLoginName(""+obj.get("loginName"));
+        user.setPassword(""+obj.get("password"));
+        //registered or created user always get role 'user'
+        user.setRole("user");
 
         return this.create(user);
     }
@@ -58,6 +54,7 @@ public class UsersCRUD extends HibernateConnector{
     }
     @POST
     @Path("/updateUser")
+    @RequiresAuthentication
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public long updateUser(JsonObject obj){
@@ -75,14 +72,17 @@ public class UsersCRUD extends HibernateConnector{
     // only admin?
     @POST
     @Path("/deleteUser")
+    @RequiresAuthentication
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
     public Long deleteUser(Long id) {
         return this.delete(id);
     }
+
     /*Only For Admin use*/
     @GET
     @Path("/deleteAll")
+    @RequiresRoles("admin")
     @Produces(MediaType.TEXT_PLAIN)
     public String deleteAllNotes(){
         List<Users> allUsers = this.readAll();
@@ -94,6 +94,8 @@ public class UsersCRUD extends HibernateConnector{
     }
     @GET
     @Path("/readAll")
+    @RequiresAuthentication
+    @RequiresRoles("admin")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Users> readAllNotes(){
         return this.readAll();
@@ -103,8 +105,8 @@ public class UsersCRUD extends HibernateConnector{
 
 
 
-// DATABASE QUERIES
-    private Long create(Users user) {
+    // DATABASE QUERIES
+    public Long create(Users user) {
         if(user.getId()==null) {
             this.init();
             this.em.persist(user);
@@ -121,6 +123,29 @@ public class UsersCRUD extends HibernateConnector{
         this.commit();
         return user;
     }
+    /*RETURNS false if loginname=null, it's length=0 or already exists in DB*/
+    public boolean validateLoginName(String loginName){
+        if(loginName!= null || loginName.length()>0) {
+            if (this.findByName(loginName)==null)
+                return true;
+        }
+        return false;
+    }
+    public Users findByName(String loginName){
+        this.init();
+        CriteriaBuilder builder = emFactory.getCriteriaBuilder();
+        //QUERY
+        CriteriaQuery<Users> query = builder.createQuery(Users.class);
+        Root<Users> root = query.from(Users.class);
+        query.select(root);
+        query.where(builder.equal(root.get("loginName"), loginName));
+
+        List<Users> users = em.createQuery(query).getResultList();
+        if(!users.isEmpty())
+            return users.get(0);
+        return null;
+    }
+
     public List<Users> readAll(){
         this.init();
         CriteriaBuilder builder = emFactory.getCriteriaBuilder();
