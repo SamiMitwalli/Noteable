@@ -8,12 +8,13 @@ import { HeroService } from './hero.service';
 import { TodoComponent } from './todo.component';
 import { LoginComponent } from './login.component';
 import { RegisterComponent } from './register.component';
+import {HTTPTestComponent} from "./http-test.component";
 
 @Component({
   selector: 'my-app',
   templateUrl: '/templates/header.html',
 //  styleUrls: ['app/app.component.css'],
-  directives: [ROUTER_DIRECTIVES],
+  directives: [ROUTER_DIRECTIVES,HTTPTestComponent],
   providers: [
     ROUTER_PROVIDERS,
     HeroService

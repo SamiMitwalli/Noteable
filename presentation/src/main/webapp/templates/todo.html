@@ -30,7 +30,7 @@
         <div class="input-group input-group-lg">
             <input type="text" class="form-control input-lg" [(ngModel)]="newTodo" (keyup.enter)="newTodo=''" placeholder="Neue ToDo">
       <span class="input-group-btn">
-        <button class="btn btn-default btn-lg" [disabled]="newTodo===''">Hinzufügen</button>
+        <button class="btn btn-default btn-lg" (click) = "addNote()" [disabled]="newTodo===''">Hinzufügen</button>
       </span>
         </div>
     </div>
@@ -48,9 +48,14 @@
         </thead>
         <tbody>
         <tr *ngFor="let todo of todos">
-            <td>{{todo.id}}</td>
+
+            <!--<td>{{todo.id}}</td>
             <td>{{todo.text}}</td>
-            <td>{{todo.owner}}</td>
+            <td>{{todo.owner}}</td>-->
+
+            <td>{{todo.Name}}</td>
+            <td>{{todo.City}}</td>
+            <td>{{todo.Country}}</td>
             <td class="text-right">
                 <button type="button" class="btn btn-default"
                 onclick="bootbox.prompt({
