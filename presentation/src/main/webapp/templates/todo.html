@@ -2,12 +2,35 @@
     <h1>Meine ToDo's</h1>
 </div>
 
+
+
+
+<!--Bootbox-->
+<!-- set up the modal to start hidden and fade in and out -->
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- dialog body -->
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                Hello world!
+            </div>
+            <!-- dialog buttons -->
+            <div class="modal-footer"><button type="button" class="btn btn-primary">OK</button></div>
+        </div>
+    </div>
+</div>
+<button class="btn btn-default" onclick="bootbox.alert('Hello world!')"> Alert </button>
+
+
+
+
 <div class="row">
     <div class="col-lg-8">
         <div class="input-group input-group-lg">
-            <input type="text" class="form-control input-lg" id="search-church" placeholder="Neue ToDo">
+            <input type="text" class="form-control input-lg" [(ngModel)]="newTodo" (keyup.enter)="newTodo=''" placeholder="Neue ToDo">
       <span class="input-group-btn">
-        <button class="btn btn-default btn-lg" type="submit">Hinzufügen</button>
+        <button class="btn btn-default btn-lg" [disabled]="newTodo===''">Hinzufügen</button>
       </span>
         </div>
     </div>
@@ -29,7 +52,18 @@
             <td>{{todo.text}}</td>
             <td>{{todo.owner}}</td>
             <td class="text-right">
-                <button type="button" class="btn btn-default">
+                <button type="button" class="btn btn-default"
+                onclick="bootbox.prompt({
+  title: 'What is your real name?',
+  value: todo.text,
+  callback: function(result) {
+    if (result === null) {
+      Example.show('Prompt dismissed');
+    } else {
+      Example.show('Hi <b>'+result+'</b>');
+    }
+  }
+});">
                     <span class="glyphicon glyphicon-pencil"></span> Bearbeiten
                 </button>
                 <button type="button" class="btn btn-default">
@@ -44,9 +78,28 @@
 <script src="../node_modules/bootbox/bootbox.min.js"></script>
 
 <script>
-    $(document).on("click", ".alert", function (e) {
-        bootbox.alert("Hello world!", function () {
-            console.log("Alert Callback");
-        });
-    });
+    /**
+     * This tiny script just helps us demonstrate
+     * what the various example callbacks are doing
+     */
+    var Example = (function() {
+        "use strict";
+
+        var elem,
+                hideHandler,
+                that = {};
+
+        that.init = function(options) {
+            elem = $(options.selector);
+        };
+
+        that.show = function(text) {
+            clearTimeout(hideHandler);
+
+            elem.find("span").html(text);
+            elem.delay(200).fadeIn().delay(4000).fadeOut();
+        };
+
+        return that;
+    }());
 </script>

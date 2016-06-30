@@ -55,5 +55,5 @@ import { RegisterComponent } from './register.component';
 ])
 
 export class AppComponent {
-  title = 'Tour of Heroes';
+  title = 'Noteable';
 }
