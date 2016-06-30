@@ -75,4 +75,17 @@ export class HTTPTestService
                 })
             .map(response => response.text());
     }
+    newUser(username:string,password:string)
+    {
+        var neu = [{"loginName":username,"password":password}];
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        return this._http
+            .post('/resources/Users/createUser',
+                neu, {
+                    headers: headers
+                })
+            .map(response => response.text());
+    }
 }
