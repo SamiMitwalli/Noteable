@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {HTTPTestService} from "./http-test.service";
+import { HTTPTestService } from "./http-test.service";
 
 export class Todo {
     id:number;
@@ -35,15 +35,29 @@ export class TodoComponent {
     currentId:number;
 
     newTodo:string;
-    todos = TODOS;
+/*    todos = TODOS;*/
 
     constructor(private _httpService: HTTPTestService){
         this.update();
         this.newTodo = '';
     }
+
+/*    showEditDialog() {
+        bootbox.prompt({
+            title: 'What is your real name?',
+            value: 'Hallo',
+            callback: function (result) {
+                if (result === null) {
+                    Example.show('Prompt dismissed');
+                } else {
+                    Example.show('Hi <b>' + result + '</b>');
+                }
+            }
+        })
+    }*/
     
     update(){
-        this._httpService.getNotes("/citys.json").subscribe(
+        this._httpService.getNotes("http://jsonplaceholder.typicode.com/todos").subscribe(
             data => this.todos = data,
             error => alert("Something went wrong"),
             () => console.log("Finished ")

@@ -2,7 +2,32 @@
     <h1>Meine ToDo's</h1>
 </div>
 
+<script>
+    /**
+     * This tiny script just helps us demonstrate
+     * what the various example callbacks are doing
+     */
+    var Example = (function() {
+        "use strict";
 
+        var elem,
+                hideHandler,
+                that = {};
+
+        that.init = function(options) {
+            elem = $(options.selector);
+        };
+
+        that.show = function(text) {
+            clearTimeout(hideHandler);
+
+            elem.find("span").html(text);
+            elem.delay(200).fadeIn().delay(4000).fadeOut();
+        };
+
+        return that;
+    }());
+</script>
 
 
 <!--Bootbox-->
@@ -43,7 +68,7 @@
             <th class="">#</th>
             <th class="col-md-7">ToDo</th>
             <th class="col-md-2">Besitzer</th>
-            <th>Optionen</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -53,14 +78,14 @@
             <td>{{todo.text}}</td>
             <td>{{todo.owner}}</td>-->
 
-            <td>{{todo.Name}}</td>
-            <td>{{todo.City}}</td>
-            <td>{{todo.Country}}</td>
+            <td>{{todo.id}}</td>
+            <td>{{todo.title}}</td>
+            <td>{{todo.completed}}</td>
             <td class="text-right">
                 <button type="button" class="btn btn-default"
                 onclick="bootbox.prompt({
   title: 'What is your real name?',
-  value: todo.text,
+  value: 'Hallo',
   callback: function(result) {
     if (result === null) {
       Example.show('Prompt dismissed');
@@ -81,30 +106,3 @@
 </div>
 
 <script src="../node_modules/bootbox/bootbox.min.js"></script>
-
-<script>
-    /**
-     * This tiny script just helps us demonstrate
-     * what the various example callbacks are doing
-     */
-    var Example = (function() {
-        "use strict";
-
-        var elem,
-                hideHandler,
-                that = {};
-
-        that.init = function(options) {
-            elem = $(options.selector);
-        };
-
-        that.show = function(text) {
-            clearTimeout(hideHandler);
-
-            elem.find("span").html(text);
-            elem.delay(200).fadeIn().delay(4000).fadeOut();
-        };
-
-        return that;
-    }());
-</script>
