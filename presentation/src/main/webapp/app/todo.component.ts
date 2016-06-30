@@ -33,47 +33,45 @@ export class TodoComponent {
     response:any;
     error:string;
     currentId:number;
+    owner:any;
+    noteid:number;
 
     newTodo:string;
 /*    todos = TODOS;*/
 
     constructor(private _httpService: HTTPTestService){
-        this.update();
+        this.test();
+        
+        //this.update();
+        
         this.newTodo = '';
     }
-
-/*    showEditDialog() {
-        bootbox.prompt({
-            title: 'What is your real name?',
-            value: 'Hallo',
-            callback: function (result) {
-                if (result === null) {
-                    Example.show('Prompt dismissed');
-                } else {
-                    Example.show('Hi <b>' + result + '</b>');
-                }
-            }
-        })
-    }*/
     
-    update(){
-        
-        //TODO Restschnittstelle ansteuern
-        
+    test()
+    {
         this._httpService.getNotes("http://jsonplaceholder.typicode.com/todos").subscribe(
             data => this.todos = data,
             error => alert("Something went wrong"),
             () => console.log("Finished ")
         );
     }
+    
+    update(){
+        
+        //TODO Restschnittstelle ansteuern
+        this._httpService.readNote(this.currentId).subscribe(
+            response => this.response = response
+        );
+    }
     addNote()
     {
         //TODO Wie bekomme ich die aktuelle Userid bzw. den aktuellen usernamen 
         
-        this._httpService.newNote(1,this.content ,"Philipp").subscribe(
-            response => this.response=response);
+        this._httpService.newNote(this.currentId,this.content,this.owner).subscribe(
+            response => this.noteid = parseInt(response));
         this.update();
-        alert(this.response);
+        
+        //alert(this.response);
     }
     deleteAll()
     {
@@ -81,28 +79,45 @@ export class TodoComponent {
         
         this._httpService.deleteAllNotes().subscribe(
             data => this.response = data,
-            error => this.error=error,
+            error => this.error = error,
             () => console.log("Success")
         );
     }
+    
     deleteNote()
     {
         //TODO Auch hier wie bekomme ich die aktulle Userid?
 
-        this._httpService.deleteNote(this.currentId).subscribe(
-            response => this.response=response);
+        this._httpService.deleteNote(this.noteid).subscribe(
+            response => this.noteid = parseInt(response));
         this.update();
         alert(this.response);
     }
+    
     updateNote()
     {
         //TODO Wie bekomme ich die aktuelle Userid bzw. den aktuellen usernamen vom Bearbeiten feld ?
 
         //Beispiel:
 
-        this._httpService.updateNote(1,this.content ,"Test").subscribe(
-            response => this.response=response);
+        this._httpService.updateNote(this.currentId,this.content,this.owner).subscribe(
+            response => this.noteid = parseInt(response));
         this.update();
-        alert(this.response);
+        
+        // alert(this.response);
     }
+
+    /*    showEditDialog() {
+     bootbox.prompt({
+     title: 'What is your real name?',
+     value: 'Hallo',
+     callback: function (result) {
+     if (result === null) {
+     Example.show('Prompt dismissed');
+     } else {
+     Example.show('Hi <b>' + result + '</b>');
+     }
+     }
+     })
+     }*/
 }
