@@ -9,15 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var http_test_service_1 = require("./http-test.service");
 var RegisterComponent = (function () {
-    function RegisterComponent() {
+    function RegisterComponent(_httpService) {
+        this._httpService = _httpService;
     }
+    RegisterComponent.prototype.createUser = function () {
+        var _this = this;
+        if (this.password1 === this.password2) {
+            this._httpService.newUser(this.loginName, this.password1).subscribe(function (response) { return _this.currentId = parseInt(response); });
+        }
+        else {
+            alert("Die Eingegebenen Passwörter stimmen nicht überein oder sind leer !!");
+        }
+    };
     RegisterComponent = __decorate([
         core_1.Component({
             selector: 'register',
-            templateUrl: 'templates/register.html'
+            templateUrl: 'templates/register.html',
+            providers: [http_test_service_1.HTTPTestService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_test_service_1.HTTPTestService])
     ], RegisterComponent);
     return RegisterComponent;
 }());

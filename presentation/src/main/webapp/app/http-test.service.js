@@ -16,8 +16,105 @@ var HTTPTestService = (function () {
     function HTTPTestService(_http) {
         this._http = _http;
     }
+    // METHODEN FÜR NOTES
+    HTTPTestService.prototype.newNote = function (Id, content, owner) {
+        var neu = [{ "Id": Id, "Content": content, "Owner": owner }];
+        var headers = new http_2.Headers();
+        headers.append('Content-Type', 'application/text');
+        return this._http
+            .post('/resources/Notes/createNote', neu, {
+            headers: headers
+        })
+            .map(function (response) { return response.text(); });
+    };
+    HTTPTestService.prototype.readNote = function (id) {
+        var neu = id;
+        var headers = new http_2.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this._http
+            .post('/resources/Notes/readNote', neu, {
+            headers: headers
+        })
+            .map(function (response) { return response.json(); });
+    };
+    HTTPTestService.prototype.updateNote = function (Id, content, owner) {
+        var neu = [{ "Id": Id, "Content": content, "Owner": owner }];
+        var headers = new http_2.Headers();
+        headers.append('Content-Type', 'application/text');
+        return this._http
+            .post('/resources/Notes/updateNote', neu, {
+            headers: headers
+        })
+            .map(function (response) { return response.text(); });
+    };
+    HTTPTestService.prototype.deleteNote = function (id) {
+        var neu = id;
+        var headers = new http_2.Headers();
+        headers.append('Content-Type', 'application/text');
+        return this._http
+            .post('/resources/Notes/deleteNote', neu, {
+            headers: headers
+        })
+            .map(function (response) { return response.text(); });
+    };
+    HTTPTestService.prototype.readAllNotes = function () {
+        return this._http.get("/resources/Notes/readAll").map(function (res) { return res.json(); });
+    };
+    HTTPTestService.prototype.deleteAllNotes = function () {
+        return this._http.get("/resources/Notes/deleteAll").map(function (res) { return res.text(); });
+    };
+    // METHODEN FÜR USERS
+    HTTPTestService.prototype.newUser = function (username, password) {
+        var neu = [{ "loginName": username, "password": password }];
+        var headers = new http_2.Headers();
+        headers.append('Content-Type', 'application/text');
+        return this._http
+            .post('/resources/access/register', neu, {
+            headers: headers
+        })
+            .map(function (response) { return response.text(); });
+    };
+    HTTPTestService.prototype.readUser = function (id) {
+        var neu = id;
+        var headers = new http_2.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this._http
+            .post('/resources/Users/readUser', neu, {
+            headers: headers
+        })
+            .map(function (response) { return response.json(); });
+    };
+    HTTPTestService.prototype.updateUser = function (id, loginName, password) {
+        var neu = [{ "id": id, "loginName": loginName, "password": password }];
+        var headers = new http_2.Headers();
+        headers.append('Content-Type', 'application/text');
+        return this._http
+            .post('/resources/Users/updateUser', neu, {
+            headers: headers
+        })
+            .map(function (response) { return response.text(); });
+    };
+    HTTPTestService.prototype.deleteUser = function (id) {
+        var neu = id;
+        var headers = new http_2.Headers();
+        headers.append('Content-Type', 'application/text');
+        return this._http
+            .post('/resources/Users/deleteUser', neu, {
+            headers: headers
+        })
+            .map(function (response) { return response.text(); });
+    };
+    // METHODEN FÜR DIE AUTHENTIFIKATION
+    HTTPTestService.prototype.login = function (username, password, remember) {
+        var neu = username + ',' + password + ',' + remember;
+        var headers = new http_2.Headers();
+        headers.append('Content-Type', 'application/text');
+        return this._http
+            .post('/resources/access/login', neu, {})
+            .map(function (response) { return response.text(); });
+    };
+    // METHODEN ZUM TESTEN
     HTTPTestService.prototype.getNotes = function (url) {
-        // Hier get Anfrgae zur kommunikation mit der Restschnittstelle
         return this._http.get(url).map(function (res) { return res.json(); });
     };
     HTTPTestService.prototype.postJSON = function () {
@@ -28,44 +125,6 @@ var HTTPTestService = (function () {
         return this._http.post('http://validate.jsontest.com', params, {
             headers: headers
         }).map(function (res) { return res.json(); });
-    };
-    HTTPTestService.prototype.newNote = function (Id, content, owner) {
-        var neu = [{ "Id": Id, "Content": content, "Owner": owner }];
-        var headers = new http_2.Headers();
-        headers.append('Content-Type', 'application/json');
-        return this._http
-            .post('/resources/Notes/createNote', neu, {
-            headers: headers
-        })
-            .map(function (response) { return response.text(); });
-        /*  .subscribe(
-              response => this.storeToken(response.id_token),
-              this.logError,
-              () => console.log('Authentication Complete')
-          );*/
-    };
-    HTTPTestService.prototype.deleteAll = function (url) {
-        return this._http.get(url).map(function (res) { return res.text(); });
-    };
-    HTTPTestService.prototype.deleteNote = function (id) {
-        var neu = id;
-        var headers = new http_2.Headers();
-        headers.append('Content-Type', 'application/json');
-        return this._http
-            .post('/resources/Notes/deleteNote', neu, {
-            headers: headers
-        })
-            .map(function (response) { return response.text(); });
-    };
-    HTTPTestService.prototype.updateNote = function (Id, content, owner) {
-        var neu = [{ "Id": Id, "Content": content, "Owner": owner }];
-        var headers = new http_2.Headers();
-        headers.append('Content-Type', 'application/json');
-        return this._http
-            .post('/resources/Notes/updateNote', neu, {
-            headers: headers
-        })
-            .map(function (response) { return response.text(); });
     };
     HTTPTestService = __decorate([
         core_1.Injectable(), 

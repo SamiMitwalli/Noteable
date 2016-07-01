@@ -31,7 +31,8 @@ var TodoComponent = (function () {
     /*    todos = TODOS;*/
     function TodoComponent(_httpService) {
         this._httpService = _httpService;
-        this.update();
+        this.test();
+        //this.update();
         this.newTodo = '';
     }
     TodoComponent.prototype.showEditDialog = function (text) {
@@ -51,26 +52,31 @@ var TodoComponent = (function () {
             }
         });
     };
-    TodoComponent.prototype.update = function () {
+    TodoComponent.prototype.test = function () {
         var _this = this;
         this._httpService.getNotes("http://jsonplaceholder.typicode.com/todos").subscribe(function (data) { return _this.todos = data; }, function (error) { return alert("Something went wrong"); }, function () { return console.log("Finished "); });
+    };
+    TodoComponent.prototype.update = function () {
+        var _this = this;
+        //TODO Restschnittstelle ansteuern
+        this._httpService.readNote(this.currentId).subscribe(function (response) { return _this.todos = response; });
     };
     TodoComponent.prototype.addNote = function () {
         //TODO Wie bekomme ich die aktuelle Userid bzw. den aktuellen usernamen 
         var _this = this;
-        this._httpService.newNote(1, this.newTodo, "Philipp").subscribe(function (response) { return _this.response = response; });
+        this._httpService.newNote(this.currentId, this.content, this.owner).subscribe(function (response) { return _this.noteid = parseInt(response); });
         this.update();
-        alert(this.response);
+        //alert(this.response);
     };
     TodoComponent.prototype.deleteAll = function () {
         //TODO Wie weiß ich ob ich Admin bin ?
         var _this = this;
-        this._httpService.deleteAll("/resources/Notes/deleteAll").subscribe(function (data) { return _this.response = data; }, function (error) { return _this.error = error; }, function () { return console.log("Success"); });
+        this._httpService.deleteAllNotes().subscribe(function (data) { return _this.response = data; }, function (error) { return _this.error = error; }, function () { return console.log("Success"); });
     };
     TodoComponent.prototype.deleteNote = function () {
         //TODO Auch hier wie bekomme ich die aktulle Userid?
         var _this = this;
-        this._httpService.deleteNote(this.currentId).subscribe(function (response) { return _this.response = response; });
+        this._httpService.deleteNote(this.noteid).subscribe(function (response) { return _this.noteid = parseInt(response); });
         this.update();
         alert(this.response);
     };
@@ -78,9 +84,9 @@ var TodoComponent = (function () {
         //TODO Wie bekomme ich die aktuelle Userid bzw. den aktuellen usernamen vom Bearbeiten feld ?
         var _this = this;
         //Beispiel:
-        this._httpService.updateNote(1, this.content, "Philipp").subscribe(function (response) { return _this.response = response; });
+        this._httpService.updateNote(this.currentId, this.content, this.owner).subscribe(function (response) { return _this.noteid = parseInt(response); });
         this.update();
-        alert(this.response);
+        // alert(this.response);
     };
     TodoComponent = __decorate([
         core_1.Component({

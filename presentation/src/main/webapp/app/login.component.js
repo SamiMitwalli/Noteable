@@ -10,16 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
+var http_test_service_1 = require("./http-test.service");
 var LoginComponent = (function () {
-    function LoginComponent() {
+    function LoginComponent(_httpService) {
+        this._httpService = _httpService;
+        this.angemeldet = false;
     }
+    LoginComponent.prototype.login = function () {
+        var _this = this;
+        this._httpService.login(this.loginName, this.password, this.remember).subscribe(function (response) { return _this.angemeldet = !!response; });
+        this.angemeldet = !!this.angemeldet;
+        if (!!this.angemeldet) {
+            alert("Login fehlgeschlagen");
+        }
+    };
     LoginComponent = __decorate([
         core_1.Component({
             selector: 'login',
             templateUrl: 'templates/login.html',
-            directives: [router_deprecated_1.ROUTER_DIRECTIVES]
+            directives: [router_deprecated_1.ROUTER_DIRECTIVES],
+            providers: [http_test_service_1.HTTPTestService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_test_service_1.HTTPTestService])
     ], LoginComponent);
     return LoginComponent;
 }());
