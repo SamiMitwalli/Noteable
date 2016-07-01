@@ -35,12 +35,17 @@ export class TodoComponent {
     response:any;
     error:string;
     currentId:number;
+    owner:any;
+    noteid:number;
 
     newTodo:string;
 /*    todos = TODOS;*/
 
     constructor(private _httpService: HTTPTestService){
-        this.update();
+        this.test();
+        
+        //this.update();
+        
         this.newTodo = '';
     }
 
@@ -62,29 +67,39 @@ export class TodoComponent {
         })
     }
     
-    update(){
+    test()
+    {
         this._httpService.getNotes("http://jsonplaceholder.typicode.com/todos").subscribe(
             data => this.todos = data,
             error => alert("Something went wrong"),
             () => console.log("Finished ")
         );
     }
+    
+    update(){
+        
+        //TODO Restschnittstelle ansteuern
+        this._httpService.readNote(this.currentId).subscribe(
+            response => this.todos = response
+        );
+    }
     addNote()
     {
         //TODO Wie bekomme ich die aktuelle Userid bzw. den aktuellen usernamen 
         
-        this._httpService.newNote(1,this.newTodo ,"Philipp").subscribe(
-            response => this.response=response);
+        this._httpService.newNote(this.currentId,this.content,this.owner).subscribe(
+            response => this.noteid = parseInt(response));
         this.update();
-        alert(this.response);
+        
+        //alert(this.response);
     }
     deleteAll()
     {
         //TODO Wie weiß ich ob ich Admin bin ?
         
-        this._httpService.deleteAll("/resources/Notes/deleteAll").subscribe(
+        this._httpService.deleteAllNotes().subscribe(
             data => this.response = data,
-            error => this.error=error,
+            error => this.error = error,
             () => console.log("Success")
         );
     }
@@ -92,8 +107,8 @@ export class TodoComponent {
     {
         //TODO Auch hier wie bekomme ich die aktulle Userid?
 
-        this._httpService.deleteNote(this.currentId).subscribe(
-            response => this.response=response);
+        this._httpService.deleteNote(this.noteid).subscribe(
+            response => this.noteid = parseInt(response));
         this.update();
         alert(this.response);
     }
@@ -103,9 +118,10 @@ export class TodoComponent {
 
         //Beispiel:
 
-        this._httpService.updateNote(1,this.content ,"Philipp").subscribe(
-            response => this.response=response);
+        this._httpService.updateNote(this.currentId,this.content,this.owner).subscribe(
+            response => this.noteid = parseInt(response));
         this.update();
-        alert(this.response);
+        
+        // alert(this.response);
     }
 }

@@ -4,13 +4,14 @@
             <h3>Registrieren</h3>
             <hr>
             <label for="inputUser" class="sr-only">Benutzername</label>
-            <input type="text" id="inputUser" class="form-control" placeholder="Benutzername" required autofocus>
+            <input [(ngModel)]="loginName" type="text" id="inputUser" class="form-control" placeholder="Benutzername" required autofocus>
             <br>
             <label for="inputPassword" class="sr-only">Paswort</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Passwort" required><br>
+            <input [(ngModel)]="password1" type="password" id="inputPassword" class="form-control" placeholder="Passwort"  required><br>
             <label for="inputPassword2" class="sr-only">Paswort bestätigen</label>
-            <input type="password" id="inputPassword2" class="form-control" placeholder="Passwort bestätigen" required><br>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Registrieren</button>
+            <input [(ngModel)]="password2" type="password" id="inputPassword2" class="form-control" placeholder="Passwort bestätigen" required><br>
+            <button class="btn btn-lg btn-primary btn-block" (click)="createUser()">Registrieren</button>
         </form>
     </div>
 </div>
+
