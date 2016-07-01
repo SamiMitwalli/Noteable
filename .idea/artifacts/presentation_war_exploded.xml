@@ -7,7 +7,6 @@
           <element id="module-output" name="presentation" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: com.webtech2.project:business:1.0-SNAPSHOT" />
           <element id="library" level="project" name="Maven: javax:javaee-api:7.0" />
           <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.5.0" />
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />

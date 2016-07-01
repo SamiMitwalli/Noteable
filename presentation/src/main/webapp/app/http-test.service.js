@@ -17,8 +17,8 @@ var HTTPTestService = (function () {
         this._http = _http;
     }
     // METHODEN FÜR NOTES
-    HTTPTestService.prototype.newNote = function (Id, content, owner) {
-        var neu = [{ "Id": Id, "Content": content, "Owner": owner }];
+    HTTPTestService.prototype.newNote = function (content) {
+        var neu = [{ "Content": content }];
         var headers = new http_2.Headers();
         headers.append('Content-Type', 'application/text');
         return this._http
@@ -89,7 +89,7 @@ var HTTPTestService = (function () {
         var headers = new http_2.Headers();
         headers.append('Content-Type', 'application/text');
         return this._http
-            .post('/resources/Users/updateUser', neu, {
+            .post('/resources/access/updateUser', neu, {
             headers: headers
         })
             .map(function (response) { return response.text(); });

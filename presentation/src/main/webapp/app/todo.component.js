@@ -64,7 +64,7 @@ var TodoComponent = (function () {
     TodoComponent.prototype.addNote = function () {
         //TODO Wie bekomme ich die aktuelle Userid bzw. den aktuellen usernamen 
         var _this = this;
-        this._httpService.newNote(this.currentId, this.content, this.owner).subscribe(function (response) { return _this.noteid = parseInt(response); });
+        this._httpService.newNote(this.content).subscribe(function (response) { return _this.noteid = parseInt(response); });
         this.update();
         //alert(this.response);
     };

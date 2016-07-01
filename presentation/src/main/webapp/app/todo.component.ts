@@ -87,7 +87,7 @@ export class TodoComponent {
     {
         //TODO Wie bekomme ich die aktuelle Userid bzw. den aktuellen usernamen 
         
-        this._httpService.newNote(this.currentId,this.content,this.owner).subscribe(
+        this._httpService.newNote(this.content).subscribe(
             response => this.noteid = parseInt(response));
         this.update();
         

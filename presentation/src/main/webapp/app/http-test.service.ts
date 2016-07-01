@@ -12,9 +12,9 @@ export class HTTPTestService
 
     // METHODEN FÜR NOTES
 
-    newNote(Id:number,content:string,owner:string)
+    newNote(content:string)
     {
-        var neu = [{"Id":Id,"Content":content,"Owner":owner}];
+        var neu = [{"Content":content}];
         var headers = new Headers();
         headers.append('Content-Type', 'application/text');
 
@@ -115,7 +115,7 @@ export class HTTPTestService
         headers.append('Content-Type', 'application/text');
 
         return this._http
-            .post('/resources/Users/updateUser',
+            .post('/resources/access/updateUser',
                 neu, {
                     headers: headers
                 })
