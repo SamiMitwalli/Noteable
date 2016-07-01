@@ -22,15 +22,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="business" />
-        <module name="persistence" />
         <module name="presentation" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="business" target="1.5" />
       <module name="Noteable" target="1.8" />
-      <module name="persistence" target="1.8" />
+      <module name="persistence" target="1.5" />
       <module name="presentation" target="1.8" />
     </bytecodeTargetLevel>
   </component>

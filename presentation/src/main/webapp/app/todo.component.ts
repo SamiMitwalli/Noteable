@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HTTPTestService } from "./http-test.service";
+import { } from 'bootbox';
+import { } from 'jquery';
 
 export class Todo {
     id:number;
@@ -42,19 +44,23 @@ export class TodoComponent {
         this.newTodo = '';
     }
 
-/*    showEditDialog() {
+    showEditDialog(text:string) {
+
+        bootbox.setDefaults({
+            locale: "de",
+        });
         bootbox.prompt({
-            title: 'What is your real name?',
-            value: 'Hallo',
+            title: 'ToDo bearbeiten',
+            value: text,
             callback: function (result) {
                 if (result === null) {
-                    Example.show('Prompt dismissed');
+                    alert("ok");
                 } else {
-                    Example.show('Hi <b>' + result + '</b>');
+                    alert("nicht ok");
                 }
             }
         })
-    }*/
+    }
     
     update(){
         this._httpService.getNotes("http://jsonplaceholder.typicode.com/todos").subscribe(
@@ -67,7 +73,7 @@ export class TodoComponent {
     {
         //TODO Wie bekomme ich die aktuelle Userid bzw. den aktuellen usernamen 
         
-        this._httpService.newNote(1,this.content ,"Philipp").subscribe(
+        this._httpService.newNote(1,this.newTodo ,"Philipp").subscribe(
             response => this.response=response);
         this.update();
         alert(this.response);

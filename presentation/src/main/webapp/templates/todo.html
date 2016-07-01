@@ -2,36 +2,7 @@
     <h1>Meine ToDo's</h1>
 </div>
 
-<script>
-    /**
-     * This tiny script just helps us demonstrate
-     * what the various example callbacks are doing
-     */
-    var Example = (function() {
-        "use strict";
-
-        var elem,
-                hideHandler,
-                that = {};
-
-        that.init = function(options) {
-            elem = $(options.selector);
-        };
-
-        that.show = function(text) {
-            clearTimeout(hideHandler);
-
-            elem.find("span").html(text);
-            elem.delay(200).fadeIn().delay(4000).fadeOut();
-        };
-
-        return that;
-    }());
-</script>
-
-
-<!--Bootbox-->
-<!-- set up the modal to start hidden and fade in and out -->
+<!-- Eingabemaske -->
 <div id="myModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -45,10 +16,8 @@
         </div>
     </div>
 </div>
-<button class="btn btn-default" onclick="bootbox.alert('Hello world!')"> Alert </button>
 
-
-
+<button class="btn btn-default"> Alert </button>
 
 <div class="row">
     <div class="col-lg-8">
@@ -82,21 +51,10 @@
             <td>{{todo.title}}</td>
             <td>{{todo.completed}}</td>
             <td class="text-right">
-                <button type="button" class="btn btn-default"
-                onclick="bootbox.prompt({
-  title: 'What is your real name?',
-  value: 'Hallo',
-  callback: function(result) {
-    if (result === null) {
-      Example.show('Prompt dismissed');
-    } else {
-      Example.show('Hi <b>'+result+'</b>');
-    }
-  }
-});">
+                <button type="button" class="btn btn-primary" (click)="showEditDialog(todo.title)">
                     <span class="glyphicon glyphicon-pencil"></span> Bearbeiten
                 </button>
-                <button type="button" class="btn btn-default">
+                <button type="button" class="btn btn-danger">
                     <span class="glyphicon glyphicon-trash"></span> Löschen
                 </button>
             </td>
