@@ -31,8 +31,8 @@ import java.util.Collections;
 /**
  * Created by Sami Mitwalli on 26.06.2016.
  */
-@Stateful
 @Path("/access")
+@Stateful
 public class ShiroSessionBean{
     private static final transient Logger log = LoggerFactory.getLogger(ShiroSessionBean.class);
     UsersCRUD usersCRUD;
@@ -197,12 +197,36 @@ public class ShiroSessionBean{
     }
 
     @GET
-    @RequiresAuthentication
     @Path("logout")
     public void logout(){
-        this.currentUser.logout();
-        log.info("logged out");
+        if(this.currentUser!=null) {
+            if(this.currentUser.isAuthenticated()) {
+                this.currentUser.logout();
+                log.info("logged out");
+            }
+        }
+        log.info("you have to be logged in, to logout");
     }
+
+    @GET
+    @Path("get")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String get(){return "GET";}
+
+    @GET
+    @Path("authc")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String authc(){return "authc";}
+
+    @GET
+    @Path("authcBasic")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String authcBasic(){return "authcBasic";}
+
+    @GET
+    @Path("authc/admin")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String adminTools(){return "Admin-Tools available.";}
 
     /*SHIRO-SESSION-BEAN-INITIALIZATION*/
     @PostConstruct
