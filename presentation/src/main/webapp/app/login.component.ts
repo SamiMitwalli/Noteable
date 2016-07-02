@@ -1,16 +1,15 @@
-import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router-deprecated';
-import { HTTPTestService } from "./http-test.service";
+import {Component} from '@angular/core';
+import {ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {HTTPTestService} from "./http-test.service";
 
 @Component({
     selector: 'login',
-    templateUrl : 'templates/login.html',
+    templateUrl: 'templates/login.html',
     directives: [ROUTER_DIRECTIVES],
-    providers:[HTTPTestService]
+    providers: [HTTPTestService]
 })
 
-export class LoginComponent
-{
+export class LoginComponent {
     loginName:string;
     password:string;
     response:any;
@@ -18,19 +17,23 @@ export class LoginComponent
     angemeldet:boolean;
     remember:boolean;
 
-    constructor(private _httpService: HTTPTestService){this.angemeldet = false;}
+    constructor(private _httpService:HTTPTestService) {
+        this.angemeldet = false;
+        this.remember = false;
+    }
 
-    login()
-    {
-        this._httpService.login(this.loginName,this.password,this.remember).subscribe(
-            response => this.angemeldet = !! response
+    login() {
+        this._httpService.login(this.loginName, this.password, this.remember).subscribe(
+            response => this.angemeldet = !!response
         );
-        
-        this.angemeldet = !! this.angemeldet;
-        
-        if(!! this.angemeldet)
-        {
-            alert("Login fehlgeschlagen");
+
+        this.angemeldet = !!this.angemeldet;
+
+        if (!!this.angemeldet) {
+            alert("Login fehlgeschlagen!");
+        }
+        else {
+            alert("Login erfolgreich!");
         }
     }
 }

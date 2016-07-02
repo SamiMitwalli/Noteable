@@ -58,8 +58,9 @@ var TodoComponent = (function () {
     };
     TodoComponent.prototype.addNote = function () {
         var _this = this;
-        this._httpService.createNote(this.content).subscribe(function (response) { return _this.noteid = parseInt(response); });
+        this._httpService.createNote(this.content).subscribe(function (response) { return _this.response = response; });
         this.update();
+        alert(this.response);
     };
     TodoComponent.prototype.deleteAll = function () {
         var _this = this;

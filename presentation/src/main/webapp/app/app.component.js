@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
+var http_test_service_1 = require("./http-test.service");
 var dashboard_component_1 = require('./dashboard.component');
 var heroes_component_1 = require('./heroes.component');
 var hero_detail_component_1 = require('./hero-detail.component');
@@ -17,20 +18,31 @@ var hero_service_1 = require('./hero.service');
 var todo_component_1 = require('./todo.component');
 var login_component_1 = require('./login.component');
 var register_component_1 = require('./register.component');
-var http_test_component_1 = require("./http-test.component");
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(_httpService) {
+        this._httpService = _httpService;
         this.title = 'Noteable';
     }
+    AppComponent.prototype.logout = function () {
+        var _this = this;
+        this._httpService.logout().subscribe(function (response) { return _this.success = parseInt(response); });
+        if (this.success == null) {
+            alert("Logout fehlgeschlagen!");
+        }
+        else {
+            alert("Logout erfolgreich!");
+        }
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
             templateUrl: '/templates/header.html',
             //  styleUrls: ['app/app.component.css'],
-            directives: [router_deprecated_1.ROUTER_DIRECTIVES, http_test_component_1.HTTPTestComponent],
+            directives: [router_deprecated_1.ROUTER_DIRECTIVES],
             providers: [
                 router_deprecated_1.ROUTER_PROVIDERS,
-                hero_service_1.HeroService
+                hero_service_1.HeroService,
+                http_test_service_1.HTTPTestService
             ]
         }),
         router_deprecated_1.RouteConfig([
@@ -66,7 +78,7 @@ var AppComponent = (function () {
                 component: todo_component_1.TodoComponent
             }
         ]), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_test_service_1.HTTPTestService])
     ], AppComponent);
     return AppComponent;
 }());

@@ -30,7 +30,7 @@ export class RegisterComponent {
          }
         else
         {
-            alert("Die Eingegebenen Passwörter stimmen nicht überein oder sind leer !!");
+            alert("Fehler: Die eingegebenen Passwörter stimmen nicht überein.");
         }
     }
 }

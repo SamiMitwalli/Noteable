@@ -15,13 +15,17 @@ var LoginComponent = (function () {
     function LoginComponent(_httpService) {
         this._httpService = _httpService;
         this.angemeldet = false;
+        this.remember = false;
     }
     LoginComponent.prototype.login = function () {
         var _this = this;
         this._httpService.login(this.loginName, this.password, this.remember).subscribe(function (response) { return _this.angemeldet = !!response; });
         this.angemeldet = !!this.angemeldet;
         if (!!this.angemeldet) {
-            alert("Login fehlgeschlagen");
+            alert("Login fehlgeschlagen!");
+        }
+        else {
+            alert("Login erfolgreich!");
         }
     };
     LoginComponent = __decorate([

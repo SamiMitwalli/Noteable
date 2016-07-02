@@ -20,7 +20,7 @@ var RegisterComponent = (function () {
             this._httpService.register(this.loginName, this.password1).subscribe(function (response) { return _this.currentId = parseInt(response); });
         }
         else {
-            alert("Die Eingegebenen Passwörter stimmen nicht überein oder sind leer !!");
+            alert("Fehler: Die eingegebenen Passwörter stimmen nicht überein.");
         }
     };
     RegisterComponent = __decorate([

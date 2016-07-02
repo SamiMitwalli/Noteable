@@ -77,8 +77,9 @@ export class TodoComponent {
     addNote()
     {
         this._httpService.createNote(this.content).subscribe(
-            response => this.noteid = parseInt(response));
+            response => this.response = response);
         this.update();
+        alert(this.response);
     }
 
     deleteAll()

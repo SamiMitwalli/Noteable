@@ -14,9 +14,9 @@ export class HTTPTestService
     
     createNote(content:string) // success = id of Note || error = null
     {
-        var neu = [{"content":content}];
+        var neu = {"content":content};
         var headers = new Headers();
-        headers.append('Content-Type', 'application/text');
+        headers.append('Content-Type', 'application/json');
 
         return this._http
             .post('resources/access/user/createNote',
@@ -33,12 +33,12 @@ export class HTTPTestService
 
     updateNote(id:number,content:string) // success = id of Note || error = null
     {
-        var neu = [{"id":id,"content":content}];
+        var neu = {"id":id,"content":content};
         var headers = new Headers();
         headers.append('Content-Type', 'application/text');
 
         return this._http
-            .post('/resources/access/user/updateNote',
+            .post('resources/access/user/updateNote',
                 neu, {
                     headers: headers
                 })
@@ -47,12 +47,12 @@ export class HTTPTestService
 
     deleteNote(id:number) // success = id of Note || error = null
     {
-        var neu = [{"id":id}];
+        var neu = {"id":id};
         var headers = new Headers();
         headers.append('Content-Type', 'application/text');
 
         return this._http
-            .post('/resources/access/user/deleteNote',
+            .post('resources/access/user/deleteNote',
                 neu, {
                     headers: headers
                 })
@@ -63,12 +63,12 @@ export class HTTPTestService
     
     register(loginName:string,password:string) // success = id of Note || error = null
     {
-        var neu = [{"loginName":loginName,"password":password}];
+        var neu = {"loginName":loginName,"password":password};
         var headers = new Headers();
-        headers.append('Content-Type', 'application/text');
+        headers.append('Content-Type', 'application/json');
 
         return this._http
-            .post('/resources/access/register',
+            .post('resources/access/register',
                 neu, {
                     headers: headers
                 })
@@ -77,12 +77,12 @@ export class HTTPTestService
 
     login(loginName:string,password:string,remember:boolean) // success = true || error = false
     {
-        var neu = [{"loginName":loginName,"password":password,"remember":remember}];
+        var neu = {"loginName":loginName,"password":password,"remember":remember};
         var headers = new Headers();
-        headers.append('Content-Type', 'application/text');
+        headers.append('Content-Type', 'application/json');
 
         return this._http
-            .post('/resources/access/login',
+            .post('resources/access/login',
                 neu, {
                     headers:headers
                 })
@@ -91,12 +91,12 @@ export class HTTPTestService
     
     changePassword(id:number,password:string) // success = id of Note || error = null
     {
-        var neu = [{"id":id,"password":password}];
+        var neu = {"id":id,"password":password};
         var headers = new Headers();
         headers.append('Content-Type', 'application/text');
 
         return this._http
-            .post('/resources/access/user/changePassword',
+            .post('resources/access/user/changePassword',
                 neu, {
                     headers: headers
                 })
@@ -105,17 +105,17 @@ export class HTTPTestService
     
     logout() // success = 1 || error = null
     {
-        return this._http.get("/resources/access/user/logout").map(res => res.text());
+        return this._http.get("resources/access/user/logout").map(res => res.text());
     }
     
     deleteAccount(id:number) // success = id of Note || error = null
     {
-        var neu = [{"id":id}];
+        var neu = {"id":id};
         var headers = new Headers();
         headers.append('Content-Type', 'application/text');
 
         return this._http
-            .post('/resources/access/user/deleteAccount',
+            .post('resources/access/user/deleteAccount',
                 neu, {
                     headers: headers
                 })
@@ -126,12 +126,12 @@ export class HTTPTestService
     
     deleteNotes(id:number) // success = 1 || error = null
     {
-        var neu = [{"id":id}];
+        var neu = {"id":id};
         var headers = new Headers();
         headers.append('Content-Type', 'application/text');
 
         return this._http
-            .post('/resources/access/admin/deleteNotes',
+            .post('resources/access/admin/deleteNotes',
                 neu, {
                     headers: headers
                 })
@@ -140,7 +140,7 @@ export class HTTPTestService
     
     deleteUsers()
     {
-        return this._http.get("/resources/access/admin/deleteUsers").map(res => res.text());   
+        return this._http.get("resources/access/admin/deleteUsers").map(res => res.text());
     }
     
     // TEST METHODEN
