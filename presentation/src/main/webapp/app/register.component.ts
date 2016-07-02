@@ -24,7 +24,7 @@ export class RegisterComponent {
     {
         if(this.password1 === this.password2)
          {
-                 this._httpService.newUser(this.loginName,this.password1).subscribe(
+                 this._httpService.register(this.loginName,this.password1).subscribe(
                      response => this.currentId = parseInt(response)
                  );
          }

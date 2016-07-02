@@ -17,8 +17,6 @@
     </div>
 </div>
 
-<button class="btn btn-default"> Alert </button>
-
 <div class="row">
     <div class="col-lg-8">
         <div class="input-group input-group-lg">
@@ -48,8 +46,8 @@
             <td>{{todo.owner}}</td>-->
 
             <td>{{todo.id}}</td>
-            <td>{{todo.title}}</td>
-            <td>{{todo.completed}}</td>
+            <td>{{todo.content}}</td>
+            <td>{{todo.owner}}</td>
             <td class="text-right">
                 <button type="button" class="btn btn-primary" (click)="showEditDialog(todo.title)">
                     <span class="glyphicon glyphicon-pencil"></span> Bearbeiten

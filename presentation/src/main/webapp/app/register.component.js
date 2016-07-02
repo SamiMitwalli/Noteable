@@ -17,7 +17,7 @@ var RegisterComponent = (function () {
     RegisterComponent.prototype.createUser = function () {
         var _this = this;
         if (this.password1 === this.password2) {
-            this._httpService.newUser(this.loginName, this.password1).subscribe(function (response) { return _this.currentId = parseInt(response); });
+            this._httpService.register(this.loginName, this.password1).subscribe(function (response) { return _this.currentId = parseInt(response); });
         }
         else {
             alert("Die Eingegebenen Passwörter stimmen nicht überein oder sind leer !!");

@@ -34,7 +34,7 @@ export class TodoComponent {
     content:string;
     response:any;
     error:string;
-    currentId:number;
+    userId:number;
     owner:any;
     noteid:number;
 
@@ -42,9 +42,9 @@ export class TodoComponent {
 /*    todos = TODOS;*/
 
     constructor(private _httpService: HTTPTestService){
-        this.test();
+        //this.test();
         
-        //this.update();
+        this.update();
         
         this.newTodo = '';
     }
@@ -67,6 +67,46 @@ export class TodoComponent {
         })
     }
     
+    update()
+    {
+        this._httpService.readNotes().subscribe(
+            response => this.todos = response
+        );
+    }
+
+    addNote()
+    {
+        this._httpService.createNote(this.content).subscribe(
+            response => this.noteid = parseInt(response));
+        this.update();
+    }
+
+    deleteAll()
+    {
+        this._httpService.deleteNotes(this.userId).subscribe(
+            data => this.response = parseInt(data),
+            error => this.error = error,
+            () => console.log("Success")
+        );
+    }
+    
+    deleteNote()
+    {
+        this._httpService.deleteNote(this.noteid).subscribe(
+            response => this.noteid = parseInt(response));
+        this.update();
+        alert(this.response);
+    }
+    
+    updateNote()
+    {
+        this._httpService.updateNote(this.userId,this.content).subscribe(
+            response => this.noteid = parseInt(response));
+        this.update();
+    }
+
+    // TEST METHODEN
+
     test()
     {
         this._httpService.getNotes("http://jsonplaceholder.typicode.com/todos").subscribe(
@@ -74,54 +114,5 @@ export class TodoComponent {
             error => alert("Something went wrong"),
             () => console.log("Finished ")
         );
-    }
-    
-    update(){
-        
-        //TODO Restschnittstelle ansteuern
-        this._httpService.readNote(this.currentId).subscribe(
-            response => this.todos = response
-        );
-    }
-    addNote()
-    {
-        //TODO Wie bekomme ich die aktuelle Userid bzw. den aktuellen usernamen 
-        
-        this._httpService.newNote(this.content).subscribe(
-            response => this.noteid = parseInt(response));
-        this.update();
-        
-        //alert(this.response);
-    }
-    deleteAll()
-    {
-        //TODO Wie weiß ich ob ich Admin bin ?
-        
-        this._httpService.deleteAllNotes().subscribe(
-            data => this.response = data,
-            error => this.error = error,
-            () => console.log("Success")
-        );
-    }
-    deleteNote()
-    {
-        //TODO Auch hier wie bekomme ich die aktulle Userid?
-
-        this._httpService.deleteNote(this.noteid).subscribe(
-            response => this.noteid = parseInt(response));
-        this.update();
-        alert(this.response);
-    }
-    updateNote()
-    {
-        //TODO Wie bekomme ich die aktuelle Userid bzw. den aktuellen usernamen vom Bearbeiten feld ?
-
-        //Beispiel:
-
-        this._httpService.updateNote(this.currentId,this.content,this.owner).subscribe(
-            response => this.noteid = parseInt(response));
-        this.update();
-        
-        // alert(this.response);
     }
 }

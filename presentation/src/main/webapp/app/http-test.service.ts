@@ -11,78 +11,59 @@ export class HTTPTestService
     {}
 
     // METHODEN FÜR NOTES
-
-    newNote(content:string)
+    
+    createNote(content:string) // success = id of Note || error = null
     {
-        var neu = [{"Content":content}];
+        var neu = [{"content":content}];
         var headers = new Headers();
         headers.append('Content-Type', 'application/text');
 
         return this._http
-            .post('/resources/Notes/createNote',
+            .post('resources/access/user/createNote',
                 neu, {
                     headers: headers
                 })
             .map(response => response.text());
     }
 
-    readNote(id:number)
+    readNotes() // JSON of Notes mit id,content
     {
-        var neu = id;
-        var headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-
-        return this._http
-            .post('/resources/Notes/readNote',
-                neu, {
-                    headers: headers
-                })
-            .map(response => response.json());
+        return this._http.get("resources/access/user/readNotes").map(res => res.json());
     }
 
-    updateNote(Id:number,content:string,owner:string)
+    updateNote(id:number,content:string) // success = id of Note || error = null
     {
-        var neu = [{"Id":Id,"Content":content,"Owner":owner}];
+        var neu = [{"id":id,"content":content}];
         var headers = new Headers();
         headers.append('Content-Type', 'application/text');
 
         return this._http
-            .post('/resources/Notes/updateNote',
+            .post('/resources/access/user/updateNote',
                 neu, {
                     headers: headers
                 })
             .map(response => response.text());
     }
 
-    deleteNote(id:number)
+    deleteNote(id:number) // success = id of Note || error = null
     {
-        var neu = id;
+        var neu = [{"id":id}];
         var headers = new Headers();
         headers.append('Content-Type', 'application/text');
 
         return this._http
-            .post('/resources/Notes/deleteNote',
+            .post('/resources/access/user/deleteNote',
                 neu, {
                     headers: headers
                 })
             .map(response => response.text());
     }
-
-    readAllNotes()
+    
+    // METHODEN FÜR USER
+    
+    register(loginName:string,password:string) // success = id of Note || error = null
     {
-        return this._http.get("/resources/Notes/readAll").map(res => res.json());
-    }
-
-    deleteAllNotes()
-    {
-        return this._http.get("/resources/Notes/deleteAll").map(res => res.text());
-    }
-
-    // METHODEN FÜR USERS
-
-    newUser(username:string,password:string)
-    {
-        var neu = [{"loginName":username,"password":password}];
+        var neu = [{"loginName":loginName,"password":password}];
         var headers = new Headers();
         headers.append('Content-Type', 'application/text');
 
@@ -94,85 +75,80 @@ export class HTTPTestService
             .map(response => response.text());
     }
 
-    readUser(id:number)
+    login(loginName:string,password:string,remember:boolean) // success = true || error = false
     {
-        var neu = id;
-        var headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-
-        return this._http
-            .post('/resources/Users/readUser',
-                neu, {
-                    headers: headers
-                })
-            .map(response => response.json());
-    }
-    
-    updateUser(id:number,loginName:string,password:string)
-    {
-        var neu = [{"id":id,"loginName":loginName,"password":password}];
-        var headers = new Headers();
-        headers.append('Content-Type', 'application/text');
-
-        return this._http
-            .post('/resources/access/updateUser',
-                neu, {
-                    headers: headers
-                })
-            .map(response => response.text());
-    }
-
-    deleteUser(id:number)
-    {
-        var neu = id;
-        var headers = new Headers();
-        headers.append('Content-Type', 'application/text');
-
-        return this._http
-            .post('/resources/Users/deleteUser',
-                neu, {
-                    headers: headers
-                })
-            .map(response => response.text());
-    }
-
-    // METHODEN FÜR DIE AUTHENTIFIKATION
-    
-    login(username:string,password:string,remember:boolean)
-    {
-        var neu = username+','+password+','+remember;
+        var neu = [{"loginName":loginName,"password":password,"remember":remember}];
         var headers = new Headers();
         headers.append('Content-Type', 'application/text');
 
         return this._http
             .post('/resources/access/login',
                 neu, {
-                    
+                    headers:headers
                 })
             .map(response => response.text());
     }
+    
+    changePassword(id:number,password:string) // success = id of Note || error = null
+    {
+        var neu = [{"id":id,"password":password}];
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/text');
 
+        return this._http
+            .post('/resources/access/user/changePassword',
+                neu, {
+                    headers: headers
+                })
+            .map(response => response.text()); 
+    }
+    
+    logout() // success = 1 || error = null
+    {
+        return this._http.get("/resources/access/user/logout").map(res => res.text());
+    }
+    
+    deleteAccount(id:number) // success = id of Note || error = null
+    {
+        var neu = [{"id":id}];
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/text');
 
-    // METHODEN ZUM TESTEN
+        return this._http
+            .post('/resources/access/user/deleteAccount',
+                neu, {
+                    headers: headers
+                })
+            .map(response => response.text());
+    }
+    
+    // ADMIN AKTIONEN
+    
+    deleteNotes(id:number) // success = 1 || error = null
+    {
+        var neu = [{"id":id}];
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/text');
 
+        return this._http
+            .post('/resources/access/admin/deleteNotes',
+                neu, {
+                    headers: headers
+                })
+            .map(response => response.text());     
+    }
+    
+    deleteUsers()
+    {
+        return this._http.get("/resources/access/admin/deleteUsers").map(res => res.text());   
+    }
+    
+    // TEST METHODEN
+    
     getNotes(url:string) //  Get anfrage
     {
         
         return this._http.get(url).map(res => res.json());
         
     }
-
-    postJSON()
-    {
-        var json = JSON.stringify({var1:'Test',var2:3});
-        var params = 'json=' + json;
-        var headers = new Headers();
-        headers.append('Content-Type','application/x-www-form-urlencoded');
-
-        return this._http.post('http://validate.jsontest.com',
-            params,{
-                headers:headers
-            }).map(res => res.json());
-    }
-
 }
