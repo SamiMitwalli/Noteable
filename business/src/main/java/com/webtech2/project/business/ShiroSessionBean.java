@@ -14,10 +14,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateful;
+import javax.json.Json;
 import javax.json.JsonObject;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import javax.print.attribute.standard.Media;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
@@ -34,7 +36,7 @@ public class ShiroSessionBean extends HibernateConnector{
     private Session session = currentUser.getSession();
 
     @GET
-    @Path("c")
+    @Path("connection")
     @Produces(MediaType.TEXT_PLAIN)
     public String connectionTest(){
         return "connection established!";
@@ -46,7 +48,7 @@ public class ShiroSessionBean extends HibernateConnector{
         if(this.currentUser==null)
             return "CurrentUser=null";
         if(this.currentUser.isAuthenticated())
-            return "CurrentUser is authenticated: id"+this.session.getAttribute("id");
+            return "CurrentUser ["+this.currentUser.getPrincipal().toString()+"] is authenticated: id "+this.session.getAttribute("id").toString();
         else
             return "CurrentUser is not authenticated!";
 
@@ -58,7 +60,7 @@ public class ShiroSessionBean extends HibernateConnector{
     @Produces(MediaType.TEXT_PLAIN)//success = id of Note || error = null
     public Long createNoteREST(JsonObject obj){
         Notes note = new Notes();
-        note.setContent(obj.get("content").toString());
+        note.setContent(obj.getString("content"));
         note.setOwner(this.findUserByName(this.currentUser.getPrincipal().toString()));
         Long id = this.createNote(note);
         log.info("created Note ["+id+"]");
@@ -78,17 +80,17 @@ public class ShiroSessionBean extends HibernateConnector{
     @Consumes(MediaType.APPLICATION_JSON)//id, content
     @Produces(MediaType.TEXT_PLAIN)//success = id of Note || error = null
     public Long updateNoteREST(JsonObject obj){
-        if(this.currentUser.isAuthenticated())
-        if(this.currentUser.isPermitted(obj.get("id").toString())){
+        log.info("user ["+this.currentUser.getPrincipal()+"] is about to update note ["+obj.getInt("id")+"]");
+        if(this.currentUser.isPermitted(""+obj.getInt("id"))){
             Notes note = new Notes();
-            note.setId(Long.parseLong(obj.get("id").toString()));
-            note.setContent(obj.get("content").toString());
+            note.setId(Long.parseLong(""+obj.getInt("id")));
+            note.setContent(obj.getString("content"));
             note.setOwner(this.findUserByName(this.currentUser.getPrincipal().toString()));
             Long id = this.updateNote(note);
-            log.info("updated note ["+id+"]");
+            log.info("user ["+this.currentUser.getPrincipal()+"] updated note ["+id+"]");
             return id;
         }
-        log.info("Not permitted to update note ["+obj.get("id").toString()+"]");
+        log.info("user ["+this.currentUser.getPrincipal()+"] is not permitted to update note ["+obj.getInt("id")+"]");
         return null;
     }
     @POST
@@ -96,12 +98,13 @@ public class ShiroSessionBean extends HibernateConnector{
     @Consumes(MediaType.APPLICATION_JSON)//id of Note
     @Produces(MediaType.TEXT_PLAIN)//success = id of Note || error = null
     public Long deleteNoteREST(JsonObject obj){
-        if(this.currentUser.isPermitted(obj.get("id").toString())) {
-            Long id = this.deleteNote(Long.parseLong(obj.get("id").toString()));
+        log.info("user ["+this.currentUser.getPrincipal()+"] is about to delete note ["+obj.getInt("id")+"]");
+        if(this.currentUser.isPermitted(""+obj.getInt("id"))) {
+            Long id = this.deleteNote(Long.parseLong(""+obj.getInt("id")));
             log.info("deleted note ["+id+"]");
             return id;
         }
-        log.info("Not permitted to delete note ["+obj.get("id").toString()+"]");
+        log.info("user ["+this.currentUser.getPrincipal()+"] is not permitted to delete note ["+obj.getInt("id")+"]");
         return null;
     }
     /*DATA-ACCESS-USERS*/
@@ -110,11 +113,12 @@ public class ShiroSessionBean extends HibernateConnector{
     @Consumes(MediaType.APPLICATION_JSON)//loginName, password
     @Produces(MediaType.TEXT_PLAIN)//success = id of User || error = null
     public Long register(JsonObject obj){
+        log.info("validating loginName");
         //VALIDATION
-        if(this.validateLoginName(""+obj.get("loginName"))){
+        if(this.validateLoginName(obj.getString("loginName"))){
             Users user = new Users();
-            user.setLoginName(obj.get("loginName").toString());
-            user.setPassword(obj.get("password").toString());
+            user.setLoginName(obj.getString("loginName"));
+            user.setPassword(obj.getString("password"));
             //REGISTRATION
             log.info("new user is getting registrated");
             return this.createUser(user);
@@ -129,14 +133,14 @@ public class ShiroSessionBean extends HibernateConnector{
     public boolean login(JsonObject obj){
 
         if (!this.currentUser.isAuthenticated()) {
-            UsernamePasswordToken token = new UsernamePasswordToken(obj.get("loginName").toString(), obj.get("password").toString());
-            token.setRememberMe(Boolean.valueOf(obj.get("remember").toString()));
+            UsernamePasswordToken token = new UsernamePasswordToken(obj.getString("loginName"), obj.getString("password"));
+            token.setRememberMe(obj.getBoolean("remember"));
             try{
                 this.currentUser.login(token);
-                log.info("user ["+this.currentUser.getPrincipal()+"] logged in successfully.");
+                log.info("user ["+this.currentUser.getPrincipal().toString()+"] logged in successfully.");
                 log.info("retrieving user-information");
-                this.session.setAttribute("id", this.findUserByName(""+this.currentUser.getPrincipal()).getId());
-                log.info("Users database-id: "+this.session.getAttribute("id"));
+                this.session.setAttribute("id", this.findUserByName(""+this.currentUser.getPrincipal().toString()).getId());
+                log.info("users database-id: "+this.session.getAttribute("id").toString());
                 return true;
             }
             catch(UnknownAccountException u){
@@ -148,7 +152,7 @@ public class ShiroSessionBean extends HibernateConnector{
                 return false;
             }
         }
-        log.info("user ["+this.currentUser.getPrincipal()+"] already logged in.");
+        log.info("user ["+this.currentUser.getPrincipal().toString()+"] already logged in.");
         return false;
     }
     @POST
@@ -156,11 +160,12 @@ public class ShiroSessionBean extends HibernateConnector{
     @Consumes(MediaType.APPLICATION_JSON)//id, password
     @Produces(MediaType.TEXT_PLAIN)//success = id of user || error = null
     public Long changePasswordREST(JsonObject obj) {
+        log.info("user ["+this.currentUser.getPrincipal()+"] is about to change his/her password");
         //WARNING! UNSECURED
-        if (this.currentUser.hasRole(obj.get("id").toString()) || this.currentUser.hasRole("admin")) {
+        if (this.currentUser.hasRole(""+obj.getInt("id")) || this.currentUser.hasRole("admin")) {
             Users user = new Users();
             user.setLoginName(this.currentUser.getPrincipal().toString());
-            user.setPassword(obj.get("password").toString());
+            user.setPassword(obj.getString("password"));
             user.setId(Long.parseLong(this.session.getAttribute("id").toString()));
             log.info("changing password");
             return this.updateUser(user);
@@ -182,18 +187,20 @@ public class ShiroSessionBean extends HibernateConnector{
         log.info("you have to be logged in, to logout");
         return null;
     }
-    @GET
+    @POST
     @Path("user/deleteAccount")//[admin] can delete a specific user. user can delete him/herself
     @Consumes(MediaType.APPLICATION_JSON)//id (of user to be deleted)
     @Produces(MediaType.TEXT_PLAIN)//success = id of user || error = null
     public Long deleteAccount(JsonObject obj){
-        if(this.currentUser.hasRole(obj.get("id").toString()) || this.currentUser.hasRole("admin")) {
+        log.info("user ["+this.currentUser.getPrincipal()+"] is about to delete Account ["+obj.getInt("id")+"]");
+        if(this.currentUser.hasRole(""+obj.getInt("id")) || this.currentUser.hasRole("admin")) {
             Long id = this.deleteUser(Long.parseLong(this.session.getAttribute("id").toString()));
-            log.info("user account ["+obj.get("id").toString()+"] deleted");
-            this.logout();
+            log.info("user account ["+obj.getInt("id")+"] deleted");
+            if(!this.currentUser.hasRole("admin"))
+                this.logout();
             return id;
         }
-        log.info("you are not allowed to delete this account");
+        log.info("you are not allowed to delete account ["+obj.getInt("id")+"]");
         return null;
     }
     /*ADMIN-TOOLS*/
@@ -203,7 +210,7 @@ public class ShiroSessionBean extends HibernateConnector{
     @Produces(MediaType.TEXT_PLAIN)//success = 1 || error = null
     public Long deleteAllNotesOfREST(JsonObject user_obj){
         //Deletes All Notes of a specific User user_obj
-        return this.deleteNotesOf(Long.parseLong(user_obj.get("id").toString()));
+        return this.deleteNotesOf(Long.parseLong(""+user_obj.getInt("id")));
     }
     @POST
     @Path("admin/deleteAllNotes")

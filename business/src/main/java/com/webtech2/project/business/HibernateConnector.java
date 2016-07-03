@@ -14,11 +14,6 @@ public class HibernateConnector {
     EntityManagerFactory emFactory;
 
     /*STARTUP-CONNECTION-TO-DATABASE*/
-    /*@PostConstruct
-    public void onCreate(){
-        emFactory = Persistence.createEntityManagerFactory("noteable");
-    }*/
-
     /*PERSISTENCE INIT,COMMIT*/
     public void init(){
         /*Nötig?*/
