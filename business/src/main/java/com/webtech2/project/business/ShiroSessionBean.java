@@ -33,23 +33,6 @@ public class ShiroSessionBean extends HibernateConnector{
     private Users userEntity;
     //private Session session;
 
-    /*REST-TEST-METHODEN*/
-    @GET
-    @Path("get")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String get(){return "GET";}
-    @GET
-    @Path("authc")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String authc(){return "authc";}
-    @GET
-    @Path("authcBasic")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String authcBasic(){return "authcBasic";}
-    @GET
-    @Path("authc/admin")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String adminTools(){return "Admin-Tools available.";}
     /*DATA-ACCESS-NOTES*/
     @POST
     @Path("user/createNote")
@@ -67,7 +50,10 @@ public class ShiroSessionBean extends HibernateConnector{
     @Path("user/readNotes")
     @Produces(MediaType.APPLICATION_JSON)//Array of Notes
     public List<Notes> readNotesREST(){
-        return this.readNotes(userEntity.getId());
+        if(this.currentUser.isAuthenticated())
+            return this.readNotesOf(userEntity.getId());
+        else
+            return null;
     }
     @POST
     @Path("user/updateNote")
@@ -178,7 +164,7 @@ public class ShiroSessionBean extends HibernateConnector{
         return null;
     }
     @GET
-    @Path("user/deleteAccount")
+    @Path("user/deleteAccount")//[admin] can delete a specific user. user can delete him/herself
     @Consumes(MediaType.APPLICATION_JSON)//id (of user to be deleted)
     @Produces(MediaType.TEXT_PLAIN)//success = id of user || error = null
     public Long deleteAccount(JsonObject obj){
@@ -193,19 +179,39 @@ public class ShiroSessionBean extends HibernateConnector{
     }
     /*ADMIN-TOOLS*/
     @POST
-    @Path("admin/deleteNotes")
+    @Path("admin/deleteAllNotesOf")
+    @Consumes(MediaType.APPLICATION_JSON)//id (of user)
+    @Produces(MediaType.TEXT_PLAIN)//success = 1 || error = null
+    public Long deleteAllNotesOfREST(JsonObject user_obj){
+        //Deletes All Notes of a specific User user_obj
+        return this.deleteNotesOf(Long.parseLong(user_obj.get("id").toString()));
+    }
+    @POST
+    @Path("admin/deleteAllNotes")
     @Consumes(MediaType.APPLICATION_JSON)//id (of user)
     @Produces(MediaType.TEXT_PLAIN)//success = 1 || error = null
     public Long deleteAllNotesREST(JsonObject user_obj){
         //Deletes All Notes of a specific User user_obj
-        return this.deleteNotes(Long.parseLong(user_obj.get("id").toString()));
+        return this.deleteAllNotes();
     }
     @GET
-    @Path("admin/deleteUsers")
+    @Path("admin/deleteAllUsers")
     @Produces(MediaType.TEXT_PLAIN)//success = 1 || error = null
     public Long deleteAllUsersREST(){
         //Deletes All Users from the Database
         return this.deleteUsers();
+    }
+    @GET
+    @Path("admin/readAllUsers")
+    @Produces(MediaType.APPLICATION_JSON)//List of all Users (except the admin, who is not in the database)
+    public List<Users> readAllUsersREST(){
+        return this.readUsers();
+    }
+    @GET
+    @Path("admin/readAllNotes")
+    @Produces(MediaType.APPLICATION_JSON)//List of all Notes
+    public List<Notes> readAllNotesREST(){
+        return this.readNotes();
     }
     /*NOTES-DATABASE-QUERIES*/
     private Long createNote(Notes note){
@@ -220,7 +226,7 @@ public class ShiroSessionBean extends HibernateConnector{
         this.commit();
         return note;
     }
-    private List<Notes> readNotes(Long id){
+    private List<Notes> readNotesOf(Long id){
         //returns all Notes of the logged in subject
         this.init();
         CriteriaBuilder builder = emFactory.getCriteriaBuilder();
@@ -229,6 +235,19 @@ public class ShiroSessionBean extends HibernateConnector{
         Root<Notes> root = query.from(Notes.class);
         query.select(root);
         query.where(builder.equal(root.get("owner_id"), id ));
+
+        List<Notes> notes = em.createQuery(query).getResultList();
+        this.commit();
+        return notes;
+    }
+    private List<Notes> readNotes(){
+        //returns all Notes
+        this.init();
+        CriteriaBuilder builder = emFactory.getCriteriaBuilder();
+
+        CriteriaQuery<Notes> query = builder.createQuery(Notes.class);
+        Root<Notes> root = query.from(Notes.class);
+        query.select(root);
 
         List<Notes> notes = em.createQuery(query).getResultList();
         this.commit();
@@ -259,8 +278,22 @@ public class ShiroSessionBean extends HibernateConnector{
             return null;
         }
     }
-    private Long deleteNotes(Long user_id){
-        List<Notes> notes = this.readNotes(user_id);
+    private Long deleteNotesOf(Long user_id){
+        List<Notes> notes = this.readNotesOf(user_id);
+        this.init();
+        try{
+            for(Notes note : notes){
+                this.em.remove(note);
+            }
+            this.commit();
+        }
+        catch (Exception e){
+            return null;
+        }
+        return (long)1;
+    }
+    private Long deleteAllNotes(){
+        List<Notes> notes = this.readNotes();
         this.init();
         try{
             for(Notes note : notes){
