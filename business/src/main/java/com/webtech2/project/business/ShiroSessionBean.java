@@ -33,6 +33,12 @@ public class ShiroSessionBean extends HibernateConnector{
     private Users userEntity;
     //private Session session;
 
+    @GET
+    @Path("c")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String connectionTest(){
+        return "connection established!";
+    }
     /*DATA-ACCESS-NOTES*/
     @POST
     @Path("user/createNote")
