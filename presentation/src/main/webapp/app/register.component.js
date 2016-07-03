@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var http_test_service_1 = require("./http-test.service");
+var http_service_1 = require("./http.service");
 var RegisterComponent = (function () {
     function RegisterComponent(_httpService) {
         this._httpService = _httpService;
@@ -27,9 +27,9 @@ var RegisterComponent = (function () {
         core_1.Component({
             selector: 'register',
             templateUrl: 'templates/register.html',
-            providers: [http_test_service_1.HTTPTestService]
+            providers: [http_service_1.HTTPTestService]
         }), 
-        __metadata('design:paramtypes', [http_test_service_1.HTTPTestService])
+        __metadata('design:paramtypes', [http_service_1.HTTPTestService])
     ], RegisterComponent);
     return RegisterComponent;
 }());

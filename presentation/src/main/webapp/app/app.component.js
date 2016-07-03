@@ -10,14 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var http_test_service_1 = require("./http-test.service");
-var dashboard_component_1 = require('./dashboard.component');
-var heroes_component_1 = require('./heroes.component');
-var hero_detail_component_1 = require('./hero-detail.component');
-var hero_service_1 = require('./hero.service');
+var http_service_1 = require("./http.service");
 var todo_component_1 = require('./todo.component');
 var login_component_1 = require('./login.component');
 var register_component_1 = require('./register.component');
+/*Hero example*/
+var dashboard_component_1 = require('./hero_example/dashboard.component');
+var heroes_component_1 = require('./hero_example/heroes.component');
+var hero_detail_component_1 = require('./hero_example/hero-detail.component');
+var hero_service_1 = require('./hero_example/hero.service');
 var AppComponent = (function () {
     function AppComponent(_httpService) {
         this._httpService = _httpService;
@@ -42,7 +43,7 @@ var AppComponent = (function () {
             providers: [
                 router_deprecated_1.ROUTER_PROVIDERS,
                 hero_service_1.HeroService,
-                http_test_service_1.HTTPTestService
+                http_service_1.HTTPTestService
             ]
         }),
         router_deprecated_1.RouteConfig([
@@ -78,7 +79,7 @@ var AppComponent = (function () {
                 component: todo_component_1.TodoComponent
             }
         ]), 
-        __metadata('design:paramtypes', [http_test_service_1.HTTPTestService])
+        __metadata('design:paramtypes', [http_service_1.HTTPTestService])
     ], AppComponent);
     return AppComponent;
 }());

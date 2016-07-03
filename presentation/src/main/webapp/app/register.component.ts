@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {HTTPTestService} from "./http-test.service";
+import {HTTPTestService} from "./http.service";
 
 @Component({
     selector: 'register',

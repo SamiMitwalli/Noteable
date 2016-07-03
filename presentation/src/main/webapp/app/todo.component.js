@@ -9,46 +9,52 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var http_test_service_1 = require("./http-test.service");
-var Todo = (function () {
-    function Todo() {
-    }
-    return Todo;
-}());
-exports.Todo = Todo;
-var TODOS = [
-    { id: 1, text: 'Mr. Nice', owner: 'User1' },
-    { id: 2, text: 'Narco', owner: 'User1' },
-    { id: 3, text: 'Bombasto', owner: 'User1' },
-    { id: 4, text: 'Celeritas', owner: 'User1' },
-    { id: 5, text: 'Magneta', owner: 'User1' },
-    { id: 6, text: 'RubberMan', owner: 'User1' },
-    { id: 7, text: 'Dynama', owner: 'User1' },
-    { id: 8, text: 'Dr IQ', owner: 'User1' },
-    { id: 9, text: 'Magma', owner: 'User1' }
-];
+var http_service_1 = require("./http.service");
 var TodoComponent = (function () {
-    /*    todos = TODOS;*/
     function TodoComponent(_httpService) {
-        //this.test();
         this._httpService = _httpService;
+        //this.test();
         this.update();
         this.newTodo = '';
     }
-    TodoComponent.prototype.showEditDialog = function (text) {
+    TodoComponent.prototype.showEditDialog = function (id, content) {
+        bootbox.addLocale("todo", {
+            OK: 'OK',
+            CANCEL: 'Abbrechen',
+            CONFIRM: 'Speichern'
+        });
         bootbox.setDefaults({
-            locale: "de",
+            locale: "todo",
         });
         bootbox.prompt({
             title: 'ToDo bearbeiten',
-            value: text,
+            value: content,
             callback: function (result) {
                 if (result === null) {
-                    alert("ok");
                 }
                 else {
-                    alert("nicht ok");
+                    this.updateNote(id, content);
                 }
+            }
+        });
+    };
+    TodoComponent.prototype.showDeleteDialog = function (id, content) {
+        bootbox.dialog({
+            title: "Wollen Sie diesen Eintrag wirklich löschen?",
+            message: content,
+            buttons: {
+                cancel: {
+                    label: "Abbrechen",
+                    className: "btn-default",
+                },
+                confirm: {
+                    label: "Löschen",
+                    className: "btn-danger",
+                    callback: function () {
+                        this.deleteNote(id);
+                        this.update();
+                    }
+                },
             }
         });
     };
@@ -66,15 +72,15 @@ var TodoComponent = (function () {
         var _this = this;
         this._httpService.deleteNotes(this.userId).subscribe(function (data) { return _this.response = parseInt(data); }, function (error) { return _this.error = error; }, function () { return console.log("Success"); });
     };
-    TodoComponent.prototype.deleteNote = function () {
+    TodoComponent.prototype.deleteNote = function (id) {
         var _this = this;
-        this._httpService.deleteNote(this.noteid).subscribe(function (response) { return _this.noteid = parseInt(response); });
+        this._httpService.deleteNote(id).subscribe(function (response) { return _this.noteid = parseInt(response); });
         this.update();
         alert(this.response);
     };
-    TodoComponent.prototype.updateNote = function () {
+    TodoComponent.prototype.updateNote = function (noteId, content) {
         var _this = this;
-        this._httpService.updateNote(this.userId, this.content).subscribe(function (response) { return _this.noteid = parseInt(response); });
+        this._httpService.updateNote(noteId, content).subscribe(function (response) { return _this.noteid = parseInt(response); });
         this.update();
     };
     // TEST METHODEN
@@ -86,9 +92,9 @@ var TodoComponent = (function () {
         core_1.Component({
             selector: 'todo',
             templateUrl: 'templates/todo.html',
-            providers: [http_test_service_1.HTTPTestService]
+            providers: [http_service_1.HTTPTestService]
         }), 
-        __metadata('design:paramtypes', [http_test_service_1.HTTPTestService])
+        __metadata('design:paramtypes', [http_service_1.HTTPTestService])
     ], TodoComponent);
     return TodoComponent;
 }());

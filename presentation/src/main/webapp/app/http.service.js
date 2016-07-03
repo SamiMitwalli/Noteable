@@ -119,4 +119,4 @@ var HTTPTestService = (function () {
     return HTTPTestService;
 }());
 exports.HTTPTestService = HTTPTestService;
-//# sourceMappingURL=http-test.service.js.map
+//# sourceMappingURL=http.service.js.map

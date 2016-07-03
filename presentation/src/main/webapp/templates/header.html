@@ -16,11 +16,21 @@
                 <li><a [routerLink]="['Todo']">ToDo</a></li>
                 <li><a [routerLink]="['Dashboard']">Dashboard</a></li>
                 <li><a [routerLink]="['Heroes']">Heroes</a></li>
-                <li><a (click)="logout()">Logout</a></li>
+            </ul>
+            <ul class="nav navbar-nav"><!--navbar-right-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <span class="glyphicon glyphicon-user" style="color:white"></span> Willkommen, user <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li class="divider"></li>
+                        <li><a (click)="logout()"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+                    </ul>
+                </li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
 <div class="container theme-showcase" role="main">
-<router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 </div>

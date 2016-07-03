@@ -1,14 +1,16 @@
 import {Component} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
-import {HTTPTestService} from "./http-test.service";
+import {HTTPTestService} from "./http.service";
 
-import {DashboardComponent} from './dashboard.component';
-import {HeroesComponent} from './heroes.component';
-import {HeroDetailComponent} from './hero-detail.component';
-import {HeroService} from './hero.service';
 import {TodoComponent} from './todo.component';
 import {LoginComponent} from './login.component';
 import {RegisterComponent} from './register.component';
+
+/*Hero example*/
+import {DashboardComponent} from './hero_example/dashboard.component';
+import {HeroesComponent} from './hero_example/heroes.component';
+import {HeroDetailComponent} from './hero_example/hero-detail.component';
+import {HeroService} from './hero_example/hero.service';
 
 @Component({
     selector: 'my-app',

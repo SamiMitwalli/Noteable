@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var http_test_service_1 = require("./http-test.service");
+var http_service_1 = require("./http.service");
 var LoginComponent = (function () {
     function LoginComponent(_httpService) {
         this._httpService = _httpService;
@@ -33,9 +33,9 @@ var LoginComponent = (function () {
             selector: 'login',
             templateUrl: 'templates/login.html',
             directives: [router_deprecated_1.ROUTER_DIRECTIVES],
-            providers: [http_test_service_1.HTTPTestService]
+            providers: [http_service_1.HTTPTestService]
         }), 
-        __metadata('design:paramtypes', [http_test_service_1.HTTPTestService])
+        __metadata('design:paramtypes', [http_service_1.HTTPTestService])
     ], LoginComponent);
     return LoginComponent;
 }());
