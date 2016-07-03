@@ -75,7 +75,7 @@ export class TodoComponent {
     }
 
     addNote() {
-        this._httpService.createNote(this.content).subscribe(
+        this._httpService.createNote(this.newTodo).subscribe(
             response => this.response = response);
         this.update();
         alert(this.response);
