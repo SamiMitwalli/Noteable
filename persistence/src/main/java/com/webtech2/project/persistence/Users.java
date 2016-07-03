@@ -18,11 +18,10 @@ public class Users {
     private String              loginName;      //Username
     @NotNull
     private String              password;       //Password
-    private String              role;
     @OneToMany(mappedBy = "owner")
     private List<Notes>         notes;           //created Notes of the User
-    @ManyToMany
-    private List<Groups>        groups;          //Groups the User is part of
+    //@ManyToMany
+    //private List<Groups>        groups;          //Groups the User is part of
 
     public Users(){}
 
@@ -49,7 +48,7 @@ public class Users {
     public void setPassword(String password) {
         this.password = password;
     }
-
+    /*
     public List<Groups> getGroups() {
         return groups;
     }
@@ -57,7 +56,7 @@ public class Users {
     public void setGroups(List<Groups> groups) {
         this.groups = groups;
     }
-
+    */
     public List<Notes> getNotes() {
         return notes;
     }
@@ -65,13 +64,5 @@ public class Users {
     public void setNotes(List<Notes> notes) {
         this.notes = notes;
     }
-
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
+    
 }

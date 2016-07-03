@@ -6,7 +6,7 @@ import java.util.List;
 /**
  *
  * Created by Sami Mitwalli on 06.06.2016.
- */
+
 @Entity
 @Table(name="groups")
 public class Groups {
@@ -52,4 +52,5 @@ public class Groups {
     public void setUsers(List<Users> users) {
         this. users =  users;
     }
-}
+
+}*/
