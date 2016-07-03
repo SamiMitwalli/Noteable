@@ -14,7 +14,7 @@ export class LoginComponent {
     password:string;
     response:any;
     userId:number;
-    angemeldet:boolean;
+    angemeldet:any;
     remember:boolean;
 
     constructor(private _httpService:HTTPTestService) {
@@ -24,12 +24,14 @@ export class LoginComponent {
 
     login() {
         this._httpService.login(this.loginName, this.password, this.remember).subscribe(
-            response => this.angemeldet = !!response
-        );
+            response => this.angemeldet = response
+        ); // TODO: angemeldet ist immer false
 
-        this.angemeldet = !!this.angemeldet;
+        alert(this.angemeldet.toString());
 
-        if (!!this.angemeldet) {
+        // this.angemeldet = !!this.angemeldet;
+
+        if (this.angemeldet) {
             alert("Login fehlgeschlagen!");
         }
         else {

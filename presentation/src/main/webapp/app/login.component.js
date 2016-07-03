@@ -19,9 +19,10 @@ var LoginComponent = (function () {
     }
     LoginComponent.prototype.login = function () {
         var _this = this;
-        this._httpService.login(this.loginName, this.password, this.remember).subscribe(function (response) { return _this.angemeldet = !!response; });
-        this.angemeldet = !!this.angemeldet;
-        if (!!this.angemeldet) {
+        this._httpService.login(this.loginName, this.password, this.remember).subscribe(function (response) { return _this.angemeldet = response; }); // TODO: angemeldet ist immer false
+        alert(this.angemeldet.toString());
+        // this.angemeldet = !!this.angemeldet;
+        if (this.angemeldet) {
             alert("Login fehlgeschlagen!");
         }
         else {

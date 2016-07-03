@@ -5,16 +5,15 @@ import {Headers} from '@angular/http';
 
 @Injectable()
 
-export class HTTPTestService
-{
-    constructor(private _http:Http)
-    {}
+export class HTTPTestService {
+    constructor(private _http:Http) {
+    }
 
     // METHODEN FÜR NOTES
-    
+
     createNote(content:string) // success = id of Note || error = null
     {
-        var neu = {"content":content};
+        var neu = {"content": content};
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
@@ -31,9 +30,9 @@ export class HTTPTestService
         return this._http.get("resources/access/user/readNotes").map(res => res.json());
     }
 
-    updateNote(id:number,content:string) // success = id of Note || error = null
+    updateNote(id:number, content:string) // success = id of Note || error = null
     {
-        var neu = {"id":id,"content":content};
+        var neu = {"id": id, "content": content};
         var headers = new Headers();
         headers.append('Content-Type', 'application/text');
 
@@ -47,7 +46,7 @@ export class HTTPTestService
 
     deleteNote(id:number) // success = id of Note || error = null
     {
-        var neu = {"id":id};
+        var neu = {"id": id};
         var headers = new Headers();
         headers.append('Content-Type', 'application/text');
 
@@ -58,12 +57,12 @@ export class HTTPTestService
                 })
             .map(response => response.text());
     }
-    
+
     // METHODEN FÜR USER
-    
-    register(loginName:string,password:string) // success = id of Note || error = null
+
+    register(loginName:string, password:string) // success = id of Note || error = null
     {
-        var neu = {"loginName":loginName,"password":password};
+        var neu = {"loginName": loginName, "password": password};
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
@@ -75,23 +74,23 @@ export class HTTPTestService
             .map(response => response.text());
     }
 
-    login(loginName:string,password:string,remember:boolean) // success = true || error = false
+    login(loginName:string, password:string, remember:boolean) // success = true || error = false
     {
-        var neu = {"loginName":loginName,"password":password,"remember":remember};
+        var neu = {"loginName": loginName, "password": password, "remember": remember};
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
         return this._http
             .post('resources/access/login',
                 neu, {
-                    headers:headers
+                    headers: headers
                 })
             .map(response => response.text());
     }
-    
-    changePassword(id:number,password:string) // success = id of Note || error = null
+
+    changePassword(id:number, password:string) // success = id of Note || error = null
     {
-        var neu = {"id":id,"password":password};
+        var neu = {"id": id, "password": password};
         var headers = new Headers();
         headers.append('Content-Type', 'application/text');
 
@@ -100,17 +99,17 @@ export class HTTPTestService
                 neu, {
                     headers: headers
                 })
-            .map(response => response.text()); 
+            .map(response => response.text());
     }
-    
+
     logout() // success = 1 || error = null
     {
         return this._http.get("resources/access/user/logout").map(res => res.text());
     }
-    
+
     deleteAccount(id:number) // success = id of Note || error = null
     {
-        var neu = {"id":id};
+        var neu = {"id": id};
         var headers = new Headers();
         headers.append('Content-Type', 'application/text');
 
@@ -121,12 +120,12 @@ export class HTTPTestService
                 })
             .map(response => response.text());
     }
-    
+
     // ADMIN AKTIONEN
-    
+
     deleteNotes(id:number) // success = 1 || error = null
     {
-        var neu = {"id":id};
+        var neu = {"id": id};
         var headers = new Headers();
         headers.append('Content-Type', 'application/text');
 
@@ -135,20 +134,19 @@ export class HTTPTestService
                 neu, {
                     headers: headers
                 })
-            .map(response => response.text());     
+            .map(response => response.text());
     }
-    
-    deleteUsers()
-    {
+
+    deleteUsers() {
         return this._http.get("resources/access/admin/deleteUsers").map(res => res.text());
     }
-    
+
     // TEST METHODEN
-    
+
     getNotes(url:string) //  Get anfrage
     {
-        
+
         return this._http.get(url).map(res => res.json());
-        
+
     }
 }
