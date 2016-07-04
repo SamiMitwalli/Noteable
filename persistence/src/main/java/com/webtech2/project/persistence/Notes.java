@@ -1,8 +1,7 @@
 package com.webtech2.project.persistence;
 
 import javax.persistence.*;
-import java.util.List;
-
+//import java.util.List;
 /**
  *
  * Created by Sami Mitwalli on 06.06.2016.

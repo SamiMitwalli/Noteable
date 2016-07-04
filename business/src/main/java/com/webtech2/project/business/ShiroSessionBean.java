@@ -2,11 +2,12 @@ package com.webtech2.project.business;
 
 import com.webtech2.project.persistence.Notes;
 import com.webtech2.project.persistence.Users;
+import com.webtech2.project.persistence.Notes_;
+import com.webtech2.project.persistence.Users_;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.config.IniSecurityManagerFactory;
 import org.apache.shiro.mgt.SecurityManager;
-//import org.apache.shiro.session.Session;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.util.Factory;
@@ -14,13 +15,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateful;
-import javax.json.Json;
 import javax.json.JsonObject;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import javax.print.attribute.standard.Media;
 import javax.ws.rs.*;
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -70,10 +70,12 @@ public class ShiroSessionBean extends HibernateConnector{
     @Path("user/readNotes")
     @Produces(MediaType.APPLICATION_JSON)//Array of Notes
     public List<Notes> readNotesREST(){
-        if(this.currentUser.isAuthenticated())
-            return this.readNotesOf(Long.parseLong(this.session.getAttribute("id").toString()));
-        else
-            return null;
+        List<Notes> notes = this.readNotesOf(Long.parseLong(this.session.getAttribute("id").toString()));
+        //Bereinigung des Lazy-Fetching-Json-Mapping-Errors
+        for(Notes note : notes){
+            note.setOwner(null);
+        }
+        return notes;
     }
     @POST
     @Path("user/updateNote")
@@ -139,7 +141,11 @@ public class ShiroSessionBean extends HibernateConnector{
                 this.currentUser.login(token);
                 log.info("user ["+this.currentUser.getPrincipal().toString()+"] logged in successfully.");
                 log.info("retrieving user-information");
-                this.session.setAttribute("id", this.findUserByName(""+this.currentUser.getPrincipal().toString()).getId());
+                //Giving Admin user_id 0, for creating Notes etc. (Primary Key 0 not mapped in Database)
+                if(this.currentUser.hasRole("admin"))
+                    this.session.setAttribute("id", (long)0);
+                else
+                    this.session.setAttribute("id", this.findUserByName(""+this.currentUser.getPrincipal().toString()).getId());
                 log.info("users database-id: "+this.session.getAttribute("id").toString());
                 return true;
             }
@@ -155,6 +161,16 @@ public class ShiroSessionBean extends HibernateConnector{
         log.info("user ["+this.currentUser.getPrincipal().toString()+"] already logged in.");
         return false;
     }
+    @GET
+    @Path("user/info")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Users getInfo(){
+        log.info("sending information of user ["+this.session.getAttribute("id")+"]");
+        Users user = new Users();
+        user.setId((long)this.session.getAttribute("id"));
+        user.setLoginName(""+this.currentUser.getPrincipal());
+        return user;
+    }
     @POST
     @Path("user/changePassword")
     @Consumes(MediaType.APPLICATION_JSON)//id, password
@@ -166,7 +182,7 @@ public class ShiroSessionBean extends HibernateConnector{
             Users user = new Users();
             user.setLoginName(this.currentUser.getPrincipal().toString());
             user.setPassword(obj.getString("password"));
-            user.setId(Long.parseLong(this.session.getAttribute("id").toString()));
+            user.setId(Long.parseLong(""+obj.getInt("id")));
             log.info("changing password");
             return this.updateUser(user);
         }
@@ -194,7 +210,7 @@ public class ShiroSessionBean extends HibernateConnector{
     public Long deleteAccount(JsonObject obj){
         log.info("user ["+this.currentUser.getPrincipal()+"] is about to delete Account ["+obj.getInt("id")+"]");
         if(this.currentUser.hasRole(""+obj.getInt("id")) || this.currentUser.hasRole("admin")) {
-            Long id = this.deleteUser(Long.parseLong(this.session.getAttribute("id").toString()));
+            Long id = this.deleteUser(Long.parseLong(""+obj.getInt("id")));
             log.info("user account ["+obj.getInt("id")+"] deleted");
             if(!this.currentUser.hasRole("admin"))
                 this.logout();
@@ -212,18 +228,17 @@ public class ShiroSessionBean extends HibernateConnector{
         //Deletes All Notes of a specific User user_obj
         return this.deleteNotesOf(Long.parseLong(""+user_obj.getInt("id")));
     }
-    @POST
+    @GET
     @Path("admin/deleteAllNotes")
-    @Consumes(MediaType.APPLICATION_JSON)//id (of user)
     @Produces(MediaType.TEXT_PLAIN)//success = 1 || error = null
-    public Long deleteAllNotesREST(JsonObject user_obj){
-        //Deletes All Notes of a specific User user_obj
+    public boolean deleteAllNotesREST(){
+        //Deletes All Notes
         return this.deleteAllNotes();
     }
     @GET
     @Path("admin/deleteAllUsers")
     @Produces(MediaType.TEXT_PLAIN)//success = 1 || error = null
-    public Long deleteAllUsersREST(){
+    public boolean deleteAllUsersREST(){
         //Deletes All Users from the Database
         return this.deleteUsers();
     }
@@ -231,13 +246,23 @@ public class ShiroSessionBean extends HibernateConnector{
     @Path("admin/readAllUsers")
     @Produces(MediaType.APPLICATION_JSON)//List of all Users (except the admin, who is not in the database)
     public List<Users> readAllUsersREST(){
-        return this.readUsers();
+        List<Users> users = this.readUsers();
+        //Bereinigung des Lazy-Fetching-Json-Mapping-Errors
+        for(Users user : users){
+            user.setNotes(null);
+        }
+        return users;
     }
     @GET
     @Path("admin/readAllNotes")
     @Produces(MediaType.APPLICATION_JSON)//List of all Notes
     public List<Notes> readAllNotesREST(){
-        return this.readNotes();
+        List<Notes> notes = this.readNotes();
+        //Bereinigung des Lazy-Fetching-Json-Mapping-Errors
+        for(Notes note : notes){
+            note.setOwner(null);
+        }
+        return notes;
     }
     /*NOTES-DATABASE-QUERIES*/
     private Long createNote(Notes note){
@@ -260,7 +285,7 @@ public class ShiroSessionBean extends HibernateConnector{
         CriteriaQuery<Notes> query = builder.createQuery(Notes.class);
         Root<Notes> root = query.from(Notes.class);
         query.select(root);
-        query.where(builder.equal(root.get("owner_id"), id ));
+        query.where(builder.equal(root.get(Notes_.owner), id ));
 
         List<Notes> notes = em.createQuery(query).getResultList();
         this.commit();
@@ -305,32 +330,42 @@ public class ShiroSessionBean extends HibernateConnector{
         }
     }
     private Long deleteNotesOf(Long user_id){
+        log.info("["+this.currentUser.getPrincipal()+"] deletes all notes of ["+user_id+"]");
         List<Notes> notes = this.readNotesOf(user_id);
         this.init();
         try{
             for(Notes note : notes){
+                log.info("deleting note ["+note.getId()+"]");
+                note = em.getReference(Notes.class, note.getId());
                 this.em.remove(note);
             }
             this.commit();
+            log.info("deleted notes");
         }
         catch (Exception e){
+            log.info("couldn't delete notes\n"+e);
             return null;
         }
         return (long)1;
     }
-    private Long deleteAllNotes(){
+    private boolean deleteAllNotes(){
+        log.info("["+this.currentUser.getPrincipal()+"] deletes all notes");
         List<Notes> notes = this.readNotes();
         this.init();
         try{
             for(Notes note : notes){
+                log.info("deleting note ["+note.getId()+"]");
+                note = em.getReference(Notes.class, note.getId());
                 this.em.remove(note);
             }
             this.commit();
+            log.info("deleted "+notes.size()+" notes");
         }
         catch (Exception e){
-            return null;
+            log.info("couldn't delete notes\n"+e);
+            return false;
         }
-        return (long)1;
+        return true;
     }
     /*USERS-DATABASE-QUERIES*/
     private Long createUser(Users user) {
@@ -374,9 +409,13 @@ public class ShiroSessionBean extends HibernateConnector{
         }
     }
     private Long deleteUser(Long id){
+        //Cleaning Notes of deleted user
+        this.deleteNotesOf(id);
+        //Deleting User
         this.init();
         Users user = em.getReference(Users.class, id);
         if(user!=null) {
+            //log.info("deleting user ["+id+"]");
             this.em.remove(user);
             this.commit();
             return user.getId();
@@ -385,19 +424,38 @@ public class ShiroSessionBean extends HibernateConnector{
             return null;
         }
     }
-    private Long deleteUsers(){
+    private boolean deleteUsers(){
+        log.info("["+this.currentUser.getPrincipal()+"] deletes all users");
         List<Users> users = this.readUsers();
-        this.init();
         try{
             for(Users user : users){
+                //deleting notes of user
+                List<Notes> notes = this.readNotesOf(user.getId());
+                this.init();
+                try{
+                    for(Notes note : notes){
+                        log.info("deleting note ["+note.getId()+"]");
+                        note = em.getReference(Notes.class, note.getId());
+                        this.em.remove(note);
+                    }
+                    log.info("deleted "+notes.size()+" notes of user ["+user.getId()+"]");
+                }
+                catch (Exception e){
+                    log.info("couldn't delete all notes of user ["+user.getId()+"]\n"+e);
+                }
+                //deleting user
+                log.info("deleting user ["+user.getId()+"]");
+                user = em.getReference(Users.class, user.getId());
                 this.em.remove(user);
+                this.commit();
             }
-            this.commit();
+            log.info("deleted users");
         }
         catch (Exception e){
-            return null;
+            log.info("couldn't delete users\n"+e);
+            return false;
         }
-        return (long)1;
+        return true;
     }
     private boolean validateLoginName(String loginName) {
     /*RETURNS false if loginName=null, it's length=0 or already exists in DB*/
@@ -414,7 +472,7 @@ public class ShiroSessionBean extends HibernateConnector{
         CriteriaQuery<Users> query = builder.createQuery(Users.class);
         Root<Users> root = query.from(Users.class);
         query.select(root);
-        query.where(builder.equal(root.get("loginName"), loginName));
+        query.where(builder.equal(root.get(Users_.loginName), loginName));
 
         List<Users> users = em.createQuery(query).getResultList();
         if(!users.isEmpty())
