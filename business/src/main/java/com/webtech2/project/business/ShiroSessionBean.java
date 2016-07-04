@@ -2,11 +2,12 @@ package com.webtech2.project.business;
 
 import com.webtech2.project.persistence.Notes;
 import com.webtech2.project.persistence.Users;
+import com.webtech2.project.persistence.Notes_;
+import com.webtech2.project.persistence.Users_;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.config.IniSecurityManagerFactory;
 import org.apache.shiro.mgt.SecurityManager;
-//import org.apache.shiro.session.Session;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.util.Factory;
@@ -14,12 +15,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateful;
-import javax.json.Json;
 import javax.json.JsonObject;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import javax.print.attribute.standard.Media;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
@@ -155,6 +154,16 @@ public class ShiroSessionBean extends HibernateConnector{
         log.info("user ["+this.currentUser.getPrincipal().toString()+"] already logged in.");
         return false;
     }
+    @GET
+    @Path("user/info")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Users getInfo(){
+        log.info("sending information of user ["+this.session.getAttribute("id")+"]");
+        Users user = new Users();
+        user.setId((long)this.session.getAttribute("id"));
+        user.setLoginName(""+this.currentUser.getPrincipal());
+        return user;
+    }
     @POST
     @Path("user/changePassword")
     @Consumes(MediaType.APPLICATION_JSON)//id, password
@@ -260,7 +269,7 @@ public class ShiroSessionBean extends HibernateConnector{
         CriteriaQuery<Notes> query = builder.createQuery(Notes.class);
         Root<Notes> root = query.from(Notes.class);
         query.select(root);
-        query.where(builder.equal(root.get("owner_id"), id ));
+        query.where(builder.equal(root.get(Notes_.owner), id ));
 
         List<Notes> notes = em.createQuery(query).getResultList();
         this.commit();
@@ -414,7 +423,7 @@ public class ShiroSessionBean extends HibernateConnector{
         CriteriaQuery<Users> query = builder.createQuery(Users.class);
         Root<Users> root = query.from(Users.class);
         query.select(root);
-        query.where(builder.equal(root.get("loginName"), loginName));
+        query.where(builder.equal(root.get(Users_.loginName), loginName));
 
         List<Users> users = em.createQuery(query).getResultList();
         if(!users.isEmpty())
