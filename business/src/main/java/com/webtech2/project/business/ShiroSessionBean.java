@@ -20,6 +20,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.ws.rs.*;
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -60,7 +61,15 @@ public class ShiroSessionBean extends HibernateConnector{
     public Long createNoteREST(JsonObject obj){
         Notes note = new Notes();
         note.setContent(obj.getString("content"));
-        note.setOwner(this.findUserByName(this.currentUser.getPrincipal().toString()));
+        //Admin creating Note
+        if(this.currentUser.hasRole("admin")){
+            Users user = new Users();
+            user.setId(Long.parseLong(""+this.session.getAttribute("id")));
+            note.setOwner(user);
+        }
+        //User creating Note
+        else
+            note.setOwner(this.findUserByName(this.currentUser.getPrincipal().toString()));
         Long id = this.createNote(note);
         log.info("created Note ["+id+"]");
         return id;
@@ -69,10 +78,12 @@ public class ShiroSessionBean extends HibernateConnector{
     @Path("user/readNotes")
     @Produces(MediaType.APPLICATION_JSON)//Array of Notes
     public List<Notes> readNotesREST(){
-        if(this.currentUser.isAuthenticated())
-            return this.readNotesOf(Long.parseLong(this.session.getAttribute("id").toString()));
-        else
-            return null;
+        List<Notes> notes = this.readNotesOf(Long.parseLong(this.session.getAttribute("id").toString()));
+        //Bereinigung des Lazy-Fetching-Json-Mapping-Errors
+        for(Notes note : notes){
+            note.setOwner(null);
+        }
+        return notes;
     }
     @POST
     @Path("user/updateNote")
@@ -138,7 +149,11 @@ public class ShiroSessionBean extends HibernateConnector{
                 this.currentUser.login(token);
                 log.info("user ["+this.currentUser.getPrincipal().toString()+"] logged in successfully.");
                 log.info("retrieving user-information");
-                this.session.setAttribute("id", this.findUserByName(""+this.currentUser.getPrincipal().toString()).getId());
+                //Giving Admin user_id 0, for creating Notes etc. (Primary Key 0 not mapped in Database)
+                if(this.currentUser.hasRole("admin"))
+                    this.session.setAttribute("id", (long)0);
+                else
+                    this.session.setAttribute("id", this.findUserByName(""+this.currentUser.getPrincipal().toString()).getId());
                 log.info("users database-id: "+this.session.getAttribute("id").toString());
                 return true;
             }
@@ -240,13 +255,23 @@ public class ShiroSessionBean extends HibernateConnector{
     @Path("admin/readAllUsers")
     @Produces(MediaType.APPLICATION_JSON)//List of all Users (except the admin, who is not in the database)
     public List<Users> readAllUsersREST(){
-        return this.readUsers();
+        List<Users> users = this.readUsers();
+        //Bereinigung des Lazy-Fetching-Json-Mapping-Errors
+        for(Users user : users){
+            user.setNotes(null);
+        }
+        return users;
     }
     @GET
     @Path("admin/readAllNotes")
     @Produces(MediaType.APPLICATION_JSON)//List of all Notes
     public List<Notes> readAllNotesREST(){
-        return this.readNotes();
+        List<Notes> notes = this.readNotes();
+        //Bereinigung des Lazy-Fetching-Json-Mapping-Errors
+        for(Notes note : notes){
+            note.setOwner(null);
+        }
+        return notes;
     }
     /*NOTES-DATABASE-QUERIES*/
     private Long createNote(Notes note){
