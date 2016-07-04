@@ -61,15 +61,7 @@ public class ShiroSessionBean extends HibernateConnector{
     public Long createNoteREST(JsonObject obj){
         Notes note = new Notes();
         note.setContent(obj.getString("content"));
-        //Admin creating Note
-        if(this.currentUser.hasRole("admin")){
-            Users user = new Users();
-            user.setId(Long.parseLong(""+this.session.getAttribute("id")));
-            note.setOwner(user);
-        }
-        //User creating Note
-        else
-            note.setOwner(this.findUserByName(this.currentUser.getPrincipal().toString()));
+        note.setOwner(this.findUserByName(this.currentUser.getPrincipal().toString()));
         Long id = this.createNote(note);
         log.info("created Note ["+id+"]");
         return id;
@@ -138,7 +130,7 @@ public class ShiroSessionBean extends HibernateConnector{
     }
     @POST
     @Path("login")
-    @Consumes(MediaType.TEXT_PLAIN)//loginName, password, remember("true" or "false")
+    @Consumes(MediaType.APPLICATION_JSON)//loginName, password, remember("true" or "false")
     @Produces(MediaType.TEXT_PLAIN)//success = "true" || error = "false"
     public boolean login(JsonObject obj){
 
@@ -190,7 +182,7 @@ public class ShiroSessionBean extends HibernateConnector{
             Users user = new Users();
             user.setLoginName(this.currentUser.getPrincipal().toString());
             user.setPassword(obj.getString("password"));
-            user.setId(Long.parseLong(this.session.getAttribute("id").toString()));
+            user.setId(Long.parseLong(""+obj.getInt("id")));
             log.info("changing password");
             return this.updateUser(user);
         }
@@ -218,7 +210,7 @@ public class ShiroSessionBean extends HibernateConnector{
     public Long deleteAccount(JsonObject obj){
         log.info("user ["+this.currentUser.getPrincipal()+"] is about to delete Account ["+obj.getInt("id")+"]");
         if(this.currentUser.hasRole(""+obj.getInt("id")) || this.currentUser.hasRole("admin")) {
-            Long id = this.deleteUser(Long.parseLong(this.session.getAttribute("id").toString()));
+            Long id = this.deleteUser(Long.parseLong(""+obj.getInt("id")));
             log.info("user account ["+obj.getInt("id")+"] deleted");
             if(!this.currentUser.hasRole("admin"))
                 this.logout();
@@ -236,18 +228,17 @@ public class ShiroSessionBean extends HibernateConnector{
         //Deletes All Notes of a specific User user_obj
         return this.deleteNotesOf(Long.parseLong(""+user_obj.getInt("id")));
     }
-    @POST
+    @GET
     @Path("admin/deleteAllNotes")
-    @Consumes(MediaType.APPLICATION_JSON)//id (of user)
     @Produces(MediaType.TEXT_PLAIN)//success = 1 || error = null
-    public Long deleteAllNotesREST(JsonObject user_obj){
-        //Deletes All Notes of a specific User user_obj
+    public boolean deleteAllNotesREST(){
+        //Deletes All Notes
         return this.deleteAllNotes();
     }
     @GET
     @Path("admin/deleteAllUsers")
     @Produces(MediaType.TEXT_PLAIN)//success = 1 || error = null
-    public Long deleteAllUsersREST(){
+    public boolean deleteAllUsersREST(){
         //Deletes All Users from the Database
         return this.deleteUsers();
     }
@@ -339,32 +330,42 @@ public class ShiroSessionBean extends HibernateConnector{
         }
     }
     private Long deleteNotesOf(Long user_id){
+        log.info("["+this.currentUser.getPrincipal()+"] deletes all notes of ["+user_id+"]");
         List<Notes> notes = this.readNotesOf(user_id);
         this.init();
         try{
             for(Notes note : notes){
+                log.info("deleting note ["+note.getId()+"]");
+                note = em.getReference(Notes.class, note.getId());
                 this.em.remove(note);
             }
             this.commit();
+            log.info("deleted notes");
         }
         catch (Exception e){
+            log.info("couldn't delete notes\n"+e);
             return null;
         }
         return (long)1;
     }
-    private Long deleteAllNotes(){
+    private boolean deleteAllNotes(){
+        log.info("["+this.currentUser.getPrincipal()+"] deletes all notes");
         List<Notes> notes = this.readNotes();
         this.init();
         try{
             for(Notes note : notes){
+                log.info("deleting note ["+note.getId()+"]");
+                note = em.getReference(Notes.class, note.getId());
                 this.em.remove(note);
             }
             this.commit();
+            log.info("deleted "+notes.size()+" notes");
         }
         catch (Exception e){
-            return null;
+            log.info("couldn't delete notes\n"+e);
+            return false;
         }
-        return (long)1;
+        return true;
     }
     /*USERS-DATABASE-QUERIES*/
     private Long createUser(Users user) {
@@ -408,9 +409,13 @@ public class ShiroSessionBean extends HibernateConnector{
         }
     }
     private Long deleteUser(Long id){
+        //Cleaning Notes of deleted user
+        this.deleteNotesOf(id);
+        //Deleting User
         this.init();
         Users user = em.getReference(Users.class, id);
         if(user!=null) {
+            //log.info("deleting user ["+id+"]");
             this.em.remove(user);
             this.commit();
             return user.getId();
@@ -419,19 +424,38 @@ public class ShiroSessionBean extends HibernateConnector{
             return null;
         }
     }
-    private Long deleteUsers(){
+    private boolean deleteUsers(){
+        log.info("["+this.currentUser.getPrincipal()+"] deletes all users");
         List<Users> users = this.readUsers();
-        this.init();
         try{
             for(Users user : users){
+                //deleting notes of user
+                List<Notes> notes = this.readNotesOf(user.getId());
+                this.init();
+                try{
+                    for(Notes note : notes){
+                        log.info("deleting note ["+note.getId()+"]");
+                        note = em.getReference(Notes.class, note.getId());
+                        this.em.remove(note);
+                    }
+                    log.info("deleted "+notes.size()+" notes of user ["+user.getId()+"]");
+                }
+                catch (Exception e){
+                    log.info("couldn't delete all notes of user ["+user.getId()+"]\n"+e);
+                }
+                //deleting user
+                log.info("deleting user ["+user.getId()+"]");
+                user = em.getReference(Users.class, user.getId());
                 this.em.remove(user);
+                this.commit();
             }
-            this.commit();
+            log.info("deleted users");
         }
         catch (Exception e){
-            return null;
+            log.info("couldn't delete users\n"+e);
+            return false;
         }
-        return (long)1;
+        return true;
     }
     private boolean validateLoginName(String loginName) {
     /*RETURNS false if loginName=null, it's length=0 or already exists in DB*/
