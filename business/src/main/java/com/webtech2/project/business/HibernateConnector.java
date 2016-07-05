@@ -1,5 +1,6 @@
 package com.webtech2.project.business;
 
+import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.ejb.Stateful;
 import javax.persistence.*;
@@ -13,12 +14,15 @@ public class HibernateConnector {
     EntityManager em;
     EntityManagerFactory emFactory;
 
+    @PostConstruct
+    public void onInit(){
+        emFactory = Persistence.createEntityManagerFactory("noteable");
+    }
+
     /*STARTUP-CONNECTION-TO-DATABASE*/
     /*PERSISTENCE INIT,COMMIT*/
     public void init(){
-        /*Nötig?*/
-        if(emFactory==null)
-            emFactory = Persistence.createEntityManagerFactory("noteable");
+        //if(emFactory==null)
         em = emFactory.createEntityManager();
         em.getTransaction().begin();
     }
