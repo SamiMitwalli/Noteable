@@ -20,7 +20,6 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.ws.rs.*;
-import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -144,7 +143,7 @@ public class ShiroSessionBean extends HibernateConnector{
                 log.info("retrieving user-information");
                 //Giving Admin user_id 0, for creating Notes etc. (Primary Key 0 not mapped in Database)
                 if(this.currentUser.hasRole("admin"))
-                    this.session.setAttribute("id", 0);
+                    this.session.setAttribute("id", (long)0);
                 else
                     this.session.setAttribute("id", this.findUserByName(""+this.currentUser.getPrincipal().toString()).getId());
                 log.info("users database-id: "+this.session.getAttribute("id").toString());
@@ -485,6 +484,7 @@ public class ShiroSessionBean extends HibernateConnector{
     /*SHIRO-SESSION-BEAN-INITIALIZATION*/
     @PostConstruct
     public void onInit(){
+        super.onInit();
         Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro.ini");
         SecurityManager securityManager = factory.getInstance();
         SecurityUtils.setSecurityManager(securityManager);

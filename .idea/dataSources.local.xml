@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="PostgreSQL - d29p5ejsnl1ef9@ec2-54-247-174-238.eu-west-1.compute.amazonaws.com" uuid="be58209d-2a0c-4695-ad83-03763b5688e7" />
-    <data-source name="noteable/Hibernate" uuid="74e7b461-2876-4187-b989-905672239ca9">
+    <data-source name="MySQL - web104_noteable@c5.webspace-verkauf.de" uuid="3531fdd4-ff90-4054-8c6f-4efbbcea667d">
       <secret-storage>master_key</secret-storage>
-      <user-name>zjmyariwmnnlpw</user-name>
+      <user-name>web104_noteable</user-name>
     </data-source>
   </component>
 </project>

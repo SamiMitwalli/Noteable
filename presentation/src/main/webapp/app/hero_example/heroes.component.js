@@ -30,7 +30,7 @@ var HeroesComponent = (function () {
     HeroesComponent = __decorate([
         core_1.Component({
             selector: 'my-heroes',
-            templateUrl: '../templates/heroes.component.html',
+            templateUrl: '../templates/hero_example/heroes.component.html',
             styleUrls: ['../css/heroes.component.css']
         }), 
         __metadata('design:paramtypes', [router_deprecated_1.Router, hero_service_1.HeroService])

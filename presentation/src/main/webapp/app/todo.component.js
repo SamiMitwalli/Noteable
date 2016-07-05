@@ -18,6 +18,7 @@ var TodoComponent = (function () {
         this.newTodo = '';
     }
     TodoComponent.prototype.showEditDialog = function (id, content) {
+        var that = this;
         bootbox.addLocale("todo", {
             OK: 'OK',
             CANCEL: 'Abbrechen',
@@ -26,12 +27,14 @@ var TodoComponent = (function () {
         bootbox.setDefaults({
             locale: "todo",
         });
-        var that = this;
         bootbox.prompt({
             title: 'ToDo bearbeiten',
             value: content,
             callback: function (result) {
-                that.updateNote(id, result);
+                if (result != null) {
+                    alert(typeof parseInt(id) + id);
+                    that.updateNote(parseInt(id), result);
+                }
             }
         });
     };
@@ -49,8 +52,7 @@ var TodoComponent = (function () {
                     label: "Löschen",
                     className: "btn-danger",
                     callback: function () {
-                        that.deleteNote(id);
-                        that.update();
+                        that.deleteNote(parseInt(id));
                     }
                 },
             }
@@ -58,29 +60,33 @@ var TodoComponent = (function () {
     };
     TodoComponent.prototype.update = function () {
         var _this = this;
-        this._httpService.readNotes().subscribe(function (response) { return _this.todos = response; });
+        console.log("loading notes...");
+        this._httpService.readNotes().subscribe(function (response) { return _this.todos = response; }, function (error) { return console.log("loading failed"); }, function () { return console.log("loading finished"); });
     };
     TodoComponent.prototype.addNote = function () {
         var _this = this;
-        this._httpService.createNote(this.newTodo).subscribe(function (response) { return _this.response = response; });
-        this.update();
-        alert(this.response);
+        this._httpService.createNote(this.newTodo).subscribe(function (response) { return _this.response = response; }, function (error) { return console.log("add note failed"); }, function () {
+            console.log("todo added successfully");
+            _this.update();
+        });
+    };
+    TodoComponent.prototype.updateNote = function (noteId, content) {
+        var _this = this;
+        this._httpService.updateNote(noteId, content).subscribe(function (response) { return _this.noteid = parseInt(response); }, function (error) { return console.log("update note failed"); }, function () {
+            console.log("note " + _this.noteid + " updated");
+            _this.update();
+        });
+    };
+    TodoComponent.prototype.deleteNote = function (id) {
+        var _this = this;
+        this._httpService.deleteNote(id).subscribe(function (response) { return _this.noteid = parseInt(response); }, function (error) { return console.log("delete note failed"); }, function () {
+            console.log("delete note successfully");
+            _this.update();
+        });
     };
     TodoComponent.prototype.deleteAll = function () {
         var _this = this;
         this._httpService.deleteNotes(this.userId).subscribe(function (data) { return _this.response = parseInt(data); }, function (error) { return _this.error = error; }, function () { return console.log("Success"); });
-    };
-    TodoComponent.prototype.deleteNote = function (id) {
-        var _this = this;
-        this._httpService.deleteNote(id).subscribe(function (response) { return _this.noteid = parseInt(response); });
-        this.update();
-        alert(this.response);
-    };
-    TodoComponent.prototype.updateNote = function (noteId, content) {
-        var _this = this;
-        this._httpService.updateNote(noteId, content).subscribe(function (response) { return _this.noteid = parseInt(response); }),
-            function () { return console.log("note" + _this.noteid + "successfully updated"); };
-        this.update();
     };
     // TEST METHODEN
     TodoComponent.prototype.test = function () {

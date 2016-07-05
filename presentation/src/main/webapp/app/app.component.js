@@ -20,39 +20,36 @@ var heroes_component_1 = require('./hero_example/heroes.component');
 var hero_detail_component_1 = require('./hero_example/hero-detail.component');
 var hero_service_1 = require('./hero_example/hero.service');
 var AppComponent = (function () {
+    //    mode = 'Observable';
     function AppComponent(_httpService, router) {
-        var _this = this;
         this._httpService = _httpService;
         this.router = router;
         this.title = 'Noteable';
-        this.mode = 'Observable';
-        router.root.subscribe(function (val) { return _this.getUser(); });
-        this.navTodo(router);
     }
+    AppComponent.prototype.ngOnInit = function () {
+        this.getUser();
+    };
     AppComponent.prototype.navTodo = function (router) {
-        if (typeof this.user !== undefined) {
+        if (this.user !== undefined) {
             router.navigate(['Todo']);
         }
     };
-    /*    ngOnInit() {
-     this.getUser();
-     }*/
     AppComponent.prototype.getUser = function () {
         var _this = this;
         this._httpService.userinfo()
-            .subscribe(function (response) { return _this.user = response.loginName; }, function (error) { return console.log("nicht eingeloggt"); }, function () { return console.log(_this.user); });
+            .subscribe(function (response) { return _this.user = response.loginName; }, function (error) { return function () {
+            console.log("nicht eingeloggt.");
+        }; }, function () { return _this.router.navigate(['Todo']); });
     };
     AppComponent.prototype.logout = function () {
         var _this = this;
+        var success;
         this._httpService.logout()
-            .subscribe(function (response) { return _this.success = parseInt(response); }, function () { return function () {
-            if (this.success == null) {
-                alert("Logout fehlgeschlagen!");
-            }
-            else {
-                alert("Logout erfolgreich!");
-            }
-        }; });
+            .subscribe(function (response) { return success = response; }, function (error) { return console.log("logout failed"); }, function () {
+            console.log("logout successfully");
+            _this.user = null;
+            _this.router.navigate(['Login']);
+        });
     };
     AppComponent = __decorate([
         core_1.Component({

@@ -9,15 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var http_service_1 = require("./http.service");
 var RegisterComponent = (function () {
-    function RegisterComponent(_httpService) {
+    function RegisterComponent(_httpService, router) {
         this._httpService = _httpService;
+        this.router = router;
     }
     RegisterComponent.prototype.createUser = function () {
         var _this = this;
         if (this.password1 === this.password2) {
-            this._httpService.register(this.loginName, this.password1).subscribe(function (response) { return _this.currentId = parseInt(response); });
+            this._httpService.register(this.loginName, this.password1).subscribe(function (response) { return _this.response = response; }, function (error) { return console.log("register failed"); }, function () {
+                alert(_this.response);
+                if (_this.response != "") {
+                    alert("registriert!");
+                    _this.router.navigate(['Login']);
+                }
+                else {
+                    alert("Registrierung fehlgeschlagen!");
+                    console.log("register failed");
+                }
+            });
         }
         else {
             alert("Fehler: Die eingegebenen Passwörter stimmen nicht überein.");
@@ -29,7 +41,7 @@ var RegisterComponent = (function () {
             templateUrl: 'templates/register.html',
             providers: [http_service_1.HTTPService]
         }), 
-        __metadata('design:paramtypes', [http_service_1.HTTPService])
+        __metadata('design:paramtypes', [http_service_1.HTTPService, router_deprecated_1.Router])
     ], RegisterComponent);
     return RegisterComponent;
 }());

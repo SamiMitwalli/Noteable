@@ -25,14 +25,14 @@ export class LoginComponent {
     login() {
         this._httpService.login(this.loginName, this.password, this.remember).subscribe(
             response => this.angemeldet = response,
-            error => alert("Something went wrong"),
+            error => alert("Anmeldung fehlgeschlagen!"),
             () => {
                 if (this.angemeldet == "true") {
                     console.log("login successful");
                     this.router.navigate(['Todo']);
                 }
                 else {
-                    alert("Login fehlgeschlagen!");
+                    alert("Login fehlgeschlagen: User oder Passwort falsch!");
                     console.log("login failed");
                 }
             }

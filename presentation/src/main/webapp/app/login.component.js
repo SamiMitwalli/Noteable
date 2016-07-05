@@ -15,12 +15,21 @@ var LoginComponent = (function () {
     function LoginComponent(_httpService, router) {
         this._httpService = _httpService;
         this.router = router;
-        this.angemeldet = false;
+        this.angemeldet = "false";
         this.remember = false;
     }
     LoginComponent.prototype.login = function () {
         var _this = this;
-        this._httpService.login(this.loginName, this.password, this.remember).subscribe(function (response) { return _this.angemeldet = response; }, function (error) { return alert("Something went wrong"); }, function () { return _this.router.navigate(['Todo']); });
+        this._httpService.login(this.loginName, this.password, this.remember).subscribe(function (response) { return _this.angemeldet = response; }, function (error) { return alert("Anmeldung fehlgeschlagen!"); }, function () {
+            if (_this.angemeldet == "true") {
+                console.log("login successful");
+                _this.router.navigate(['Todo']);
+            }
+            else {
+                alert("Login fehlgeschlagen: User oder Passwort falsch!");
+                console.log("login failed");
+            }
+        });
     };
     LoginComponent = __decorate([
         core_1.Component({

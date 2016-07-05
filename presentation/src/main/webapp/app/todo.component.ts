@@ -40,7 +40,10 @@ export class TodoComponent {
             title: 'ToDo bearbeiten',
             value: content,
             callback: function (result) {
-                that.updateNote(parseInt(id), result);
+                if (result != null) {
+                    alert(typeof parseInt(id)+id);
+                    that.updateNote(parseInt(id), result);
+                }
             }
         });
     }

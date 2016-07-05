@@ -10,7 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>business</artifactId>
     <packaging>jar</packaging>
-
     <dependencies>
         <dependency>
             <groupId>javax.ws.rs</groupId>
@@ -39,9 +38,15 @@
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>LATEST</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.5.8</version>
+            <version>LATEST</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
-
 </project>

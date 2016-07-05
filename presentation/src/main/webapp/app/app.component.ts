@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
 
 import {HTTPService} from "./http.service";
@@ -68,8 +68,10 @@ export class AppComponent {
 
     constructor(private _httpService:HTTPService,
                 private router:Router) {
-        router.root.subscribe((val) => this.getUser());
-        this.navTodo(router);
+    }
+
+    ngOnInit() {
+        this.getUser();
     }
 
     navTodo(router:Router) {
@@ -78,17 +80,14 @@ export class AppComponent {
         }
     }
 
-    /*    ngOnInit() {
-     this.getUser();
-     }*/
-
     getUser() {
         this._httpService.userinfo()
             .subscribe(
                 response => this.user = response.loginName,
                 error => () => {
                     console.log("nicht eingeloggt.")
-                }
+                },
+                () => this.router.navigate(['Todo'])
             );
     }
 
