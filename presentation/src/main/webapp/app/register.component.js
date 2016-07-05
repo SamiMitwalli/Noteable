@@ -27,9 +27,9 @@ var RegisterComponent = (function () {
         core_1.Component({
             selector: 'register',
             templateUrl: 'templates/register.html',
-            providers: [http_service_1.HTTPTestService]
+            providers: [http_service_1.HTTPService]
         }), 
-        __metadata('design:paramtypes', [http_service_1.HTTPTestService])
+        __metadata('design:paramtypes', [http_service_1.HTTPService])
     ], RegisterComponent);
     return RegisterComponent;
 }());

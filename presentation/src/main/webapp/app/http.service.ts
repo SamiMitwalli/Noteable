@@ -5,7 +5,7 @@ import {Headers} from '@angular/http';
 
 @Injectable()
 
-export class HTTPTestService {
+export class HTTPService {
     constructor(private _http:Http) {
     }
 
@@ -34,7 +34,7 @@ export class HTTPTestService {
     {
         var neu = {"id": id, "content": content};
         var headers = new Headers();
-        headers.append('Content-Type', 'application/text');
+        headers.append('Content-Type', 'application/json');
 
         return this._http
             .post('resources/access/user/updateNote',
@@ -48,7 +48,7 @@ export class HTTPTestService {
     {
         var neu = {"id": id};
         var headers = new Headers();
-        headers.append('Content-Type', 'application/text');
+        headers.append('Content-Type', 'application/json');
 
         return this._http
             .post('resources/access/user/deleteNote',
@@ -59,6 +59,10 @@ export class HTTPTestService {
     }
 
     // METHODEN FÜR USER
+    
+    userinfo() {
+        return this._http.get("resources/access/user/info").map(res => res.json());
+    }
 
     register(loginName:string, password:string) // success = id of Note || error = null
     {

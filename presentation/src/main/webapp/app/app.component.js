@@ -20,19 +20,39 @@ var heroes_component_1 = require('./hero_example/heroes.component');
 var hero_detail_component_1 = require('./hero_example/hero-detail.component');
 var hero_service_1 = require('./hero_example/hero.service');
 var AppComponent = (function () {
-    function AppComponent(_httpService) {
+    function AppComponent(_httpService, router) {
+        var _this = this;
         this._httpService = _httpService;
+        this.router = router;
         this.title = 'Noteable';
+        this.mode = 'Observable';
+        router.root.subscribe(function (val) { return _this.getUser(); });
+        this.navTodo(router);
     }
+    AppComponent.prototype.navTodo = function (router) {
+        if (typeof this.user !== undefined) {
+            router.navigate(['Todo']);
+        }
+    };
+    /*    ngOnInit() {
+     this.getUser();
+     }*/
+    AppComponent.prototype.getUser = function () {
+        var _this = this;
+        this._httpService.userinfo()
+            .subscribe(function (response) { return _this.user = response.loginName; }, function (error) { return console.log("nicht eingeloggt"); }, function () { return console.log(_this.user); });
+    };
     AppComponent.prototype.logout = function () {
         var _this = this;
-        this._httpService.logout().subscribe(function (response) { return _this.success = parseInt(response); });
-        if (this.success == null) {
-            alert("Logout fehlgeschlagen!");
-        }
-        else {
-            alert("Logout erfolgreich!");
-        }
+        this._httpService.logout()
+            .subscribe(function (response) { return _this.success = parseInt(response); }, function () { return function () {
+            if (this.success == null) {
+                alert("Logout fehlgeschlagen!");
+            }
+            else {
+                alert("Logout erfolgreich!");
+            }
+        }; });
     };
     AppComponent = __decorate([
         core_1.Component({
@@ -43,7 +63,7 @@ var AppComponent = (function () {
             providers: [
                 router_deprecated_1.ROUTER_PROVIDERS,
                 hero_service_1.HeroService,
-                http_service_1.HTTPTestService
+                http_service_1.HTTPService
             ]
         }),
         router_deprecated_1.RouteConfig([
@@ -54,14 +74,19 @@ var AppComponent = (function () {
                 useAsDefault: true
             },
             {
-                path: '/dashboard',
-                name: 'Dashboard',
-                component: dashboard_component_1.DashboardComponent
-            },
-            {
                 path: '/register',
                 name: 'Register',
                 component: register_component_1.RegisterComponent
+            },
+            {
+                path: '/todo',
+                name: 'Todo',
+                component: todo_component_1.TodoComponent
+            },
+            {
+                path: '/dashboard',
+                name: 'Dashboard',
+                component: dashboard_component_1.DashboardComponent
             },
             {
                 path: '/detail/:id',
@@ -72,14 +97,9 @@ var AppComponent = (function () {
                 path: '/heroes',
                 name: 'Heroes',
                 component: heroes_component_1.HeroesComponent
-            },
-            {
-                path: '/todo',
-                name: 'Todo',
-                component: todo_component_1.TodoComponent
             }
         ]), 
-        __metadata('design:paramtypes', [http_service_1.HTTPTestService])
+        __metadata('design:paramtypes', [http_service_1.HTTPService, router_deprecated_1.Router])
     ], AppComponent);
     return AppComponent;
 }());

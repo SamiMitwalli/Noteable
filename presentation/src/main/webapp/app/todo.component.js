@@ -26,19 +26,17 @@ var TodoComponent = (function () {
         bootbox.setDefaults({
             locale: "todo",
         });
+        var that = this;
         bootbox.prompt({
             title: 'ToDo bearbeiten',
             value: content,
             callback: function (result) {
-                if (result === null) {
-                }
-                else {
-                    this.updateNote(id, content);
-                }
+                that.updateNote(id, result);
             }
         });
     };
     TodoComponent.prototype.showDeleteDialog = function (id, content) {
+        var that = this;
         bootbox.dialog({
             title: "Wollen Sie diesen Eintrag wirklich löschen?",
             message: content,
@@ -51,8 +49,8 @@ var TodoComponent = (function () {
                     label: "Löschen",
                     className: "btn-danger",
                     callback: function () {
-                        this.deleteNote(id);
-                        this.update();
+                        that.deleteNote(id);
+                        that.update();
                     }
                 },
             }
@@ -80,7 +78,8 @@ var TodoComponent = (function () {
     };
     TodoComponent.prototype.updateNote = function (noteId, content) {
         var _this = this;
-        this._httpService.updateNote(noteId, content).subscribe(function (response) { return _this.noteid = parseInt(response); });
+        this._httpService.updateNote(noteId, content).subscribe(function (response) { return _this.noteid = parseInt(response); }),
+            function () { return console.log("note" + _this.noteid + "successfully updated"); };
         this.update();
     };
     // TEST METHODEN
@@ -92,9 +91,9 @@ var TodoComponent = (function () {
         core_1.Component({
             selector: 'todo',
             templateUrl: 'templates/todo.html',
-            providers: [http_service_1.HTTPTestService]
+            providers: [http_service_1.HTTPService]
         }), 
-        __metadata('design:paramtypes', [http_service_1.HTTPTestService])
+        __metadata('design:paramtypes', [http_service_1.HTTPService])
     ], TodoComponent);
     return TodoComponent;
 }());

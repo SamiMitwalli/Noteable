@@ -12,12 +12,12 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/map');
 var http_2 = require('@angular/http');
-var HTTPTestService = (function () {
-    function HTTPTestService(_http) {
+var HTTPService = (function () {
+    function HTTPService(_http) {
         this._http = _http;
     }
     // METHODEN FÜR NOTES
-    HTTPTestService.prototype.createNote = function (content) {
+    HTTPService.prototype.createNote = function (content) {
         var neu = { "content": content };
         var headers = new http_2.Headers();
         headers.append('Content-Type', 'application/json');
@@ -27,23 +27,23 @@ var HTTPTestService = (function () {
         })
             .map(function (response) { return response.text(); });
     };
-    HTTPTestService.prototype.readNotes = function () {
+    HTTPService.prototype.readNotes = function () {
         return this._http.get("resources/access/user/readNotes").map(function (res) { return res.json(); });
     };
-    HTTPTestService.prototype.updateNote = function (id, content) {
+    HTTPService.prototype.updateNote = function (id, content) {
         var neu = { "id": id, "content": content };
         var headers = new http_2.Headers();
-        headers.append('Content-Type', 'application/text');
+        headers.append('Content-Type', 'application/json');
         return this._http
             .post('resources/access/user/updateNote', neu, {
             headers: headers
         })
             .map(function (response) { return response.text(); });
     };
-    HTTPTestService.prototype.deleteNote = function (id) {
+    HTTPService.prototype.deleteNote = function (id) {
         var neu = { "id": id };
         var headers = new http_2.Headers();
-        headers.append('Content-Type', 'application/text');
+        headers.append('Content-Type', 'application/json');
         return this._http
             .post('resources/access/user/deleteNote', neu, {
             headers: headers
@@ -51,7 +51,10 @@ var HTTPTestService = (function () {
             .map(function (response) { return response.text(); });
     };
     // METHODEN FÜR USER
-    HTTPTestService.prototype.register = function (loginName, password) {
+    HTTPService.prototype.userinfo = function () {
+        return this._http.get("resources/access/user/info").map(function (res) { return res.json(); });
+    };
+    HTTPService.prototype.register = function (loginName, password) {
         var neu = { "loginName": loginName, "password": password };
         var headers = new http_2.Headers();
         headers.append('Content-Type', 'application/json');
@@ -61,7 +64,7 @@ var HTTPTestService = (function () {
         })
             .map(function (response) { return response.text(); });
     };
-    HTTPTestService.prototype.login = function (loginName, password, remember) {
+    HTTPService.prototype.login = function (loginName, password, remember) {
         var neu = { "loginName": loginName, "password": password, "remember": remember };
         var headers = new http_2.Headers();
         headers.append('Content-Type', 'application/json');
@@ -71,7 +74,7 @@ var HTTPTestService = (function () {
         })
             .map(function (response) { return response.text(); });
     };
-    HTTPTestService.prototype.changePassword = function (id, password) {
+    HTTPService.prototype.changePassword = function (id, password) {
         var neu = { "id": id, "password": password };
         var headers = new http_2.Headers();
         headers.append('Content-Type', 'application/text');
@@ -81,10 +84,10 @@ var HTTPTestService = (function () {
         })
             .map(function (response) { return response.text(); });
     };
-    HTTPTestService.prototype.logout = function () {
+    HTTPService.prototype.logout = function () {
         return this._http.get("resources/access/user/logout").map(function (res) { return res.text(); });
     };
-    HTTPTestService.prototype.deleteAccount = function (id) {
+    HTTPService.prototype.deleteAccount = function (id) {
         var neu = { "id": id };
         var headers = new http_2.Headers();
         headers.append('Content-Type', 'application/text');
@@ -95,7 +98,7 @@ var HTTPTestService = (function () {
             .map(function (response) { return response.text(); });
     };
     // ADMIN AKTIONEN
-    HTTPTestService.prototype.deleteNotes = function (id) {
+    HTTPService.prototype.deleteNotes = function (id) {
         var neu = { "id": id };
         var headers = new http_2.Headers();
         headers.append('Content-Type', 'application/text');
@@ -105,18 +108,18 @@ var HTTPTestService = (function () {
         })
             .map(function (response) { return response.text(); });
     };
-    HTTPTestService.prototype.deleteUsers = function () {
+    HTTPService.prototype.deleteUsers = function () {
         return this._http.get("resources/access/admin/deleteUsers").map(function (res) { return res.text(); });
     };
     // TEST METHODEN
-    HTTPTestService.prototype.getNotes = function (url) {
+    HTTPService.prototype.getNotes = function (url) {
         return this._http.get(url).map(function (res) { return res.json(); });
     };
-    HTTPTestService = __decorate([
+    HTTPService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], HTTPTestService);
-    return HTTPTestService;
+    ], HTTPService);
+    return HTTPService;
 }());
-exports.HTTPTestService = HTTPTestService;
+exports.HTTPService = HTTPService;
 //# sourceMappingURL=http.service.js.map

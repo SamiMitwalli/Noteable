@@ -12,31 +12,24 @@ var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var http_service_1 = require("./http.service");
 var LoginComponent = (function () {
-    function LoginComponent(_httpService) {
+    function LoginComponent(_httpService, router) {
         this._httpService = _httpService;
+        this.router = router;
         this.angemeldet = false;
         this.remember = false;
     }
     LoginComponent.prototype.login = function () {
         var _this = this;
-        this._httpService.login(this.loginName, this.password, this.remember).subscribe(function (response) { return _this.angemeldet = response; }); // TODO: angemeldet ist immer false
-        alert(this.angemeldet.toString());
-        // this.angemeldet = !!this.angemeldet;
-        if (this.angemeldet) {
-            alert("Login fehlgeschlagen!");
-        }
-        else {
-            alert("Login erfolgreich!");
-        }
+        this._httpService.login(this.loginName, this.password, this.remember).subscribe(function (response) { return _this.angemeldet = response; }, function (error) { return alert("Something went wrong"); }, function () { return _this.router.navigate(['Todo']); });
     };
     LoginComponent = __decorate([
         core_1.Component({
             selector: 'login',
             templateUrl: 'templates/login.html',
             directives: [router_deprecated_1.ROUTER_DIRECTIVES],
-            providers: [http_service_1.HTTPTestService]
+            providers: [http_service_1.HTTPService]
         }), 
-        __metadata('design:paramtypes', [http_service_1.HTTPTestService])
+        __metadata('design:paramtypes', [http_service_1.HTTPService, router_deprecated_1.Router])
     ], LoginComponent);
     return LoginComponent;
 }());

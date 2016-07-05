@@ -1,12 +1,12 @@
 import {Component} from '@angular/core';
-import {HTTPTestService} from "./http.service";
+import {HTTPService} from "./http.service";
 import {} from 'bootbox';
 import {} from 'jquery';
 
 @Component({
     selector: 'todo',
     templateUrl: 'templates/todo.html',
-    providers: [HTTPTestService]
+    providers: [HTTPService]
 })
 
 export class TodoComponent {
@@ -19,7 +19,7 @@ export class TodoComponent {
     noteid:number;
     newTodo:string;
 
-    constructor(private _httpService:HTTPTestService) {
+    constructor(private _httpService:HTTPService) {
         //this.test();
         this.update();
         this.newTodo = '';
@@ -35,19 +35,18 @@ export class TodoComponent {
         bootbox.setDefaults({
             locale: "todo",
         });
+        var that = this;
         bootbox.prompt({
             title: 'ToDo bearbeiten',
             value: content,
             callback: function (result) {
-                if (result === null) {
-                } else {
-                    this.updateNote(id,content);
+                    that.updateNote(id,result);
                 }
-            }
-        })
+        });
     }
 
     showDeleteDialog(id:number, content:string) {
+        var that = this;
         bootbox.dialog({
             title: "Wollen Sie diesen Eintrag wirklich löschen?",
             message: content,
@@ -60,8 +59,8 @@ export class TodoComponent {
                     label: "Löschen",
                     className: "btn-danger",
                     callback: function () {
-                        this.deleteNote(id);
-                        this.update();
+                        that.deleteNote(id);
+                        that.update();
                     }
                 },
             }
@@ -98,7 +97,8 @@ export class TodoComponent {
 
     updateNote(noteId:number, content:string) {
         this._httpService.updateNote(noteId, content).subscribe(
-            response => this.noteid = parseInt(response));
+            response => this.noteid = parseInt(response)),
+            () => console.log("note"+this.noteid+"successfully updated");
         this.update();
     }
 

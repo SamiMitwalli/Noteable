@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import {HTTPTestService} from "./http.service";
+import {HTTPService} from "./http.service";
 
 @Component({
     selector: 'register',
     templateUrl : 'templates/register.html',
-    providers:[HTTPTestService]
+    providers:[HTTPService]
 })
 
 export class RegisterComponent {
@@ -16,7 +16,7 @@ export class RegisterComponent {
     currentId:number;
 
 
-    constructor(private _httpService: HTTPTestService){
+    constructor(private _httpService: HTTPService){
 
     }
 

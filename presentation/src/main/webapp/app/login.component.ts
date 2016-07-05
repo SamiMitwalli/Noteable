@@ -1,12 +1,12 @@
 import {Component} from '@angular/core';
-import {ROUTER_DIRECTIVES} from '@angular/router-deprecated';
-import {HTTPTestService} from "./http.service";
+import {Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {HTTPService} from "./http.service";
 
 @Component({
     selector: 'login',
     templateUrl: 'templates/login.html',
     directives: [ROUTER_DIRECTIVES],
-    providers: [HTTPTestService]
+    providers: [HTTPService]
 })
 
 export class LoginComponent {
@@ -17,25 +17,16 @@ export class LoginComponent {
     angemeldet:any;
     remember:boolean;
 
-    constructor(private _httpService:HTTPTestService) {
+    constructor(private _httpService:HTTPService, private router:Router) {
         this.angemeldet = false;
         this.remember = false;
     }
 
     login() {
         this._httpService.login(this.loginName, this.password, this.remember).subscribe(
-            response => this.angemeldet = response
-        ); // TODO: angemeldet ist immer false
-
-        alert(this.angemeldet.toString());
-
-        // this.angemeldet = !!this.angemeldet;
-
-        if (this.angemeldet) {
-            alert("Login fehlgeschlagen!");
-        }
-        else {
-            alert("Login erfolgreich!");
-        }
+            response => this.angemeldet = response,
+            error => alert("Something went wrong"),
+            () => this.router.navigate(['Todo'])
+        );
     }
 }

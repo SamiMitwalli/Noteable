@@ -61,6 +61,7 @@ public class ShiroSessionBean extends HibernateConnector{
     public Long createNoteREST(JsonObject obj){
         Notes note = new Notes();
         note.setContent(obj.getString("content"));
+        //null for admin, since he can't be found in the database
         note.setOwner(this.findUserByName(this.currentUser.getPrincipal().toString()));
         Long id = this.createNote(note);
         log.info("created Note ["+id+"]");
@@ -143,7 +144,7 @@ public class ShiroSessionBean extends HibernateConnector{
                 log.info("retrieving user-information");
                 //Giving Admin user_id 0, for creating Notes etc. (Primary Key 0 not mapped in Database)
                 if(this.currentUser.hasRole("admin"))
-                    this.session.setAttribute("id", (long)0);
+                    this.session.setAttribute("id", 0);
                 else
                     this.session.setAttribute("id", this.findUserByName(""+this.currentUser.getPrincipal().toString()).getId());
                 log.info("users database-id: "+this.session.getAttribute("id").toString());
@@ -285,8 +286,10 @@ public class ShiroSessionBean extends HibernateConnector{
         CriteriaQuery<Notes> query = builder.createQuery(Notes.class);
         Root<Notes> root = query.from(Notes.class);
         query.select(root);
-        query.where(builder.equal(root.get(Notes_.owner), id ));
-
+        if(id==0)//ADMIN NOTES HAVE NO OWNER_ID
+            query.where(builder.isNull(root.get(Notes_.owner)));
+        else//USER NOTES
+            query.where(builder.equal(root.get(Notes_.owner), id ));
         List<Notes> notes = em.createQuery(query).getResultList();
         this.commit();
         return notes;
