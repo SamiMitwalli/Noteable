@@ -12,41 +12,41 @@
       <database id="1" name="d29p5ejsnl1ef9"/>
       <schema id="2" parent="1" name="public">
         <object-id>2414654</object-id>
-        <introspection-state-number>15000532</introspection-state-number>
-        <introspection-timestamp>2016-07-05.00:17:51.189</introspection-timestamp>
+        <introspection-state-number>15257551</introspection-state-number>
+        <introspection-timestamp>2016-07-05.12:26:02.955</introspection-timestamp>
       </schema>
       <sequence id="3" parent="2" name="notes_id_seq">
-        <object-id>2764745</object-id>
-        <state-number>15000526</state-number>
+        <object-id>2847449</object-id>
+        <state-number>15257548</state-number>
       </sequence>
       <sequence id="4" parent="2" name="users_id_seq">
-        <object-id>2764753</object-id>
-        <state-number>15000527</state-number>
+        <object-id>2847457</object-id>
+        <state-number>15257550</state-number>
       </sequence>
       <table id="5" parent="2" name="notes">
-        <object-id>2764747</object-id>
-        <state-number>15000532</state-number>
+        <object-id>2847451</object-id>
+        <state-number>15257551</state-number>
       </table>
       <table id="6" parent="2" name="users">
-        <object-id>2764755</object-id>
-        <state-number>15000532</state-number>
+        <object-id>2847459</object-id>
+        <state-number>15257551</state-number>
       </table>
       <column id="7" parent="5" name="id">
-        <state-number>15000526</state-number>
+        <state-number>15257548</state-number>
         <mandatory>1</mandatory>
         <data-type>bigint</data-type>
         <default-expression>nextval(&apos;notes_id_seq&apos;::regclass)</default-expression>
       </column>
       <column id="8" parent="5" name="content">
-        <state-number>15000526</state-number>
+        <state-number>15257548</state-number>
         <data-type>varchar(255)</data-type>
       </column>
       <column id="9" parent="5" name="owner_id">
-        <state-number>15000526</state-number>
+        <state-number>15257548</state-number>
         <data-type>bigint</data-type>
       </column>
       <index id="10" parent="5" name="notes_pkey">
-        <object-id>2764751</object-id>
+        <object-id>2847455</object-id>
         <columns>id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
@@ -63,23 +63,23 @@
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
       <column id="13" parent="6" name="id">
-        <state-number>15000527</state-number>
+        <state-number>15257550</state-number>
         <mandatory>1</mandatory>
         <data-type>bigint</data-type>
         <default-expression>nextval(&apos;users_id_seq&apos;::regclass)</default-expression>
       </column>
       <column id="14" parent="6" name="loginname">
-        <state-number>15000527</state-number>
+        <state-number>15257550</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
       <column id="15" parent="6" name="password">
-        <state-number>15000527</state-number>
+        <state-number>15257550</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
       <index id="16" parent="6" name="users_pkey">
-        <object-id>2764762</object-id>
+        <object-id>2847466</object-id>
         <columns>id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>

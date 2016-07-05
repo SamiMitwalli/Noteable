@@ -12,7 +12,6 @@ import {DashboardComponent} from './hero_example/dashboard.component';
 import {HeroesComponent} from './hero_example/heroes.component';
 import {HeroDetailComponent} from './hero_example/hero-detail.component';
 import {HeroService} from './hero_example/hero.service';
-import {RouterConfig} from "@angular/router";
 
 @Component({
     selector: 'my-app',
@@ -48,7 +47,6 @@ import {RouterConfig} from "@angular/router";
         name: 'Dashboard',
         component: DashboardComponent
     },
-
     {
         path: '/detail/:id',
         name: 'HeroDetail',
@@ -63,12 +61,10 @@ import {RouterConfig} from "@angular/router";
 
 export class AppComponent {
 
-    errorMessage:string;
-    success:number;
     title = 'Noteable';
     response:any;
     user:string;
-    mode = 'Observable';
+//    mode = 'Observable';
 
     constructor(private _httpService:HTTPService,
                 private router:Router) {
@@ -77,7 +73,7 @@ export class AppComponent {
     }
 
     navTodo(router:Router) {
-        if (typeof this.user !== undefined) {
+        if (this.user !== undefined) {
             router.navigate(['Todo'])
         }
     }
@@ -90,22 +86,22 @@ export class AppComponent {
         this._httpService.userinfo()
             .subscribe(
                 response => this.user = response.loginName,
-                error => console.log("nicht eingeloggt"),
-                () => console.log(this.user)
-            )
+                error => () => {
+                    console.log("nicht eingeloggt.")
+                }
+            );
     }
 
     logout() {
+        var success:any;
         this._httpService.logout()
             .subscribe(
-                response => this.success = parseInt(response),
-                () => function () {
-                    if (this.success == null) {
-                        alert("Logout fehlgeschlagen!");
-                    }
-                    else {
-                        alert("Logout erfolgreich!");
-                    }
+                response => success = response,
+                error => console.log("logout failed"),
+                () => {
+                    console.log("logout successfully");
+                    this.user = null;
+                    this.router.navigate(['Login'])
                 }
             );
     }

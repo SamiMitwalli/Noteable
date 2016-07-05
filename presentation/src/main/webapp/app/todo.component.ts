@@ -25,8 +25,9 @@ export class TodoComponent {
         this.newTodo = '';
     }
 
-    showEditDialog(id:number, content:string) {
+    showEditDialog(id:string, content:string) {
 
+        var that = this;
         bootbox.addLocale("todo", {
             OK: 'OK',
             CANCEL: 'Abbrechen',
@@ -35,17 +36,16 @@ export class TodoComponent {
         bootbox.setDefaults({
             locale: "todo",
         });
-        var that = this;
         bootbox.prompt({
             title: 'ToDo bearbeiten',
             value: content,
             callback: function (result) {
-                    that.updateNote(id,result);
-                }
+                that.updateNote(parseInt(id), result);
+            }
         });
     }
 
-    showDeleteDialog(id:number, content:string) {
+    showDeleteDialog(id:string, content:string) {
         var that = this;
         bootbox.dialog({
             title: "Wollen Sie diesen Eintrag wirklich löschen?",
@@ -59,8 +59,7 @@ export class TodoComponent {
                     label: "Löschen",
                     className: "btn-danger",
                     callback: function () {
-                        that.deleteNote(id);
-                        that.update();
+                        that.deleteNote(parseInt(id));
                     }
                 },
             }
@@ -68,16 +67,45 @@ export class TodoComponent {
     }
 
     update() {
+        console.log("loading notes...")
         this._httpService.readNotes().subscribe(
-            response => this.todos = response
+            response => this.todos = response,
+            error => console.log("loading failed"),
+            () => console.log("loading finished")
         );
     }
 
     addNote() {
         this._httpService.createNote(this.newTodo).subscribe(
-            response => this.response = response);
-        this.update();
-        alert(this.response);
+            response => this.response = response,
+            error => console.log("add note failed"),
+            () => {
+                console.log("todo added successfully");
+                this.update()
+            }
+        );
+    }
+
+    updateNote(noteId:number, content:string) {
+        this._httpService.updateNote(noteId, content).subscribe(
+            response => this.noteid = parseInt(response),
+            error => console.log("update note failed"),
+            () => {
+                console.log("note " + this.noteid + " updated");
+                this.update()
+            }
+        );
+    }
+
+    deleteNote(id:number) {
+        this._httpService.deleteNote(id).subscribe(
+            response => this.noteid = parseInt(response),
+            error => console.log("delete note failed"),
+            () => {
+                console.log("delete note successfully");
+                this.update();
+            }
+        );
     }
 
     deleteAll() {
@@ -86,20 +114,6 @@ export class TodoComponent {
             error => this.error = error,
             () => console.log("Success")
         );
-    }
-
-    deleteNote(id:number) {
-        this._httpService.deleteNote(id).subscribe(
-            response => this.noteid = parseInt(response));
-        this.update();
-        alert(this.response);
-    }
-
-    updateNote(noteId:number, content:string) {
-        this._httpService.updateNote(noteId, content).subscribe(
-            response => this.noteid = parseInt(response)),
-            () => console.log("note"+this.noteid+"successfully updated");
-        this.update();
     }
 
     // TEST METHODEN

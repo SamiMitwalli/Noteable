@@ -14,11 +14,11 @@ export class LoginComponent {
     password:string;
     response:any;
     userId:number;
-    angemeldet:any;
+    angemeldet:string;
     remember:boolean;
 
     constructor(private _httpService:HTTPService, private router:Router) {
-        this.angemeldet = false;
+        this.angemeldet = "false";
         this.remember = false;
     }
 
@@ -26,7 +26,16 @@ export class LoginComponent {
         this._httpService.login(this.loginName, this.password, this.remember).subscribe(
             response => this.angemeldet = response,
             error => alert("Something went wrong"),
-            () => this.router.navigate(['Todo'])
+            () => {
+                if (this.angemeldet == "true") {
+                    console.log("login successful");
+                    this.router.navigate(['Todo']);
+                }
+                else {
+                    alert("Login fehlgeschlagen!");
+                    console.log("login failed");
+                }
+            }
         );
     }
 }
