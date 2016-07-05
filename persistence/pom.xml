@@ -86,11 +86,11 @@
             <scope>provided</scope>
         </dependency>
         <!--POSTGRESQL-DRIVER-DEPENDENCY-->
-        <dependency>
+        <!--dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>9.4.1208.jre7</version>
-        </dependency>
+        </dependency-->
         <!--MYSQL-DRIVER-DEPENDENCY-->
         <dependency>
             <groupId>mysql</groupId>
