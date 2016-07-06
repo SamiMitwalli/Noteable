@@ -16,16 +16,22 @@
             <property name="hibernate.connection.username" value="zjmyariwmnnlpw"/>
             <property name="hibernate.connection.password" value="ZXHEX_62cPGC22W-dN8JQiu6va"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL82Dialect"-->
-            <!--MYSQL-->
+            <!--MYSQL (ClearDB)
             <property name="hibernate.connection.url" value="jdbc:mysql://eu-cdbr-west-01.cleardb.com/heroku_1c0e95c679f1150?reconnect=true"/>
             <property name="hibernate.connection.username" value="b274bf67b1610b"/>
             <property name="hibernate.connection.password" value="7857061f"/>
+            -->
+            <!--MYSQL (JawsDB without ssl)-->
+            <property name="hibernate.connection.url" value="jdbc:mysql://m60mxazb4g6sb4nn.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/f2klgj61ethuva40"/>
+            <property name="hibernate.connection.username" value="s3fv5do2nzv2jxrs"/>
+            <property name="hibernate.connection.password" value="hvq1bn1ct353hb0b"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
 
-            <property name="hibernate.show_sql" value="false"/>
-            <property name="hibernate.format_sql" value="false"/>
-            <property name="hibernate.query.substitutions" value="false" />
+
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.query.substitutions" value="true" />
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <!--POSTGRESQL-RELEVANT property name="hibernate.temp.use_jdbc_metadata_defaults" value="false" /-->
             <!--No Connection Pooling - Not for Production use-->

@@ -1,36 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3076209137">
-    <data-source source="LOCAL" name="PostgreSQL - d29p5ejsnl1ef9@ec2-54-247-174-238.eu-west-1.compute.amazonaws.com" uuid="be58209d-2a0c-4695-ad83-03763b5688e7">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://ec2-54-247-174-238.eu-west-1.compute.amazonaws.com:5432/d29p5ejsnl1ef9?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="noteable/Hibernate" uuid="74e7b461-2876-4187-b989-905672239ca9">
-      <driver-ref>e17dcd2b-d735-4322-8360-03c64656badb</driver-ref>
-      <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>$PROJECT_DIR$/persistence/src/main/resources/META-INF/persistence.xml</remarks>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://eu-cdbr-west-01.cleardb.com/heroku_1c0e95c679f1150?reconnect=true</jdbc-url>
-      <explain-plan-config>
-        <provider>com.intellij.database.plan.ExplainPlanProvider.NullExplainPlanProvider</provider>
-      </explain-plan-config>
-      <libraries>
-        <library>
-          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/mysql-connector-license.txt</url>
-        </library>
-        <library>
-          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/mysql-connector-java-5.1.35-bin.jar</url>
-        </library>
-      </libraries>
-    </data-source>
-    <data-source source="LOCAL" name="MySQL - jdbc:mysql://eu-cdbr-west-01.cleardb.com:3306/heroku_1c0e95c679f1150?reconnect=true?reconnect=true" uuid="8900dc90-6412-4c7e-a1a6-91d19578e566">
+  <component name="DataSourceManagerImpl" format="xml" hash="211944134">
+    <data-source source="LOCAL" name="MySQL - f2klgj61ethuva40@m60mxazb4g6sb4nn.chr7pe7iynqr.eu-west-1.rds.amazonaws.com" uuid="81975ec5-28e3-44d1-ae97-f99710770cad">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://eu-cdbr-west-01.cleardb.com:3306/heroku_1c0e95c679f1150?reconnect=true?reconnect=true</jdbc-url>
+      <jdbc-url>jdbc:mysql://m60mxazb4g6sb4nn.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/f2klgj61ethuva40</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />
