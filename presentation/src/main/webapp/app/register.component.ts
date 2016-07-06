@@ -25,9 +25,8 @@ export class RegisterComponent {
                 response => this.response = response,
                 error => console.log("register failed"),
                 () => {
-                    alert(this.response);
                     if (this.response != "") {
-                        alert("registriert!");
+                        alert("Registrierung erfolgreich abgeschlossen!");
                         this.router.navigate(['Login']);
                     }
                     else {

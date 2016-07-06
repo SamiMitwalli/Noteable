@@ -41,7 +41,6 @@ export class TodoComponent {
             value: content,
             callback: function (result) {
                 if (result != null) {
-                    alert(typeof parseInt(id)+id);
                     that.updateNote(parseInt(id), result);
                 }
             }
