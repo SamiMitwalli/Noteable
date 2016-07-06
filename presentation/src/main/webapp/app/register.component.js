@@ -20,9 +20,8 @@ var RegisterComponent = (function () {
         var _this = this;
         if (this.password1 === this.password2) {
             this._httpService.register(this.loginName, this.password1).subscribe(function (response) { return _this.response = response; }, function (error) { return console.log("register failed"); }, function () {
-                alert(_this.response);
                 if (_this.response != "") {
-                    alert("registriert!");
+                    alert("Registrierung erfolgreich abgeschlossen!");
                     _this.router.navigate(['Login']);
                 }
                 else {

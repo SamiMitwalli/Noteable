@@ -12,17 +12,11 @@ import javax.persistence.*;
 @Stateful //Acts as Stateless SessionBean
 public class HibernateConnector {
     EntityManager em;
-    EntityManagerFactory emFactory;
-
-    @PostConstruct
-    public void onInit(){
-        emFactory = Persistence.createEntityManagerFactory("noteable");
-    }
+    EntityManagerFactory emFactory = JPActivator.emFactory;
 
     /*STARTUP-CONNECTION-TO-DATABASE*/
     /*PERSISTENCE INIT,COMMIT*/
     public void init(){
-        //if(emFactory==null)
         em = emFactory.createEntityManager();
         em.getTransaction().begin();
     }
@@ -33,10 +27,4 @@ public class HibernateConnector {
         this.em.close();
     }
 
-    /*SHUTDOWN-CONNECTION-TO-DATABASE*/
-    @PreDestroy
-    public void shutdown(){
-        if(this.emFactory!=null)
-            this.emFactory.close();
-    }
 }

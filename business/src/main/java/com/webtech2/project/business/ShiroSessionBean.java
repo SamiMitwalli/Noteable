@@ -481,12 +481,10 @@ public class ShiroSessionBean extends HibernateConnector{
             return users.get(0);
         return null;
     }
-    /*SHIRO-SESSION-BEAN-INITIALIZATION*/
+    /*SHIRO-SECURITYMANAGER-INITIALIZATION*/
     @PostConstruct
     public void onInit(){
-        super.onInit();
-        Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro.ini");
-        SecurityManager securityManager = factory.getInstance();
+        SecurityManager securityManager = JPActivator.shiroFactory.getInstance();
         SecurityUtils.setSecurityManager(securityManager);
     }
 }

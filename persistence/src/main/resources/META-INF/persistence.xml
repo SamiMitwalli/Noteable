@@ -17,15 +17,26 @@
             <property name="hibernate.connection.password" value="ZXHEX_62cPGC22W-dN8JQiu6va"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL82Dialect"-->
             <!--MYSQL-->
-            <property name="hibernate.connection.url" value="jdbc:mysql://eu-cdbr-west-01.cleardb.com/heroku_1c0e95c679f1150?reconnect=true"/>
-            <property name="hibernate.connection.username" value="b274bf67b1610b"/>
-            <property name="hibernate.connection.password" value="7857061f"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://c5.webspace-verkauf.de/web104_noteable"/>
+            <property name="hibernate.connection.username" value="web104_noteable"/>
+            <property name="hibernate.connection.password" value="Xb7ll8*6"/>
+
+            <property name="hibernate.c3p0.min_size" value="5"></property>
+            <property name="hibernate.c3p0.max_size" value="100"></property>
+            <property name="hibernate.c3p0.timeout" value="1800"></property>
+            <property name="hibernate.c3p0.max_statements" value="50"></property>
+
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
 
-            <property name="hibernate.show_sql" value="false"/>
-            <property name="hibernate.format_sql" value="false"/>
-            <property name="hibernate.query.substitutions" value="false" />
+            <property name="hibernate.connection.pool_size" value="100"/>
+            <property name="hibernate.connection.CharSet" value="utf8"/>
+            <property name="hibernate.connection.characterEncoding" value="utf8"/>
+            <property name="hibernate.connection.useUnicode" value="true"/>
+
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.query.substitutions" value="true" />
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <!--POSTGRESQL-RELEVANT property name="hibernate.temp.use_jdbc_metadata_defaults" value="false" /-->
             <!--No Connection Pooling - Not for Production use-->
