@@ -1,0 +1,3074 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="21d41930-8a2d-490a-9b59-978140c004cc" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/HibernateConnector.java" afterPath="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/HibernateConnector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/JPActivator.java" afterPath="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/JPActivator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/ShiroSessionBean.java" afterPath="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/ShiroSessionBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/business/src/main/resources/shiro.ini" afterPath="$PROJECT_DIR$/business/src/main/resources/shiro.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/persistence/src/main/resources/META-INF/persistence.xml" />
+    </list>
+    <ignored path="Noteable.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/business/target/" />
+    <ignored path="$PROJECT_DIR$/persistence/target/" />
+    <ignored path="$PROJECT_DIR$/presentation/target/" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <ignored path="$PROJECT_DIR$/business/${project.build.directory}/classes/" />
+    <ignored path="$PROJECT_DIR$/business/${project.build.directory}/test-classes/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - f2klgj61ethuva40@m60mxazb4g6sb4nn.chr7pe7iynqr.eu-west-1.rds.amazonaws.com" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Noteable" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="shiro.ini" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/business/src/main/resources/shiro.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="139">
+              <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShiroSessionBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/ShiroSessionBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="485" column="81" selection-start-line="485" selection-start-column="81" selection-end-line="485" selection-end-column="81" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#authenticationTest#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#readNotesREST#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#deleteNoteREST#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#logout#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#deleteAccount#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#deleteAllNotesOfREST#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#deleteAllNotesREST#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#deleteAllUsersREST#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#readAllUsersREST#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#readAllNotesREST#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#createNote#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#readNote#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#readNotesOf#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#readNotes#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#updateNote#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#deleteNote#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#deleteNotesOf#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#deleteAllNotes#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#createUser#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#readUser#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#readUsers#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#updateUser#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#deleteUser#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="method#deleteUsers#0;class#ShiroSessionBean#0" expanded="false" />
+                <element signature="e#18234#18235#0" expanded="true" />
+                <element signature="e#18322#18323#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="persistence.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/persistence/src/main/resources/META-INF/persistence.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="541">
+              <caret line="34" column="68" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="dummy://restClient/response79.txt" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/SecurityBean.java" />
+        <option value="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/SessionBean.java" />
+        <option value="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/NotesCRUD.java" />
+        <option value="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/GroupsCRUD.java" />
+        <option value="$PROJECT_DIR$/presentation/src/main/webapp/WEB-INF/shiro.ini" />
+        <option value="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/StartUpRealm.java" />
+        <option value="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/SessionRealm.java" />
+        <option value="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/StartUpAdmin.java" />
+        <option value="dbtable:/b9f93e0d/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.users" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/74e7b461-2876-4187-b989-905672239ca9/console.sql" />
+        <option value="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/UsersCRUD.java" />
+        <option value="$PROJECT_DIR$/presentation/src/main/webapp/index.html" />
+        <option value="$PROJECT_DIR$/persistence/src/main/java/com/webtech2/project/persistence/Groups.java" />
+        <option value="$PROJECT_DIR$/presentation/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/presentation/pom.xml" />
+        <option value="$PROJECT_DIR$/presentation/src/main/webapp/WEB-INF/bean.xml" />
+        <option value="$PROJECT_DIR$/presentation/src/main/webapp/WEB-INF/jboss-web.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/be58209d-2a0c-4695-ad83-03763b5688e7/console.sql" />
+        <option value="$PROJECT_DIR$/persistence/src/main/java/com/webtech2/project/persistence/Notes.java" />
+        <option value="$PROJECT_DIR$/persistence/src/main/java/com/webtech2/project/persistence/Users.java" />
+        <option value="$PROJECT_DIR$/persistence/pom.xml" />
+        <option value="$PROJECT_DIR$/business/pom.xml" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8900dc90-6412-4c7e-a1a6-91d19578e566/console.sql" />
+        <option value="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/HibernateConnector.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/81975ec5-28e3-44d1-ae97-f99710770cad/console.sql" />
+        <option value="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/JPActivator.java" />
+        <option value="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/ShiroSessionBean.java" />
+        <option value="$PROJECT_DIR$/persistence/src/main/resources/META-INF/persistence.xml" />
+        <option value="$PROJECT_DIR$/business/src/main/resources/shiro.ini" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1612" />
+    <option name="height" value="972" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noteable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noteable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noteable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noteable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noteable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="persistence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noteable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noteable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="persistence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noteable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noteable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="persistence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noteable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noteable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noteable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noteable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noteable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noteable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/login.json" />
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="MYdASYu_o6AOyeL7dNIgcf7H2fs-L5uBRXUeY1q9.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499387352000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="WnD3u7xo5kYAjufvUX0bwK7ETgltiCXneCpTg3KJQJ/2uGNvNnO5dM5IfeTvPa9HlvbqziRVnCwGsrTP+V2WQFxfuIsK98ksDFCsHcRklXv+PHFcH/k9coLQI6oNDTeEhGSwIGKKqQXGTIeHVUoimqaWh0wjcZXW1UUok4qQwNwTuZN5ibj5/UL6g0RtD35AIH5qQa7UwpaMe7s1Ers+PWHJJ5N0MVKuNzDJq3cdSiFtJOE8thJ1shYxkFwkzYTEn6VM+XqQkb3pNGv+1G+5MrqlU0TxEFd6eEP7C3n0jHYX2/p98VxntBOd4miooE/Hu1jVm1f+pP5UooMmkEArHvRmFHrSeO8uuPRbyaaHgrsRlJI4l2Qsyi05zmfTcaV8QFmdY4JbBHAfVDiNWf4SX0IhhjBlgEEQl0/aEL2ppmxMxvzZdIElgL1ZosvMmIFEbs9lTNLfPDcRBoI0vfPqHQ/4IEjETj975E+NFJTaITqMJrPpbpfxJwn3BwzFdyz2" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="w-7EevgUnvUolQZWGtd4E6KL6baO2Y4YbVpYAHJL.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499386954000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="jCLorz4dbcpCvHkdoFL6hG879Aodc65NV1FJ0a6otFO4g5iYDCOk7DI2M5NjNbG4NSiafJ/mCJwpqX6RP3ky6Y5+xENkfIk1uHI65OnGkhdwKg0shZzcKBE5+JJMCoO9YsPvBuG96OCdxpSJjA0AG1maQ6hYjvKAGzMJCKygKhWmAdjKytvUEJjyvEy1eblRmEWu2wVzj0Z950CnMWzbQ2mLe4JkeBVdUn9CjHsAe0X5uuNc7uNBVo/VIpWMCZ3cmqIMPwZ3gCpbdS8pWMteL3wE83zuyUZ6ktgKIJDnc6qIVtI0XjcCiCsyzkrq/ni2iOzRhEzF2PmDRaBcsR31JF4m54/MobzrlhI4+xxl3UECjSHesOPKQq1RaPyKmRIWDqMthJjWe7pD9NRlNwiggTYRAB/rKdeK6wpE9MkAICGHNh6OxbdaGikN7lu2c43soH9tMjRck/lru+36TDwdjgqVRc1jITg66tR02WI1imNMepl5stz7+tQY76Qj/oJI" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="w-7EevgUnvUolQZWGtd4E6KL6baO2Y4YbVpYAHJL.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499386954000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="jCLorz4dbcpCvHkdoFL6hG879Aodc65NV1FJ0a6otFO4g5iYDCOk7DI2M5NjNbG4NSiafJ/mCJwpqX6RP3ky6Y5+xENkfIk1uHI65OnGkhdwKg0shZzcKBE5+JJMCoO9YsPvBuG96OCdxpSJjA0AG1maQ6hYjvKAGzMJCKygKhWmAdjKytvUEJjyvEy1eblRmEWu2wVzj0Z950CnMWzbQ2mLe4JkeBVdUn9CjHsAe0X5uuNc7uNBVo/VIpWMCZ3cmqIMPwZ3gCpbdS8pWMteL3wE83zuyUZ6ktgKIJDnc6qIVtI0XjcCiCsyzkrq/ni2iOzRhEzF2PmDRaBcsR31JF4m54/MobzrlhI4+xxl3UECjSHesOPKQq1RaPyKmRIWDqMthJjWe7pD9NRlNwiggTYRAB/rKdeK6wpE9MkAICGHNh6OxbdaGikN7lu2c43soH9tMjRck/lru+36TDwdjgqVRc1jITg66tR02WI1imNMepl5stz7+tQY76Qj/oJI" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/updateNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="w-7EevgUnvUolQZWGtd4E6KL6baO2Y4YbVpYAHJL.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499386954000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="jCLorz4dbcpCvHkdoFL6hG879Aodc65NV1FJ0a6otFO4g5iYDCOk7DI2M5NjNbG4NSiafJ/mCJwpqX6RP3ky6Y5+xENkfIk1uHI65OnGkhdwKg0shZzcKBE5+JJMCoO9YsPvBuG96OCdxpSJjA0AG1maQ6hYjvKAGzMJCKygKhWmAdjKytvUEJjyvEy1eblRmEWu2wVzj0Z950CnMWzbQ2mLe4JkeBVdUn9CjHsAe0X5uuNc7uNBVo/VIpWMCZ3cmqIMPwZ3gCpbdS8pWMteL3wE83zuyUZ6ktgKIJDnc6qIVtI0XjcCiCsyzkrq/ni2iOzRhEzF2PmDRaBcsR31JF4m54/MobzrlhI4+xxl3UECjSHesOPKQq1RaPyKmRIWDqMthJjWe7pD9NRlNwiggTYRAB/rKdeK6wpE9MkAICGHNh6OxbdaGikN7lu2c43soH9tMjRck/lru+36TDwdjgqVRc1jITg66tR02WI1imNMepl5stz7+tQY76Qj/oJI" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/createNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="MA8To6uSWaXv49q0RuzW0oJh1dyxzt4Gn_myNcPs.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499386502000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="b5z9sWwOjnevrEihusbilL3NsrMrff+UMUH9Nh/+KsTah0oiQbWN8cz5oRfGJxh4eXDJz2W0sLe4474yY3NbZkf49WlXJDI7JupX4gwoufH74Iw1zygCyLX/Az4Vlk6QmlXS22mxxFpyjEVVrB+HAXUtXLg1keTEc7I3MHgBneQHpr3jR1xNYBh8yucCd07J9B+50DksyoK2h2kfqe/w92/5eGpjTHcsNr0iXUOsWXOJgTSdylG6UQxB/wNUDRBs5jGLz1SZByd6GSHa1SHjKPv65k3heah7rBnd6+pIiQQWsdWWkghBdKXpU2nxPtuhotYI7mdBR4QjyOvKd1EJryD48m/9f4s8MWAEo3B69zlXebziA7gd7qHAdM/GcwMe+wgefwiyAPAPfW898qtDfZYJ2A21ZE6wtNWl0umpqgmYBJVQtKlZVqNI3Qtj8n1cHzZn4QL68G3lcpiqbkCfJYe/M2F/DvDBnOmQzUo6pPLURfYd5Ni4xwxlBFNWygKn" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/updateNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="MA8To6uSWaXv49q0RuzW0oJh1dyxzt4Gn_myNcPs.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499386502000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="b5z9sWwOjnevrEihusbilL3NsrMrff+UMUH9Nh/+KsTah0oiQbWN8cz5oRfGJxh4eXDJz2W0sLe4474yY3NbZkf49WlXJDI7JupX4gwoufH74Iw1zygCyLX/Az4Vlk6QmlXS22mxxFpyjEVVrB+HAXUtXLg1keTEc7I3MHgBneQHpr3jR1xNYBh8yucCd07J9B+50DksyoK2h2kfqe/w92/5eGpjTHcsNr0iXUOsWXOJgTSdylG6UQxB/wNUDRBs5jGLz1SZByd6GSHa1SHjKPv65k3heah7rBnd6+pIiQQWsdWWkghBdKXpU2nxPtuhotYI7mdBR4QjyOvKd1EJryD48m/9f4s8MWAEo3B69zlXebziA7gd7qHAdM/GcwMe+wgefwiyAPAPfW898qtDfZYJ2A21ZE6wtNWl0umpqgmYBJVQtKlZVqNI3Qtj8n1cHzZn4QL68G3lcpiqbkCfJYe/M2F/DvDBnOmQzUo6pPLURfYd5Ni4xwxlBFNWygKn" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/createNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="00DszM3oeSxCMuziI5DBVDym1nnRShq6f_CH9x8I.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499385692000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="7tlLzOZW+wELFUuy1TQBbrbze7/B4mQ1/e5AMEL/zSF8JTj/R8ncEi3w9Ouj+kXbaGXPBDIRGgYXHECgfjecQCZAoA4du4KZd1gbuZujoLsScftClknTepRr8iwQUnv+c1WvblB1MyierUWCqAEllv+Gt7oEJHMTGmFSqczBLTrVCoZKFtg7kPa4BOMO6kDiCfrfG1qv05mf7qMspdh45FOLGk+jV7MooM5m0YtwwMzrXQ75eOEcyfgln+tkSmaKvGC3hU0I/1ZjRkQxFXFRv7R/gz0DjIuLm9LaLg8pMsOXBfq/hbTWg4cPQRTQqVz8xMFeok21XVhYlpiJeKlGSlhgdeC/TikcX1YimLGzvHQRO8KmrwDk8YE8TewACPYWet7tz82COO3ZWp+kGszJjXBl+zOfShw2Lk1/99eUjqn0Ak4io53iNfeL0N29a5oW61BtCty1/VNZylw2ghat4mgbcwiXPtGskKwA4p3QhSCZo3pChxAfl6lbonxv4MXa" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="00DszM3oeSxCMuziI5DBVDym1nnRShq6f_CH9x8I.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499385692000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="7tlLzOZW+wELFUuy1TQBbrbze7/B4mQ1/e5AMEL/zSF8JTj/R8ncEi3w9Ouj+kXbaGXPBDIRGgYXHECgfjecQCZAoA4du4KZd1gbuZujoLsScftClknTepRr8iwQUnv+c1WvblB1MyierUWCqAEllv+Gt7oEJHMTGmFSqczBLTrVCoZKFtg7kPa4BOMO6kDiCfrfG1qv05mf7qMspdh45FOLGk+jV7MooM5m0YtwwMzrXQ75eOEcyfgln+tkSmaKvGC3hU0I/1ZjRkQxFXFRv7R/gz0DjIuLm9LaLg8pMsOXBfq/hbTWg4cPQRTQqVz8xMFeok21XVhYlpiJeKlGSlhgdeC/TikcX1YimLGzvHQRO8KmrwDk8YE8TewACPYWet7tz82COO3ZWp+kGszJjXBl+zOfShw2Lk1/99eUjqn0Ak4io53iNfeL0N29a5oW61BtCty1/VNZylw2ghat4mgbcwiXPtGskKwA4p3QhSCZo3pChxAfl6lbonxv4MXa" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/createNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="N0wkL4IFfVuhh81iyAslfZQ0AGgvKcHeyRjSzh5s.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499385507000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="sWSRsOQpZh8lp2Hz+c0tOAvgZWk/m/r+ORJxD8Jawa1qe7zgQPKaFt9j9W9+L+9BWVyFvtYm0mcI5pP6Tbo3thSYU7OFiKuva5DkInuEZMONhLHs6He2xMJH8hLM7ByPyyTFNxpHWs/4BAgA912zNyx385dO8mV2OfruhV26IXLbq5DaSgxqWVVjveMHwnz8RS4aAAEMvayg8lLNhKas5ODYPsmq8Lzs9BhIkInkd6qpAxLDnXNY0qloF1ObYsM4S2wWeP0laoY/zTbnIy5fon2PYwmWYk7KedNHo30QNoQw0bB1AzW2USuQCSiOOCHr97G9jA9gJ6dysA+R2rcVQvqAoOesqwO2zq9LupvI+mH6bYL97b5xojyuoX4KrIQ8um5oQwQzcauEftN1frML3t604AeE/2bsxyxdcQGuEZvBqxvRMpTpO2drIHPqThNJ8qCW7Ts+kxLCVdJWZ5vGJ9ppY+Dbc7pAjXgevbbBmI4JB0cM3HRFqm0XcY20lwum" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="N0wkL4IFfVuhh81iyAslfZQ0AGgvKcHeyRjSzh5s.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499385507000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="sWSRsOQpZh8lp2Hz+c0tOAvgZWk/m/r+ORJxD8Jawa1qe7zgQPKaFt9j9W9+L+9BWVyFvtYm0mcI5pP6Tbo3thSYU7OFiKuva5DkInuEZMONhLHs6He2xMJH8hLM7ByPyyTFNxpHWs/4BAgA912zNyx385dO8mV2OfruhV26IXLbq5DaSgxqWVVjveMHwnz8RS4aAAEMvayg8lLNhKas5ODYPsmq8Lzs9BhIkInkd6qpAxLDnXNY0qloF1ObYsM4S2wWeP0laoY/zTbnIy5fon2PYwmWYk7KedNHo30QNoQw0bB1AzW2USuQCSiOOCHr97G9jA9gJ6dysA+R2rcVQvqAoOesqwO2zq9LupvI+mH6bYL97b5xojyuoX4KrIQ8um5oQwQzcauEftN1frML3t604AeE/2bsxyxdcQGuEZvBqxvRMpTpO2drIHPqThNJ8qCW7Ts+kxLCVdJWZ5vGJ9ppY+Dbc7pAjXgevbbBmI4JB0cM3HRFqm0XcY20lwum" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/updateNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="N0wkL4IFfVuhh81iyAslfZQ0AGgvKcHeyRjSzh5s.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499385507000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="sWSRsOQpZh8lp2Hz+c0tOAvgZWk/m/r+ORJxD8Jawa1qe7zgQPKaFt9j9W9+L+9BWVyFvtYm0mcI5pP6Tbo3thSYU7OFiKuva5DkInuEZMONhLHs6He2xMJH8hLM7ByPyyTFNxpHWs/4BAgA912zNyx385dO8mV2OfruhV26IXLbq5DaSgxqWVVjveMHwnz8RS4aAAEMvayg8lLNhKas5ODYPsmq8Lzs9BhIkInkd6qpAxLDnXNY0qloF1ObYsM4S2wWeP0laoY/zTbnIy5fon2PYwmWYk7KedNHo30QNoQw0bB1AzW2USuQCSiOOCHr97G9jA9gJ6dysA+R2rcVQvqAoOesqwO2zq9LupvI+mH6bYL97b5xojyuoX4KrIQ8um5oQwQzcauEftN1frML3t604AeE/2bsxyxdcQGuEZvBqxvRMpTpO2drIHPqThNJ8qCW7Ts+kxLCVdJWZ5vGJ9ppY+Dbc7pAjXgevbbBmI4JB0cM3HRFqm0XcY20lwum" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/createNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/createNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="NXLbp7o4_-YwSGex--Ov2QGM2jPnm82FHZvfez7o.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499384217000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="56TpIWMoPgHgXjtzoq31oPllbF8OHE7T1Bjyc6pmC0OS0orziF2uIjvA+iFASBIJ9WjDpuI9kxHiL0XknmXGulDzyZB0+Qzerxk7rgSq8C130GzWtpA4gOftnTx8FV9y2PNST/L+K4LOCOa38C8N+mP8HYzfCTucwj7pkntXm77+rlUd1MvpYaBFXbO1vfLxmWQ5S9BqKfLEw6NBU3Yyqn6IGkisuzkvZFJhSC3sRpJpaREt07kzrIKSRxxZuqAnWccOx5GPuzEvkZzCYxptN39AsCxIHXexEyVadQPNsADiifMHuo8SnEG8AQwbxpDbcAnCIQcdzqHkZpc7awAcEXpm8wYwmzL+4EaERaIDFWLiJEDWiUYKkqiar2/hesC5Yi2JPEiHiGtHKcHJm8TT4x1l71rR5dVml+QNmSCkD7EtRi6cz1033M3Coim6bgj42W9l2bSpvGCI3s5+sq+LSobX+b3dHFj8fuBggJt7Ihzhh3zhI4Wj3u+DW3FCSK/0" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="NXLbp7o4_-YwSGex--Ov2QGM2jPnm82FHZvfez7o.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499384217000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="56TpIWMoPgHgXjtzoq31oPllbF8OHE7T1Bjyc6pmC0OS0orziF2uIjvA+iFASBIJ9WjDpuI9kxHiL0XknmXGulDzyZB0+Qzerxk7rgSq8C130GzWtpA4gOftnTx8FV9y2PNST/L+K4LOCOa38C8N+mP8HYzfCTucwj7pkntXm77+rlUd1MvpYaBFXbO1vfLxmWQ5S9BqKfLEw6NBU3Yyqn6IGkisuzkvZFJhSC3sRpJpaREt07kzrIKSRxxZuqAnWccOx5GPuzEvkZzCYxptN39AsCxIHXexEyVadQPNsADiifMHuo8SnEG8AQwbxpDbcAnCIQcdzqHkZpc7awAcEXpm8wYwmzL+4EaERaIDFWLiJEDWiUYKkqiar2/hesC5Yi2JPEiHiGtHKcHJm8TT4x1l71rR5dVml+QNmSCkD7EtRi6cz1033M3Coim6bgj42W9l2bSpvGCI3s5+sq+LSobX+b3dHFj8fuBggJt7Ihzhh3zhI4Wj3u+DW3FCSK/0" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/createNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="NXLbp7o4_-YwSGex--Ov2QGM2jPnm82FHZvfez7o.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499384217000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="56TpIWMoPgHgXjtzoq31oPllbF8OHE7T1Bjyc6pmC0OS0orziF2uIjvA+iFASBIJ9WjDpuI9kxHiL0XknmXGulDzyZB0+Qzerxk7rgSq8C130GzWtpA4gOftnTx8FV9y2PNST/L+K4LOCOa38C8N+mP8HYzfCTucwj7pkntXm77+rlUd1MvpYaBFXbO1vfLxmWQ5S9BqKfLEw6NBU3Yyqn6IGkisuzkvZFJhSC3sRpJpaREt07kzrIKSRxxZuqAnWccOx5GPuzEvkZzCYxptN39AsCxIHXexEyVadQPNsADiifMHuo8SnEG8AQwbxpDbcAnCIQcdzqHkZpc7awAcEXpm8wYwmzL+4EaERaIDFWLiJEDWiUYKkqiar2/hesC5Yi2JPEiHiGtHKcHJm8TT4x1l71rR5dVml+QNmSCkD7EtRi6cz1033M3Coim6bgj42W9l2bSpvGCI3s5+sq+LSobX+b3dHFj8fuBggJt7Ihzhh3zhI4Wj3u+DW3FCSK/0" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/createNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="zFqu7qT_62DmY8abXy1g2ytWVsYX-JhhMxfoINIU.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499383633000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="PUusKqiVlFLHDtUQCR9UMJn8545X2j7qBaU3YeGeQ6Zq3MiUHd9fwatohMor4Uuzai4nKnKERePyz2bPa8jWamHtb3DiO0jcsvyUI8m/tJ2HX1O3H+s9/kqVBbwgeI7id7DC9wnCkaKtQgiyE8x8Ydgo5zm2/5exAsEIQ9gZvmcLuj8mnqLdPo6JxVmQDevOrkWS7z2dRbGEITlltZOJri1EpC2tHpZWPcP7I+lofHKPH+WH1ToDQaSgVazq/KRGKWOBMwz6FTPWTdsMq2kZsU2Ed/faQ2jU6/LjPfLcnJVBl2FKW5jngC8ODdwCfSo2ZzUkq5JO2jqPCcNOiW9Q/O4phZE5RZXLvRLwyl1bkQGu4HezP0UFUcDRC/sJw55TABIyjkmo7MfoupXQWoLNHQAtJi1YQGqzMXdPtDrWrogeOnRigINLRhTc7zs3S94FWlAf6yD5Gv/knzPUXpgkc9R/6v2CawRlWt5iUHIFvmUrUiT05ecZnAvXSROegHJr" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="zFqu7qT_62DmY8abXy1g2ytWVsYX-JhhMxfoINIU.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499383633000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="PUusKqiVlFLHDtUQCR9UMJn8545X2j7qBaU3YeGeQ6Zq3MiUHd9fwatohMor4Uuzai4nKnKERePyz2bPa8jWamHtb3DiO0jcsvyUI8m/tJ2HX1O3H+s9/kqVBbwgeI7id7DC9wnCkaKtQgiyE8x8Ydgo5zm2/5exAsEIQ9gZvmcLuj8mnqLdPo6JxVmQDevOrkWS7z2dRbGEITlltZOJri1EpC2tHpZWPcP7I+lofHKPH+WH1ToDQaSgVazq/KRGKWOBMwz6FTPWTdsMq2kZsU2Ed/faQ2jU6/LjPfLcnJVBl2FKW5jngC8ODdwCfSo2ZzUkq5JO2jqPCcNOiW9Q/O4phZE5RZXLvRLwyl1bkQGu4HezP0UFUcDRC/sJw55TABIyjkmo7MfoupXQWoLNHQAtJi1YQGqzMXdPtDrWrogeOnRigINLRhTc7zs3S94FWlAf6yD5Gv/knzPUXpgkc9R/6v2CawRlWt5iUHIFvmUrUiT05ecZnAvXSROegHJr" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/info" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="zFqu7qT_62DmY8abXy1g2ytWVsYX-JhhMxfoINIU.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499383633000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="PUusKqiVlFLHDtUQCR9UMJn8545X2j7qBaU3YeGeQ6Zq3MiUHd9fwatohMor4Uuzai4nKnKERePyz2bPa8jWamHtb3DiO0jcsvyUI8m/tJ2HX1O3H+s9/kqVBbwgeI7id7DC9wnCkaKtQgiyE8x8Ydgo5zm2/5exAsEIQ9gZvmcLuj8mnqLdPo6JxVmQDevOrkWS7z2dRbGEITlltZOJri1EpC2tHpZWPcP7I+lofHKPH+WH1ToDQaSgVazq/KRGKWOBMwz6FTPWTdsMq2kZsU2Ed/faQ2jU6/LjPfLcnJVBl2FKW5jngC8ODdwCfSo2ZzUkq5JO2jqPCcNOiW9Q/O4phZE5RZXLvRLwyl1bkQGu4HezP0UFUcDRC/sJw55TABIyjkmo7MfoupXQWoLNHQAtJi1YQGqzMXdPtDrWrogeOnRigINLRhTc7zs3S94FWlAf6yD5Gv/knzPUXpgkc9R/6v2CawRlWt5iUHIFvmUrUiT05ecZnAvXSROegHJr" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/createNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="zFqu7qT_62DmY8abXy1g2ytWVsYX-JhhMxfoINIU.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499383633000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="PUusKqiVlFLHDtUQCR9UMJn8545X2j7qBaU3YeGeQ6Zq3MiUHd9fwatohMor4Uuzai4nKnKERePyz2bPa8jWamHtb3DiO0jcsvyUI8m/tJ2HX1O3H+s9/kqVBbwgeI7id7DC9wnCkaKtQgiyE8x8Ydgo5zm2/5exAsEIQ9gZvmcLuj8mnqLdPo6JxVmQDevOrkWS7z2dRbGEITlltZOJri1EpC2tHpZWPcP7I+lofHKPH+WH1ToDQaSgVazq/KRGKWOBMwz6FTPWTdsMq2kZsU2Ed/faQ2jU6/LjPfLcnJVBl2FKW5jngC8ODdwCfSo2ZzUkq5JO2jqPCcNOiW9Q/O4phZE5RZXLvRLwyl1bkQGu4HezP0UFUcDRC/sJw55TABIyjkmo7MfoupXQWoLNHQAtJi1YQGqzMXdPtDrWrogeOnRigINLRhTc7zs3S94FWlAf6yD5Gv/knzPUXpgkc9R/6v2CawRlWt5iUHIFvmUrUiT05ecZnAvXSROegHJr" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/updateNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="VOgrcNuS-d2aPlqPIGdSA218hVFU7r3Ij8f0S78o.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499382780000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="LqKsnIUjkrxZu77LCwpzdaejDzbDXXcnfetOsVVkBKNL7ocBTlftxZWosniRQJIoGsexSqEGPuHXT8OmuzupTODbQkPWV2cIg2JduGx5UsmJ5U6Dw00J+NV2xL32ArW9gBxxFAxLBd5ccIuddEoTqUL5Bkx7yDTZaMiJOqr0DP+9MpZ5rWoS2eSPWQ3HAKwDAIwLUtHJoAzNubMLq2UM1lFYfzPn7PsABQX3O7kHGzDao/qkZ9cbKFyvlgJbHLvSgrs/AIUSbQ8NfBPnD5x83C0mXKNVLmx0cE7gG0moldDtgY/cWqH19w2p6W7/eozdirI69wvgv9SwoRO8wOL7QhuOuMyUWpIkWFhCywC1fFM3WJwzWzJPuuhCQNrSivt22DTEKcIMvs5BDrEDVZd4OjeVC4zCf4t44B4xj3V6QmpQMBE9PQEAAkndIReLGdDqT8v0lThT9ncER9mDFF7Xq/mjyHOqnm9LkosVBwt/KcaE0BOSSbnCOoRj7vwEac8C" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="VOgrcNuS-d2aPlqPIGdSA218hVFU7r3Ij8f0S78o.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499382780000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="LqKsnIUjkrxZu77LCwpzdaejDzbDXXcnfetOsVVkBKNL7ocBTlftxZWosniRQJIoGsexSqEGPuHXT8OmuzupTODbQkPWV2cIg2JduGx5UsmJ5U6Dw00J+NV2xL32ArW9gBxxFAxLBd5ccIuddEoTqUL5Bkx7yDTZaMiJOqr0DP+9MpZ5rWoS2eSPWQ3HAKwDAIwLUtHJoAzNubMLq2UM1lFYfzPn7PsABQX3O7kHGzDao/qkZ9cbKFyvlgJbHLvSgrs/AIUSbQ8NfBPnD5x83C0mXKNVLmx0cE7gG0moldDtgY/cWqH19w2p6W7/eozdirI69wvgv9SwoRO8wOL7QhuOuMyUWpIkWFhCywC1fFM3WJwzWzJPuuhCQNrSivt22DTEKcIMvs5BDrEDVZd4OjeVC4zCf4t44B4xj3V6QmpQMBE9PQEAAkndIReLGdDqT8v0lThT9ncER9mDFF7Xq/mjyHOqnm9LkosVBwt/KcaE0BOSSbnCOoRj7vwEac8C" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/updateNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="VOgrcNuS-d2aPlqPIGdSA218hVFU7r3Ij8f0S78o.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499382780000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="LqKsnIUjkrxZu77LCwpzdaejDzbDXXcnfetOsVVkBKNL7ocBTlftxZWosniRQJIoGsexSqEGPuHXT8OmuzupTODbQkPWV2cIg2JduGx5UsmJ5U6Dw00J+NV2xL32ArW9gBxxFAxLBd5ccIuddEoTqUL5Bkx7yDTZaMiJOqr0DP+9MpZ5rWoS2eSPWQ3HAKwDAIwLUtHJoAzNubMLq2UM1lFYfzPn7PsABQX3O7kHGzDao/qkZ9cbKFyvlgJbHLvSgrs/AIUSbQ8NfBPnD5x83C0mXKNVLmx0cE7gG0moldDtgY/cWqH19w2p6W7/eozdirI69wvgv9SwoRO8wOL7QhuOuMyUWpIkWFhCywC1fFM3WJwzWzJPuuhCQNrSivt22DTEKcIMvs5BDrEDVZd4OjeVC4zCf4t44B4xj3V6QmpQMBE9PQEAAkndIReLGdDqT8v0lThT9ncER9mDFF7Xq/mjyHOqnm9LkosVBwt/KcaE0BOSSbnCOoRj7vwEac8C" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/createNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/createNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="2z1AEIiz1uUB_8KbHXIeX6aekqQeXKKATDbDAHmv.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499382689000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="z98tIIjDoZkgI3k6H62XsoXTvVnupc4Pl0hPSaOWgW7/sRMxb8TzajR4oti8f94g96OEZwAy0p1TFqDcOnEo9T6oI38xKPLL4a45F+n+CQ4DoR1JF7Qb24FP8KdWqZKFUMJkMsp/mmc2oHOOu/iCt/4xFt0QHwGhNiBjY1LCJlotKVvgP0eELdEdjbaC4eynA2o+WBpVhgUBgmXZGcgawOwZ7vZJOtXstMJSe9gTY0KIPDirbI8p4Q3vuhwfdpPP2Wyzy/rokEZjFph2p2zcTtLLEECezEEbXkiyuPd/NeeIvtBrpa/u98P8LcOBlSTsurr8jroG553mn+wlKtDhE/1+tnw9BdHv+IuCRVdIEvEGr81iHNk1V7GKUMreXUEKF1nJIpNDUqdGnrEwPuKtvt7xS97YosOnJmiSTT+JrQyoxB7lAUAeqw6gCWGDWuATFwAgzxYEneQ+UjObHlOAU4GLda2ckyoSUntJf6+OEtDmRY/d6HRn/2q0O5c5RMvA" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="2z1AEIiz1uUB_8KbHXIeX6aekqQeXKKATDbDAHmv.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499382689000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="z98tIIjDoZkgI3k6H62XsoXTvVnupc4Pl0hPSaOWgW7/sRMxb8TzajR4oti8f94g96OEZwAy0p1TFqDcOnEo9T6oI38xKPLL4a45F+n+CQ4DoR1JF7Qb24FP8KdWqZKFUMJkMsp/mmc2oHOOu/iCt/4xFt0QHwGhNiBjY1LCJlotKVvgP0eELdEdjbaC4eynA2o+WBpVhgUBgmXZGcgawOwZ7vZJOtXstMJSe9gTY0KIPDirbI8p4Q3vuhwfdpPP2Wyzy/rokEZjFph2p2zcTtLLEECezEEbXkiyuPd/NeeIvtBrpa/u98P8LcOBlSTsurr8jroG553mn+wlKtDhE/1+tnw9BdHv+IuCRVdIEvEGr81iHNk1V7GKUMreXUEKF1nJIpNDUqdGnrEwPuKtvt7xS97YosOnJmiSTT+JrQyoxB7lAUAeqw6gCWGDWuATFwAgzxYEneQ+UjObHlOAU4GLda2ckyoSUntJf6+OEtDmRY/d6HRn/2q0O5c5RMvA" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/updateNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="o8oUovm95-chZ3p4UgX4IZ_IISdpWs9Sr5gLDeE7.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499382555000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="JbytTZiRTeNiHXhWQe9oOoYFHcnl0mKliGRADHTR6dUMgGZ6XHirVFtC4FfsVlAbxTKCy/2lwnjSe6qfFyRJRKiOXEa5CeVtAhFCiPV6KRz0v5eGgW+dUT38O3eIh+z8OI/mtrNUUWbb/6ZG8+yZjHx1z/dC4s2iS/M+Za5HFI4ulA3cPN7+XHF+cHXXX3IDPISfYpq3naJczQ9xKIL3ZYxETbaG9B02XKxgZEQ+LPFaMOSq4UQC6+L2O6jMqp3Hvjz/JB4+GRWzSwGMkfK+ciUOvSMvKLs4PR6LVDkYWUIQ86N2l4uXRSp6Ta/m3FL5GkihW2hM7h8vpHoxIyhlE/5/d2VSlBiRLoBxEMdrrTitgIZeNgsV8mJKh8Sw3ElLuqNMvWi6aM3Ytqrdx/Xd2OAKPbUgSuT1bmle6GCKo3RNlUeoSuLn/LGdqwjcomK1NBwS/+0LzNuDWSvYb2GxzelmOtCwbfh7IeslPh95D2FPfwpr2XDhxMYM5rajILSb" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="o8oUovm95-chZ3p4UgX4IZ_IISdpWs9Sr5gLDeE7.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499382555000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="JbytTZiRTeNiHXhWQe9oOoYFHcnl0mKliGRADHTR6dUMgGZ6XHirVFtC4FfsVlAbxTKCy/2lwnjSe6qfFyRJRKiOXEa5CeVtAhFCiPV6KRz0v5eGgW+dUT38O3eIh+z8OI/mtrNUUWbb/6ZG8+yZjHx1z/dC4s2iS/M+Za5HFI4ulA3cPN7+XHF+cHXXX3IDPISfYpq3naJczQ9xKIL3ZYxETbaG9B02XKxgZEQ+LPFaMOSq4UQC6+L2O6jMqp3Hvjz/JB4+GRWzSwGMkfK+ciUOvSMvKLs4PR6LVDkYWUIQ86N2l4uXRSp6Ta/m3FL5GkihW2hM7h8vpHoxIyhlE/5/d2VSlBiRLoBxEMdrrTitgIZeNgsV8mJKh8Sw3ElLuqNMvWi6aM3Ytqrdx/Xd2OAKPbUgSuT1bmle6GCKo3RNlUeoSuLn/LGdqwjcomK1NBwS/+0LzNuDWSvYb2GxzelmOtCwbfh7IeslPh95D2FPfwpr2XDhxMYM5rajILSb" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/updateNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="EwHYKKTNNS_vXiVW3fw42-L02g8-_BJOwfwRSZvl.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499381183000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="E4uLL/3yd32Z8Pq5MVNwVpPxr/nrx3YOwtzEUhV66nHIoq4ylJ//LV07Cjq+fazvUHAregaE1Bl8ebU5M7ArmPYzrluYiFZFfT+Qvz4/F9XGb+57rZt2aU5dVBWj8m1T2SEB3WfNGMr+0XfRL57LdZVCwnG1WdYN1VLnR8GuENnYWzVSjl4KhuYBYSrUsvp877/FoZDJHm5/k+wv2ikEwmT7ttoC/vNZsROlM1bB3Y6WEqVvG5wQGbuoCYS2sJbivrFypYvjzEyXaXJ6lQiznne/FIEV9yNxskmQZaX49EHhNzMuEuAIvSi3c7t3m8o3ZohLDvN05otVlNPK52KOwp8JbrafMFidYnHaLfRLKoF+4ElCJcKxv3njQz6WfdH4qMypWFuH/b/nOSMfI3n/or+ZmvHnQ5bL2CI5Mxn4LO/K6K5zmuBrMAKLboS9jeHHjqEWmbyDPwo9GYtShUGc51zbWhLt3gbQFZG88RUjmzP2bI0OxX1TQOyAOtSt5SxK" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="EwHYKKTNNS_vXiVW3fw42-L02g8-_BJOwfwRSZvl.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499381183000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="E4uLL/3yd32Z8Pq5MVNwVpPxr/nrx3YOwtzEUhV66nHIoq4ylJ//LV07Cjq+fazvUHAregaE1Bl8ebU5M7ArmPYzrluYiFZFfT+Qvz4/F9XGb+57rZt2aU5dVBWj8m1T2SEB3WfNGMr+0XfRL57LdZVCwnG1WdYN1VLnR8GuENnYWzVSjl4KhuYBYSrUsvp877/FoZDJHm5/k+wv2ikEwmT7ttoC/vNZsROlM1bB3Y6WEqVvG5wQGbuoCYS2sJbivrFypYvjzEyXaXJ6lQiznne/FIEV9yNxskmQZaX49EHhNzMuEuAIvSi3c7t3m8o3ZohLDvN05otVlNPK52KOwp8JbrafMFidYnHaLfRLKoF+4ElCJcKxv3njQz6WfdH4qMypWFuH/b/nOSMfI3n/or+ZmvHnQ5bL2CI5Mxn4LO/K6K5zmuBrMAKLboS9jeHHjqEWmbyDPwo9GYtShUGc51zbWhLt3gbQFZG88RUjmzP2bI0OxX1TQOyAOtSt5SxK" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/logout" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="EwHYKKTNNS_vXiVW3fw42-L02g8-_BJOwfwRSZvl.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499381183000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="E4uLL/3yd32Z8Pq5MVNwVpPxr/nrx3YOwtzEUhV66nHIoq4ylJ//LV07Cjq+fazvUHAregaE1Bl8ebU5M7ArmPYzrluYiFZFfT+Qvz4/F9XGb+57rZt2aU5dVBWj8m1T2SEB3WfNGMr+0XfRL57LdZVCwnG1WdYN1VLnR8GuENnYWzVSjl4KhuYBYSrUsvp877/FoZDJHm5/k+wv2ikEwmT7ttoC/vNZsROlM1bB3Y6WEqVvG5wQGbuoCYS2sJbivrFypYvjzEyXaXJ6lQiznne/FIEV9yNxskmQZaX49EHhNzMuEuAIvSi3c7t3m8o3ZohLDvN05otVlNPK52KOwp8JbrafMFidYnHaLfRLKoF+4ElCJcKxv3njQz6WfdH4qMypWFuH/b/nOSMfI3n/or+ZmvHnQ5bL2CI5Mxn4LO/K6K5zmuBrMAKLboS9jeHHjqEWmbyDPwo9GYtShUGc51zbWhLt3gbQFZG88RUjmzP2bI0OxX1TQOyAOtSt5SxK" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/logout" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="EwHYKKTNNS_vXiVW3fw42-L02g8-_BJOwfwRSZvl.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499381183000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="E4uLL/3yd32Z8Pq5MVNwVpPxr/nrx3YOwtzEUhV66nHIoq4ylJ//LV07Cjq+fazvUHAregaE1Bl8ebU5M7ArmPYzrluYiFZFfT+Qvz4/F9XGb+57rZt2aU5dVBWj8m1T2SEB3WfNGMr+0XfRL57LdZVCwnG1WdYN1VLnR8GuENnYWzVSjl4KhuYBYSrUsvp877/FoZDJHm5/k+wv2ikEwmT7ttoC/vNZsROlM1bB3Y6WEqVvG5wQGbuoCYS2sJbivrFypYvjzEyXaXJ6lQiznne/FIEV9yNxskmQZaX49EHhNzMuEuAIvSi3c7t3m8o3ZohLDvN05otVlNPK52KOwp8JbrafMFidYnHaLfRLKoF+4ElCJcKxv3njQz6WfdH4qMypWFuH/b/nOSMfI3n/or+ZmvHnQ5bL2CI5Mxn4LO/K6K5zmuBrMAKLboS9jeHHjqEWmbyDPwo9GYtShUGc51zbWhLt3gbQFZG88RUjmzP2bI0OxX1TQOyAOtSt5SxK" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/logout" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="EwHYKKTNNS_vXiVW3fw42-L02g8-_BJOwfwRSZvl.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499381183000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="E4uLL/3yd32Z8Pq5MVNwVpPxr/nrx3YOwtzEUhV66nHIoq4ylJ//LV07Cjq+fazvUHAregaE1Bl8ebU5M7ArmPYzrluYiFZFfT+Qvz4/F9XGb+57rZt2aU5dVBWj8m1T2SEB3WfNGMr+0XfRL57LdZVCwnG1WdYN1VLnR8GuENnYWzVSjl4KhuYBYSrUsvp877/FoZDJHm5/k+wv2ikEwmT7ttoC/vNZsROlM1bB3Y6WEqVvG5wQGbuoCYS2sJbivrFypYvjzEyXaXJ6lQiznne/FIEV9yNxskmQZaX49EHhNzMuEuAIvSi3c7t3m8o3ZohLDvN05otVlNPK52KOwp8JbrafMFidYnHaLfRLKoF+4ElCJcKxv3njQz6WfdH4qMypWFuH/b/nOSMfI3n/or+ZmvHnQ5bL2CI5Mxn4LO/K6K5zmuBrMAKLboS9jeHHjqEWmbyDPwo9GYtShUGc51zbWhLt3gbQFZG88RUjmzP2bI0OxX1TQOyAOtSt5SxK" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/createNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="Mh7vm-8oxY9p5dfReU6AqxBFPHhsXOheuvMo55ST.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499380299000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="Yq4nWti0QoLCY1uQnL+pBsgMUO2qoIcBhR1/i1JV8+F9dJWcfGeZYFhpe6wKedEX6Yrdqg/J9woyBeje09G0GXdv7CzYYLVySWz2COQ/crMBpkEqbFiffuEVuq3Y7ibdU9If4YyGNqEMDdwchy7Hx8D/LyVqu/v1jxAbAvZb/DqHfcOTwSrfkMg4sBW7xNqLtqlbxHCJ5bltms2jrOw0YgoIsfZu2/+T4xVn64/FF/G81qGKskN7ZO9ZJtyUqqiNesCyK3xhBIcMvnshqKrIcLWK+Rt7/zPQVp6JocEKtwIdh8LQg3oQ1wplDAfjiBIwQ4hVq3Et8lakXVgJYv1pF6y6IgI2la6ixBV9kUwrNd6FiFkmkllt/JK3ZzSUOZSnqMudpLWXGgiu67UAAlyPnsFY5NL4ZORVI1z4883sIp2j3hPNPSKKQdVvXcuyB5wfa8VHhgzXM5hOCKKnN+sQU82lqOkts40mMhiYKwzPb91KyMsphxgG2mGks/Iaui3i" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="q77LI6_0fPYUDuKwHtWUNZYXDfPuJ5gDZ3KJhgnB.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499380299000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="Yq4nWti0QoLCY1uQnL+pBsgMUO2qoIcBhR1/i1JV8+F9dJWcfGeZYFhpe6wKedEX6Yrdqg/J9woyBeje09G0GXdv7CzYYLVySWz2COQ/crMBpkEqbFiffuEVuq3Y7ibdU9If4YyGNqEMDdwchy7Hx8D/LyVqu/v1jxAbAvZb/DqHfcOTwSrfkMg4sBW7xNqLtqlbxHCJ5bltms2jrOw0YgoIsfZu2/+T4xVn64/FF/G81qGKskN7ZO9ZJtyUqqiNesCyK3xhBIcMvnshqKrIcLWK+Rt7/zPQVp6JocEKtwIdh8LQg3oQ1wplDAfjiBIwQ4hVq3Et8lakXVgJYv1pF6y6IgI2la6ixBV9kUwrNd6FiFkmkllt/JK3ZzSUOZSnqMudpLWXGgiu67UAAlyPnsFY5NL4ZORVI1z4883sIp2j3hPNPSKKQdVvXcuyB5wfa8VHhgzXM5hOCKKnN+sQU82lqOkts40mMhiYKwzPb91KyMsphxgG2mGks/Iaui3i" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="o2gOnKghRISWIEUAIU2E_y5wjAVlJxk0AGGFdflw.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499380299000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="Yq4nWti0QoLCY1uQnL+pBsgMUO2qoIcBhR1/i1JV8+F9dJWcfGeZYFhpe6wKedEX6Yrdqg/J9woyBeje09G0GXdv7CzYYLVySWz2COQ/crMBpkEqbFiffuEVuq3Y7ibdU9If4YyGNqEMDdwchy7Hx8D/LyVqu/v1jxAbAvZb/DqHfcOTwSrfkMg4sBW7xNqLtqlbxHCJ5bltms2jrOw0YgoIsfZu2/+T4xVn64/FF/G81qGKskN7ZO9ZJtyUqqiNesCyK3xhBIcMvnshqKrIcLWK+Rt7/zPQVp6JocEKtwIdh8LQg3oQ1wplDAfjiBIwQ4hVq3Et8lakXVgJYv1pF6y6IgI2la6ixBV9kUwrNd6FiFkmkllt/JK3ZzSUOZSnqMudpLWXGgiu67UAAlyPnsFY5NL4ZORVI1z4883sIp2j3hPNPSKKQdVvXcuyB5wfa8VHhgzXM5hOCKKnN+sQU82lqOkts40mMhiYKwzPb91KyMsphxgG2mGks/Iaui3i" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/register" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="o2gOnKghRISWIEUAIU2E_y5wjAVlJxk0AGGFdflw.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499380299000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="Yq4nWti0QoLCY1uQnL+pBsgMUO2qoIcBhR1/i1JV8+F9dJWcfGeZYFhpe6wKedEX6Yrdqg/J9woyBeje09G0GXdv7CzYYLVySWz2COQ/crMBpkEqbFiffuEVuq3Y7ibdU9If4YyGNqEMDdwchy7Hx8D/LyVqu/v1jxAbAvZb/DqHfcOTwSrfkMg4sBW7xNqLtqlbxHCJ5bltms2jrOw0YgoIsfZu2/+T4xVn64/FF/G81qGKskN7ZO9ZJtyUqqiNesCyK3xhBIcMvnshqKrIcLWK+Rt7/zPQVp6JocEKtwIdh8LQg3oQ1wplDAfjiBIwQ4hVq3Et8lakXVgJYv1pF6y6IgI2la6ixBV9kUwrNd6FiFkmkllt/JK3ZzSUOZSnqMudpLWXGgiu67UAAlyPnsFY5NL4ZORVI1z4883sIp2j3hPNPSKKQdVvXcuyB5wfa8VHhgzXM5hOCKKnN+sQU82lqOkts40mMhiYKwzPb91KyMsphxgG2mGks/Iaui3i" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/deleteAccount" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="o2gOnKghRISWIEUAIU2E_y5wjAVlJxk0AGGFdflw.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499380299000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="Yq4nWti0QoLCY1uQnL+pBsgMUO2qoIcBhR1/i1JV8+F9dJWcfGeZYFhpe6wKedEX6Yrdqg/J9woyBeje09G0GXdv7CzYYLVySWz2COQ/crMBpkEqbFiffuEVuq3Y7ibdU9If4YyGNqEMDdwchy7Hx8D/LyVqu/v1jxAbAvZb/DqHfcOTwSrfkMg4sBW7xNqLtqlbxHCJ5bltms2jrOw0YgoIsfZu2/+T4xVn64/FF/G81qGKskN7ZO9ZJtyUqqiNesCyK3xhBIcMvnshqKrIcLWK+Rt7/zPQVp6JocEKtwIdh8LQg3oQ1wplDAfjiBIwQ4hVq3Et8lakXVgJYv1pF6y6IgI2la6ixBV9kUwrNd6FiFkmkllt/JK3ZzSUOZSnqMudpLWXGgiu67UAAlyPnsFY5NL4ZORVI1z4883sIp2j3hPNPSKKQdVvXcuyB5wfa8VHhgzXM5hOCKKnN+sQU82lqOkts40mMhiYKwzPb91KyMsphxgG2mGks/Iaui3i" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/updateNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="o2gOnKghRISWIEUAIU2E_y5wjAVlJxk0AGGFdflw.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499380299000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="Yq4nWti0QoLCY1uQnL+pBsgMUO2qoIcBhR1/i1JV8+F9dJWcfGeZYFhpe6wKedEX6Yrdqg/J9woyBeje09G0GXdv7CzYYLVySWz2COQ/crMBpkEqbFiffuEVuq3Y7ibdU9If4YyGNqEMDdwchy7Hx8D/LyVqu/v1jxAbAvZb/DqHfcOTwSrfkMg4sBW7xNqLtqlbxHCJ5bltms2jrOw0YgoIsfZu2/+T4xVn64/FF/G81qGKskN7ZO9ZJtyUqqiNesCyK3xhBIcMvnshqKrIcLWK+Rt7/zPQVp6JocEKtwIdh8LQg3oQ1wplDAfjiBIwQ4hVq3Et8lakXVgJYv1pF6y6IgI2la6ixBV9kUwrNd6FiFkmkllt/JK3ZzSUOZSnqMudpLWXGgiu67UAAlyPnsFY5NL4ZORVI1z4883sIp2j3hPNPSKKQdVvXcuyB5wfa8VHhgzXM5hOCKKnN+sQU82lqOkts40mMhiYKwzPb91KyMsphxgG2mGks/Iaui3i" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/updateNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="o2gOnKghRISWIEUAIU2E_y5wjAVlJxk0AGGFdflw.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499380299000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="Yq4nWti0QoLCY1uQnL+pBsgMUO2qoIcBhR1/i1JV8+F9dJWcfGeZYFhpe6wKedEX6Yrdqg/J9woyBeje09G0GXdv7CzYYLVySWz2COQ/crMBpkEqbFiffuEVuq3Y7ibdU9If4YyGNqEMDdwchy7Hx8D/LyVqu/v1jxAbAvZb/DqHfcOTwSrfkMg4sBW7xNqLtqlbxHCJ5bltms2jrOw0YgoIsfZu2/+T4xVn64/FF/G81qGKskN7ZO9ZJtyUqqiNesCyK3xhBIcMvnshqKrIcLWK+Rt7/zPQVp6JocEKtwIdh8LQg3oQ1wplDAfjiBIwQ4hVq3Et8lakXVgJYv1pF6y6IgI2la6ixBV9kUwrNd6FiFkmkllt/JK3ZzSUOZSnqMudpLWXGgiu67UAAlyPnsFY5NL4ZORVI1z4883sIp2j3hPNPSKKQdVvXcuyB5wfa8VHhgzXM5hOCKKnN+sQU82lqOkts40mMhiYKwzPb91KyMsphxgG2mGks/Iaui3i" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/readNotes" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="o2gOnKghRISWIEUAIU2E_y5wjAVlJxk0AGGFdflw.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499380299000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="Yq4nWti0QoLCY1uQnL+pBsgMUO2qoIcBhR1/i1JV8+F9dJWcfGeZYFhpe6wKedEX6Yrdqg/J9woyBeje09G0GXdv7CzYYLVySWz2COQ/crMBpkEqbFiffuEVuq3Y7ibdU9If4YyGNqEMDdwchy7Hx8D/LyVqu/v1jxAbAvZb/DqHfcOTwSrfkMg4sBW7xNqLtqlbxHCJ5bltms2jrOw0YgoIsfZu2/+T4xVn64/FF/G81qGKskN7ZO9ZJtyUqqiNesCyK3xhBIcMvnshqKrIcLWK+Rt7/zPQVp6JocEKtwIdh8LQg3oQ1wplDAfjiBIwQ4hVq3Et8lakXVgJYv1pF6y6IgI2la6ixBV9kUwrNd6FiFkmkllt/JK3ZzSUOZSnqMudpLWXGgiu67UAAlyPnsFY5NL4ZORVI1z4883sIp2j3hPNPSKKQdVvXcuyB5wfa8VHhgzXM5hOCKKnN+sQU82lqOkts40mMhiYKwzPb91KyMsphxgG2mGks/Iaui3i" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/info" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="o2gOnKghRISWIEUAIU2E_y5wjAVlJxk0AGGFdflw.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499380299000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="Yq4nWti0QoLCY1uQnL+pBsgMUO2qoIcBhR1/i1JV8+F9dJWcfGeZYFhpe6wKedEX6Yrdqg/J9woyBeje09G0GXdv7CzYYLVySWz2COQ/crMBpkEqbFiffuEVuq3Y7ibdU9If4YyGNqEMDdwchy7Hx8D/LyVqu/v1jxAbAvZb/DqHfcOTwSrfkMg4sBW7xNqLtqlbxHCJ5bltms2jrOw0YgoIsfZu2/+T4xVn64/FF/G81qGKskN7ZO9ZJtyUqqiNesCyK3xhBIcMvnshqKrIcLWK+Rt7/zPQVp6JocEKtwIdh8LQg3oQ1wplDAfjiBIwQ4hVq3Et8lakXVgJYv1pF6y6IgI2la6ixBV9kUwrNd6FiFkmkllt/JK3ZzSUOZSnqMudpLWXGgiu67UAAlyPnsFY5NL4ZORVI1z4883sIp2j3hPNPSKKQdVvXcuyB5wfa8VHhgzXM5hOCKKnN+sQU82lqOkts40mMhiYKwzPb91KyMsphxgG2mGks/Iaui3i" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/info" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="X38KahYW-WlsDg4p0IV2gZRrUIbjzYoPlHBnticn.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499378861000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="m8CEdhp+zQOsOju43GWQs8HGtzaCE6kZlW9Biq9cqPaE+Ad1jXLs6GUB0Ud6KyyIh+qnzcTOg0a56tOzNCLBtvhEFtuFH81517x1llAxSLLnOvwlEFFjvOEhebCGoKZjv8ksWUIKj2O+tYljirE5qSCUw3D/quYP2GYaPRD/UCu0TGBb6MBF2k5pViJPX+YQLYJKAbaQTE2ma00GSARpNUShNwtgP501AqOPUtN9fEedSovEwWAkJdvNhZGY4y3vnI76+BUyBCn/r+OhK6dlt0IZ6JOfYhEVTHTVjhmyHWmd0NA5zfecMWgfa3jsKLVUyXVpXbdB/2AxMgTXFuzlL0LIkfByRezKeXFu1ixaPrMfngIYw8fgdaKt4UUD/EbOWQaU+mxkFQgG9oPr6oaFSh9EqQYJyBz/c50y4RfT4fJNcMyU3nYBnSkANN6Atj3IAjOSdOj1qJTgCLNFFKy9f5wo40RgeGmoqqyhYA7jzWotfbfPEY8MXuIWcA2tfrcp" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="2yF8-X5VfOul7QS9D64954feUVbpUY6hk2D2ZWLC.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499378861000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="m8CEdhp+zQOsOju43GWQs8HGtzaCE6kZlW9Biq9cqPaE+Ad1jXLs6GUB0Ud6KyyIh+qnzcTOg0a56tOzNCLBtvhEFtuFH81517x1llAxSLLnOvwlEFFjvOEhebCGoKZjv8ksWUIKj2O+tYljirE5qSCUw3D/quYP2GYaPRD/UCu0TGBb6MBF2k5pViJPX+YQLYJKAbaQTE2ma00GSARpNUShNwtgP501AqOPUtN9fEedSovEwWAkJdvNhZGY4y3vnI76+BUyBCn/r+OhK6dlt0IZ6JOfYhEVTHTVjhmyHWmd0NA5zfecMWgfa3jsKLVUyXVpXbdB/2AxMgTXFuzlL0LIkfByRezKeXFu1ixaPrMfngIYw8fgdaKt4UUD/EbOWQaU+mxkFQgG9oPr6oaFSh9EqQYJyBz/c50y4RfT4fJNcMyU3nYBnSkANN6Atj3IAjOSdOj1qJTgCLNFFKy9f5wo40RgeGmoqqyhYA7jzWotfbfPEY8MXuIWcA2tfrcp" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/connection" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="2yF8-X5VfOul7QS9D64954feUVbpUY6hk2D2ZWLC.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499378861000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="m8CEdhp+zQOsOju43GWQs8HGtzaCE6kZlW9Biq9cqPaE+Ad1jXLs6GUB0Ud6KyyIh+qnzcTOg0a56tOzNCLBtvhEFtuFH81517x1llAxSLLnOvwlEFFjvOEhebCGoKZjv8ksWUIKj2O+tYljirE5qSCUw3D/quYP2GYaPRD/UCu0TGBb6MBF2k5pViJPX+YQLYJKAbaQTE2ma00GSARpNUShNwtgP501AqOPUtN9fEedSovEwWAkJdvNhZGY4y3vnI76+BUyBCn/r+OhK6dlt0IZ6JOfYhEVTHTVjhmyHWmd0NA5zfecMWgfa3jsKLVUyXVpXbdB/2AxMgTXFuzlL0LIkfByRezKeXFu1ixaPrMfngIYw8fgdaKt4UUD/EbOWQaU+mxkFQgG9oPr6oaFSh9EqQYJyBz/c50y4RfT4fJNcMyU3nYBnSkANN6Atj3IAjOSdOj1qJTgCLNFFKy9f5wo40RgeGmoqqyhYA7jzWotfbfPEY8MXuIWcA2tfrcp" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/createNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="2yF8-X5VfOul7QS9D64954feUVbpUY6hk2D2ZWLC.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499377586000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="VlX1wH5VSWBFcCntlvXhOW6E7msD6He98TNRIkwJUyqa3OcJs0SlnrvOzSRI02PiLkH2mtjZYwfbri4bVty/x4aDo3JoA3ShepuU/vY+KsxaXKHXvheROcPUEZ8tQ1c9qTZhn7qLCtQiqRn78FiifCOBvhOwulA+i5miAdyGedpCkVn662nHwnP8Rz6/r4du0xKtPu5M9QFPJzpVjKTYlqlLMaetY5xQ+Z0NFVTIiKyYO97LIO7Vi68jBXMC4L5DrQAo7yoB9hVchtShVXqb/rs40HTVS8qZY2obB+HuyTeV/ChPsC5vLstUFKT9WL+XEQr4M5RCgazBVsqdmddDQh+Wfq7Q2Uo63nB/NCfsJzD+C4PrllLgGOQxsGv7vN9NZZkF385If9FGwUumsK6CsVf5dqpgmXuevMz1dPiA5HBUym1rmXJmf/AAMx7bDnt575gi5yAxnaGYQC/ohe737X9vzSEM/RSabUDNwA5E7HHvjQnsI8xPH10e0J4D85ns" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="r67RBMiSLDblDlaBzx5evwmRfrw0vIwV0VudBOKq.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499377586000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="VlX1wH5VSWBFcCntlvXhOW6E7msD6He98TNRIkwJUyqa3OcJs0SlnrvOzSRI02PiLkH2mtjZYwfbri4bVty/x4aDo3JoA3ShepuU/vY+KsxaXKHXvheROcPUEZ8tQ1c9qTZhn7qLCtQiqRn78FiifCOBvhOwulA+i5miAdyGedpCkVn662nHwnP8Rz6/r4du0xKtPu5M9QFPJzpVjKTYlqlLMaetY5xQ+Z0NFVTIiKyYO97LIO7Vi68jBXMC4L5DrQAo7yoB9hVchtShVXqb/rs40HTVS8qZY2obB+HuyTeV/ChPsC5vLstUFKT9WL+XEQr4M5RCgazBVsqdmddDQh+Wfq7Q2Uo63nB/NCfsJzD+C4PrllLgGOQxsGv7vN9NZZkF385If9FGwUumsK6CsVf5dqpgmXuevMz1dPiA5HBUym1rmXJmf/AAMx7bDnt575gi5yAxnaGYQC/ohe737X9vzSEM/RSabUDNwA5E7HHvjQnsI8xPH10e0J4D85ns" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/register" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="r67RBMiSLDblDlaBzx5evwmRfrw0vIwV0VudBOKq.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499377586000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="VlX1wH5VSWBFcCntlvXhOW6E7msD6He98TNRIkwJUyqa3OcJs0SlnrvOzSRI02PiLkH2mtjZYwfbri4bVty/x4aDo3JoA3ShepuU/vY+KsxaXKHXvheROcPUEZ8tQ1c9qTZhn7qLCtQiqRn78FiifCOBvhOwulA+i5miAdyGedpCkVn662nHwnP8Rz6/r4du0xKtPu5M9QFPJzpVjKTYlqlLMaetY5xQ+Z0NFVTIiKyYO97LIO7Vi68jBXMC4L5DrQAo7yoB9hVchtShVXqb/rs40HTVS8qZY2obB+HuyTeV/ChPsC5vLstUFKT9WL+XEQr4M5RCgazBVsqdmddDQh+Wfq7Q2Uo63nB/NCfsJzD+C4PrllLgGOQxsGv7vN9NZZkF385If9FGwUumsK6CsVf5dqpgmXuevMz1dPiA5HBUym1rmXJmf/AAMx7bDnt575gi5yAxnaGYQC/ohe737X9vzSEM/RSabUDNwA5E7HHvjQnsI8xPH10e0J4D85ns" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/createNote" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/updateNote.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="r67RBMiSLDblDlaBzx5evwmRfrw0vIwV0VudBOKq.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499377586000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="VlX1wH5VSWBFcCntlvXhOW6E7msD6He98TNRIkwJUyqa3OcJs0SlnrvOzSRI02PiLkH2mtjZYwfbri4bVty/x4aDo3JoA3ShepuU/vY+KsxaXKHXvheROcPUEZ8tQ1c9qTZhn7qLCtQiqRn78FiifCOBvhOwulA+i5miAdyGedpCkVn662nHwnP8Rz6/r4du0xKtPu5M9QFPJzpVjKTYlqlLMaetY5xQ+Z0NFVTIiKyYO97LIO7Vi68jBXMC4L5DrQAo7yoB9hVchtShVXqb/rs40HTVS8qZY2obB+HuyTeV/ChPsC5vLstUFKT9WL+XEQr4M5RCgazBVsqdmddDQh+Wfq7Q2Uo63nB/NCfsJzD+C4PrllLgGOQxsGv7vN9NZZkF385If9FGwUumsK6CsVf5dqpgmXuevMz1dPiA5HBUym1rmXJmf/AAMx7bDnt575gi5yAxnaGYQC/ohe737X9vzSEM/RSabUDNwA5E7HHvjQnsI8xPH10e0J4D85ns" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/user/info" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="r67RBMiSLDblDlaBzx5evwmRfrw0vIwV0VudBOKq.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499377586000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="VlX1wH5VSWBFcCntlvXhOW6E7msD6He98TNRIkwJUyqa3OcJs0SlnrvOzSRI02PiLkH2mtjZYwfbri4bVty/x4aDo3JoA3ShepuU/vY+KsxaXKHXvheROcPUEZ8tQ1c9qTZhn7qLCtQiqRn78FiifCOBvhOwulA+i5miAdyGedpCkVn662nHwnP8Rz6/r4du0xKtPu5M9QFPJzpVjKTYlqlLMaetY5xQ+Z0NFVTIiKyYO97LIO7Vi68jBXMC4L5DrQAo7yoB9hVchtShVXqb/rs40HTVS8qZY2obB+HuyTeV/ChPsC5vLstUFKT9WL+XEQr4M5RCgazBVsqdmddDQh+Wfq7Q2Uo63nB/NCfsJzD+C4PrllLgGOQxsGv7vN9NZZkF385If9FGwUumsK6CsVf5dqpgmXuevMz1dPiA5HBUym1rmXJmf/AAMx7bDnt575gi5yAxnaGYQC/ohe737X9vzSEM/RSabUDNwA5E7HHvjQnsI8xPH10e0J4D85ns" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/auth" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="r67RBMiSLDblDlaBzx5evwmRfrw0vIwV0VudBOKq.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499377586000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="VlX1wH5VSWBFcCntlvXhOW6E7msD6He98TNRIkwJUyqa3OcJs0SlnrvOzSRI02PiLkH2mtjZYwfbri4bVty/x4aDo3JoA3ShepuU/vY+KsxaXKHXvheROcPUEZ8tQ1c9qTZhn7qLCtQiqRn78FiifCOBvhOwulA+i5miAdyGedpCkVn662nHwnP8Rz6/r4du0xKtPu5M9QFPJzpVjKTYlqlLMaetY5xQ+Z0NFVTIiKyYO97LIO7Vi68jBXMC4L5DrQAo7yoB9hVchtShVXqb/rs40HTVS8qZY2obB+HuyTeV/ChPsC5vLstUFKT9WL+XEQr4M5RCgazBVsqdmddDQh+Wfq7Q2Uo63nB/NCfsJzD+C4PrllLgGOQxsGv7vN9NZZkF385If9FGwUumsK6CsVf5dqpgmXuevMz1dPiA5HBUym1rmXJmf/AAMx7bDnt575gi5yAxnaGYQC/ohe737X9vzSEM/RSabUDNwA5E7HHvjQnsI8xPH10e0J4D85ns" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/auth" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="StfrEf-AJ_x64p9iiomZ783xf9-R7HMgvDrujZLS.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499377491000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="I9rXnxWlbsrz6OcP0ASKKU9fGznf7dW0pV1p0sW8hFq37WQOSUzNzPDlZFENc2Q0pqt8YkMtt6jIQtwzBnSFHxy9/cx4rfTD/agKiYB/KBrZAj6xUWdHTbno+D/kGT4qSfgvUIE9g+RsXsgTyuD3xRaqAfdZomDbl+apZQre/st6cuu/64nb6rgJct9OtJ/OQbQUgse49qezQ0bPBLwVq3DgvkJ7rF/8KP2QMV4CKp1CrT5PbXlqeBDvoCmfEKDlI3KDQm8M9Ksrye4zezsw3LmrJ/eREHz9BJdPTpLALcv27PuOvZ7eyrNOOh+TgxOTGsU8DVMGJeZkE0Oue405+8Z/YKtqJagl5I27vU6V1xG/xPtJKnGpndxQLmBVDn3TdZVQizSm5jDez5oR3TFBkBW/pTq8gEHvC8BPF05JTshyVPjGMNTG40BON5Cs2E4qaiqy+eqA9H3Ci2OP5EZ/UnntUyntczdg5Aig0HZEhCd7Xm0KH45k5q6N70vBljTK" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="StfrEf-AJ_x64p9iiomZ783xf9-R7HMgvDrujZLS.sami" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1499351900000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="rememberMe" />
+                <option name="path" value="/" />
+                <option name="value" value="HLKoLkFsGdyUpaZhe/5qB8nYWU34IvzFIB/VFPf4RvA+0+hwz2IJKndkNqJr99W8osoSiCLFdzqyqGn7Ey1VfwOZXUHZsfsHOtDR8pAO4KTwrt4ZzFYpxZu1kiyOpVZk1Gcv79PQtouy5PvRHqetzNI/r85Tog+eQaAxM4uaqbc5WjUzbrw+1v4CxUCvA6DZpx0FxW/c8BLnVQEnTyxSXxq7X5BaVwoPncWFkyHUFvn5+9CKXqKLLpJs54dC/XNQ9elUaT0fwGVDgVcRn2MkjWQdYjm05yHvSEl0DuODIzq51f5B2/ZdRHwXZWRjYSifgN3K5WxTioXWsqHTMHmWrUw1q+5j8dbqmcVxQoire7FYq1VnSD8i8M3nF/TyoXK6ksElFDrJk6r+svDELPO2FMxo4Ob01gw70Y56CDh0dfcKdvF0F2cskDGDrdNRt3EPcroq8RVZK4AYgzdxGvN/yg2Fjk+cn61/xYiqroZhBLC2zF51Y3Rg0hr5gLJQhR5N" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources/access/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/login.json" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JBoss Server.Unnamed">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JBossConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="SERVER" value="" />
+        <option name="BINDING_SET_NAME" value="" />
+        <option name="DOMAIN" value="false" />
+        <option name="SERVER_GROUP" value="" />
+        <option name="USERNAME" value="" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="JBoss" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unnamed" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="Wildfly10" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="presentation:war">
+          <settings />
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="SERVER" />
+        <option name="BINDING_SET_NAME" value="" />
+        <option name="DOMAIN" value="false" />
+        <option name="SERVER_GROUP" value="main-server-group" />
+        <option name="USERNAME" value="" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="JBoss" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51578" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="presentation:war" />
+        </option>
+      </method>
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="JBoss Server.Unnamed" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="21d41930-8a2d-490a-9b59-978140c004cc" name="Default" comment="" />
+      <created>1466856505368</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1466856505368</updated>
+      <workItem from="1466856517743" duration="1203000" />
+      <workItem from="1466863041115" duration="8146000" />
+      <workItem from="1466946735648" duration="4509000" />
+      <workItem from="1467027957460" duration="5217000" />
+      <workItem from="1467044388677" duration="217000" />
+      <workItem from="1467048730309" duration="3000000" />
+      <workItem from="1467052459752" duration="440000" />
+      <workItem from="1467104899302" duration="25770000" />
+      <workItem from="1467205957783" duration="5736000" />
+      <workItem from="1467277486489" duration="236000" />
+      <workItem from="1467288548519" duration="10637000" />
+      <workItem from="1467324631460" duration="10353000" />
+      <workItem from="1467393588495" duration="9790000" />
+      <workItem from="1467546863449" duration="17517000" />
+      <workItem from="1467621675992" duration="18195000" />
+      <workItem from="1467641243513" duration="2692000" />
+      <workItem from="1467650792031" duration="57000" />
+      <workItem from="1467710537600" duration="1815000" />
+      <workItem from="1467712397954" duration="20231000" />
+      <workItem from="1467794392936" duration="2517000" />
+      <workItem from="1467797476729" duration="73000" />
+      <workItem from="1467815229700" duration="1021000" />
+      <workItem from="1467840246895" duration="5157000" />
+      <workItem from="1467845553728" duration="86000" />
+      <workItem from="1467845788939" duration="5546000" />
+    </task>
+    <task id="LOCAL-00001" summary="Database Connection corrrected/improved&#10;-HibernateConnector corrected&#10;-Turned into a Statelessbean&#10;-manual shutdown() removed-&gt;automatic instead&#10;-Creation of EntityManagerFactory on Startup&#10;=&gt;Huge speed improvement!&#10;-persistence.xml changed from LOCAL-RESSOURCE to default">
+      <created>1466872267354</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1466872267354</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Updates26.06&#10;Created @Stateful SessionBean for Shiro-Authentication over JAX-RS&#10;changed Users-Entity, username &amp; password must not be null">
+      <created>1466952792357</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1466952792357</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Updates26.06&#10;-Created @Stateful SessionBean for Shiro-Authentication over JAX-RS&#10;-changed Users-Entity, username &amp; password must not be null&#10;">
+      <created>1466953667800</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1466953667800</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Updates26.06&#10;-added shiro.ini">
+      <created>1466954203607</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1466954203607</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Shiro Test/Development Environment (initial)">
+      <created>1467290228108</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1467290228120</updated>
+    </task>
+    <task id="LOCAL-00006" summary="nightly Update">
+      <created>1467335491864</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1467335491864</updated>
+    </task>
+    <task id="LOCAL-00007" summary="sunset-commit">
+      <created>1467403859703</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1467403859703</updated>
+    </task>
+    <task id="LOCAL-00008" summary="commit 14:22 03.07.2016">
+      <created>1467548517797</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1467548517797</updated>
+    </task>
+    <task id="LOCAL-00009" summary="commit 14:22 03.07.2016">
+      <created>1467549557950</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1467549557950</updated>
+    </task>
+    <task id="LOCAL-00010" summary="URL-Cotext-Path = &quot;/&quot;">
+      <created>1467552260091</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1467552260091</updated>
+    </task>
+    <task id="LOCAL-00011" summary="session corrected">
+      <created>1467559499815</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1467559499815</updated>
+    </task>
+    <task id="LOCAL-00012" summary="UPDATE 18:58|03.07.2016&#10;-json parsing corrected&#10;-user/notes urls tested&#10;TODO&#10;-admin untested&#10;-RemembeMeManager warning">
+      <created>1467565160517</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1467565160517</updated>
+    </task>
+    <task id="LOCAL-00013" summary="UPDATE 12:14|04.07.2016&#10;-user/info added&#10;-JPA-Metamodel integriert&#10;TODO&#10;-admin untested&#10;-RemembeMeManager warning&#10;-readNotes() has a problem">
+      <created>1467627329781</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1467627329781</updated>
+    </task>
+    <task id="LOCAL-00014" summary="UPDATE 13:43|04.07.2016&#10;-readNotes() behoben&#10;TODO&#10;-admin untested&#10;-RemembeMeManager warning">
+      <created>1467632600701</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1467632600701</updated>
+    </task>
+    <task id="LOCAL-00015" summary="UPDATE 15:38|04.07.2016&#10;-admin methods tested and error free&#10;-everythings working&#10;TODO&#10;-RemembeMeManager warning(no real problem)">
+      <created>1467639547522</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1467639547522</updated>
+    </task>
+    <task id="LOCAL-00016" summary="UPDATE 15:38|04.07.2016&#10;-admin methods tested and error free&#10;-everythings working&#10;TODO&#10;-RemembeMeManager warning(no real problem)">
+      <created>1467640835072</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1467640835072</updated>
+    </task>
+    <task id="LOCAL-00017" summary="UPDATE 15:38|04.07.2016&#10;-admin can have adminnotes: owner=null&#10;-all admins can read these notes&#10;-admin reads all notes with owner = null at &quot;/user/readNotes&quot;&#10;TODO&#10;-RemembeMeManager warning(no real problem)">
+      <created>1467643954474</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1467643954474</updated>
+    </task>
+    <task id="LOCAL-00018" summary="UPDATE 14:44|05.07.2016&#10;-Connection changed to Cleardb(MySQL)&#10;-Database-query speed improvement&#10;-corrected a little admin error at &quot;/user/info&quot;&#10;TODO&#10;-RemembeMeManager warning(no real problem)">
+      <created>1467722767979</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1467722767979</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Deploy">
+      <created>1467723312963</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1467723312963</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Deploy">
+      <created>1467724006395</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1467724006396</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Deploy">
+      <created>1467724500009</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1467724500009</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Deploy">
+      <created>1467724916354</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1467724916354</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Deploy">
+      <created>1467729344648</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1467729344728</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Deploy">
+      <created>1467730479857</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1467730479857</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Deploy">
+      <created>1467732181772</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1467732181772</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Deploy">
+      <created>1467732932205</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1467732932205</updated>
+    </task>
+    <task id="LOCAL-00027" summary="TEMINATED!!! exceeded the 'max_user_connections' error">
+      <created>1467734162432</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1467734162432</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Deploy">
+      <created>1467734559388</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1467734559388</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Deploy">
+      <created>1467736084174</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1467736084174</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Deploy">
+      <created>1467796553290</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1467796553290</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Performance-Steigerung!&#10;-Database geändert zu Mysql(JawsDB) - 10 connections erlaubt&#10;-Singleton auf dem Server ausgelagert [JPActivator] für&#10;widerverwendbare Factories, welche für den performance verlust&#10;zuständig waren&#10;-Spaß&#10;">
+      <created>1467844702333</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1467844702334</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="160161000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1612" height="972" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32923833" sideWeight="0.22358248" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296433" sideWeight="0.5599227" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23324743" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19394329" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3992629" sideWeight="0.4974227" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296433" sideWeight="0.48969072" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296433" sideWeight="0.4974227" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32841328" sideWeight="0.48646906" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296433" sideWeight="0.77641755" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18363403" sideWeight="0.507326" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18363403" sideWeight="0.492674" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296433" sideWeight="0.5386598" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296433" sideWeight="0.49484536" order="2" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Database Connection corrrected/improved&#10;-HibernateConnector corrected&#10;-Turned into a Statelessbean&#10;-manual shutdown() removed-&gt;automatic instead&#10;-Creation of EntityManagerFactory on Startup&#10;=&gt;Huge speed improvement!&#10;-persistence.xml changed from LOCAL-RESSOURCE to default" />
+    <MESSAGE value="Updates26.06&#10;Created @Stateful SessionBean for Shiro-Authentication over JAX-RS&#10;changed Users-Entity, username &amp; password must not be null" />
+    <MESSAGE value="Updates26.06&#10;-Created @Stateful SessionBean for Shiro-Authentication over JAX-RS&#10;-changed Users-Entity, username &amp; password must not be null&#10;" />
+    <MESSAGE value="Updates26.06&#10;-added shiro.ini" />
+    <MESSAGE value="Shiro Test/Development Environment (initial)" />
+    <MESSAGE value="nightly Update" />
+    <MESSAGE value="sunset-commit" />
+    <MESSAGE value="commit 14:22 03.07.2016" />
+    <MESSAGE value="URL-Cotext-Path = &quot;/&quot;" />
+    <MESSAGE value="session corrected" />
+    <MESSAGE value="UPDATE 18:58|03.07.2016&#10;-json parsing corrected&#10;-user/notes urls tested&#10;TODO&#10;-admin untested&#10;-RemembeMeManager warning" />
+    <MESSAGE value="UPDATE 12:14|04.07.2016&#10;-user/info added&#10;-JPA-Metamodel integriert&#10;TODO&#10;-admin untested&#10;-RemembeMeManager warning&#10;-readNotes() has a problem" />
+    <MESSAGE value="UPDATE 13:43|04.07.2016&#10;-readNotes() behoben&#10;TODO&#10;-admin untested&#10;-RemembeMeManager warning" />
+    <MESSAGE value="UPDATE 15:38|04.07.2016&#10;-admin methods tested and error free&#10;-everythings working&#10;TODO&#10;-RemembeMeManager warning(no real problem)" />
+    <MESSAGE value="UPDATE 15:38|04.07.2016&#10;-admin can have adminnotes: owner=null&#10;-all admins can read these notes&#10;-admin reads all notes with owner = null at &quot;/user/readNotes&quot;&#10;TODO&#10;-RemembeMeManager warning(no real problem)" />
+    <MESSAGE value="UPDATE 14:44|05.07.2016&#10;-Connection changed to Cleardb(MySQL)&#10;-Database-query speed improvement&#10;-corrected a little admin error at &quot;/user/info&quot;&#10;TODO&#10;-RemembeMeManager warning(no real problem)" />
+    <MESSAGE value="TEMINATED!!! exceeded the 'max_user_connections' error" />
+    <MESSAGE value="Deploy" />
+    <MESSAGE value="Performance-Steigerung!&#10;-Database geändert zu Mysql(JawsDB) - 10 connections erlaubt&#10;-Singleton auf dem Server ausgelagert [JPActivator] für&#10;widerverwendbare Factories, welche für den performance verlust&#10;zuständig waren&#10;-Spaß&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Performance-Steigerung!&#10;-Database geändert zu Mysql(JawsDB) - 10 connections erlaubt&#10;-Singleton auf dem Server ausgelagert [JPActivator] für&#10;widerverwendbare Factories, welche für den performance verlust&#10;zuständig waren&#10;-Spaß&#10;" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="6" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="dbDummy://dbtable:/92bfa3ec/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.users" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.users" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.notes" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.notes" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.notes" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.users" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.users" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.notes" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.notes" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.users" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.users" />
+    <entry file="file://$PROJECT_DIR$/persistence/src/main/java/com/webtech2/project/persistence/Notes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistence/src/main/java/com/webtech2/project/persistence/Users.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/92bfa3ec/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.notes" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.notes" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.users" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.users" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.users" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.users" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.notes" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/74e7b461-2876-4187-b989-905672239ca9/d29p5ejsnl1ef9.public.notes" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-155">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8900dc90-6412-4c7e-a1a6-91d19578e566/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="85" selection-start-line="0" selection-start-column="85" selection-end-line="0" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/92bfa3ec/8900dc90-6412-4c7e-a1a6-91d19578e566/heroku_1c0e95c679f1150.notes" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/8900dc90-6412-4c7e-a1a6-91d19578e566/heroku_1c0e95c679f1150.users" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/8900dc90-6412-4c7e-a1a6-91d19578e566/heroku_1c0e95c679f1150.notes" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/8900dc90-6412-4c7e-a1a6-91d19578e566/heroku_1c0e95c679f1150.notes" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/8900dc90-6412-4c7e-a1a6-91d19578e566/heroku_1c0e95c679f1150.users" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/8900dc90-6412-4c7e-a1a6-91d19578e566/heroku_1c0e95c679f1150.users" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/8900dc90-6412-4c7e-a1a6-91d19578e566/heroku_1c0e95c679f1150.notes" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/8900dc90-6412-4c7e-a1a6-91d19578e566/heroku_1c0e95c679f1150.notes" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/8900dc90-6412-4c7e-a1a6-91d19578e566/heroku_1c0e95c679f1150.users" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/8900dc90-6412-4c7e-a1a6-91d19578e566/heroku_1c0e95c679f1150.users" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/8900dc90-6412-4c7e-a1a6-91d19578e566/heroku_1c0e95c679f1150.notes" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/8900dc90-6412-4c7e-a1a6-91d19578e566/heroku_1c0e95c679f1150.notes" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/8900dc90-6412-4c7e-a1a6-91d19578e566/heroku_1c0e95c679f1150.users" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/8900dc90-6412-4c7e-a1a6-91d19578e566/heroku_1c0e95c679f1150.users" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/8900dc90-6412-4c7e-a1a6-91d19578e566/heroku_1c0e95c679f1150.notes" />
+    <entry file="dbDummy://dbtable:/92bfa3ec/8900dc90-6412-4c7e-a1a6-91d19578e566/heroku_1c0e95c679f1150.notes" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/81975ec5-28e3-44d1-ae97-f99710770cad/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="39" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistence/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="88" column="22" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/presentation/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/HibernateConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/AppResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/92bfa3ec/81975ec5-28e3-44d1-ae97-f99710770cad/f2klgj61ethuva40.users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/92bfa3ec/81975ec5-28e3-44d1-ae97-f99710770cad/f2klgj61ethuva40.notes">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/JPActivator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="initializer##0;class#JPActivator#0" expanded="false" />
+            <element signature="initializer##1;class#JPActivator#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/ShiroSessionBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="485" column="81" selection-start-line="485" selection-start-column="81" selection-end-line="485" selection-end-column="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#authenticationTest#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#readNotesREST#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#deleteNoteREST#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#logout#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#deleteAccount#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#deleteAllNotesOfREST#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#deleteAllNotesREST#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#deleteAllUsersREST#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#readAllUsersREST#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#readAllNotesREST#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#createNote#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#readNote#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#readNotesOf#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#readNotes#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#updateNote#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#deleteNote#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#deleteNotesOf#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#deleteAllNotes#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#createUser#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#readUser#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#readUsers#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#updateUser#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#deleteUser#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="method#deleteUsers#0;class#ShiroSessionBean#0" expanded="false" />
+            <element signature="e#18234#18235#0" expanded="true" />
+            <element signature="e#18322#18323#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistence/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="34" column="68" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business/src/main/resources/shiro.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

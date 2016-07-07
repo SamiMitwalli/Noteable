@@ -6,11 +6,10 @@ import com.webtech2.project.persistence.Notes_;
 import com.webtech2.project.persistence.Users_;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
-import org.apache.shiro.config.IniSecurityManagerFactory;
+import org.apache.shiro.cache.CacheManager;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
-import org.apache.shiro.util.Factory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import javax.annotation.PostConstruct;
@@ -484,7 +483,6 @@ public class ShiroSessionBean extends HibernateConnector{
     /*SHIRO-SECURITYMANAGER-INITIALIZATION*/
     @PostConstruct
     public void onInit(){
-        SecurityManager securityManager = JPActivator.shiroFactory.getInstance();
-        SecurityUtils.setSecurityManager(securityManager);
+        SecurityUtils.setSecurityManager(JPActivator.shiroFactory.getInstance());
     }
 }

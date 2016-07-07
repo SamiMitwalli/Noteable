@@ -29,11 +29,10 @@
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
 
 
-            <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.format_sql" value="true"/>
-            <property name="hibernate.query.substitutions" value="true" />
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.format_sql" value="false"/>
+            <property name="hibernate.query.substitutions" value="false" />
             <property name="hibernate.hbm2ddl.auto" value="update"/>
-            <!--POSTGRESQL-RELEVANT property name="hibernate.temp.use_jdbc_metadata_defaults" value="false" /-->
             <!--No Connection Pooling - Not for Production use-->
         </properties>
 
