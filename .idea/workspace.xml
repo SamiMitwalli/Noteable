@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21d41930-8a2d-490a-9b59-978140c004cc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_15_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jolbox_bonecp_0_8_0_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_c3p0_0_9_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_3_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_c3p0_5_1_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_4.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Noteable.iml" afterPath="$PROJECT_DIR$/Noteable.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/business/business.iml" afterPath="$PROJECT_DIR$/business/business.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/business/pom.xml" afterPath="$PROJECT_DIR$/business/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/HibernateConnector.java" afterPath="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/HibernateConnector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/JPActivator.java" afterPath="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/JPActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/ShiroSessionBean.java" afterPath="$PROJECT_DIR$/business/src/main/java/com/webtech2/project/business/ShiroSessionBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/business/src/main/resources/shiro.ini" afterPath="$PROJECT_DIR$/business/src/main/resources/shiro.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/persistence.iml" afterPath="$PROJECT_DIR$/persistence/persistence.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/pom.xml" afterPath="$PROJECT_DIR$/persistence/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/persistence/src/main/resources/META-INF/persistence.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/presentation/pom.xml" afterPath="$PROJECT_DIR$/presentation/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/presentation/presentation.iml" afterPath="$PROJECT_DIR$/presentation/presentation.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/presentation/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/presentation/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/presentation/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/presentation/src/main/webapp/index.html" />
     </list>
     <ignored path="Noteable.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -2901,7 +2881,7 @@
       <workItem from="1467840246895" duration="5157000" />
       <workItem from="1467845553728" duration="86000" />
       <workItem from="1467845788939" duration="7588000" />
-      <workItem from="1467855072583" duration="6965000" />
+      <workItem from="1467855072583" duration="7258000" />
     </task>
     <task id="LOCAL-00001" summary="Database Connection corrrected/improved&#10;-HibernateConnector corrected&#10;-Turned into a Statelessbean&#10;-manual shutdown() removed-&gt;automatic instead&#10;-Creation of EntityManagerFactory on Startup&#10;=&gt;Huge speed improvement!&#10;-persistence.xml changed from LOCAL-RESSOURCE to default">
       <created>1466872267354</created>
@@ -3127,11 +3107,18 @@
       <option name="project" value="LOCAL" />
       <updated>1467851415839</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="GOLD&#10;-Connection-Pooling integriert: 5/10 Shiro, 5/10 JPA&#10;[JawsDB = 10 free Connections]">
+      <created>1467862430687</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1467862430687</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169168000" />
+    <option name="totallyTimeSpent" value="169461000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1612" height="972" extended-state="6" />
@@ -3205,7 +3192,8 @@
     <MESSAGE value="Deploy" />
     <MESSAGE value="Performance-Steigerung!&#10;-Database geändert zu Mysql(JawsDB) - 10 connections erlaubt&#10;-Singleton auf dem Server ausgelagert [JPActivator] für&#10;widerverwendbare Factories, welche für den performance verlust&#10;zuständig waren&#10;-Spaß&#10;" />
     <MESSAGE value="GOLD&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="GOLD&#10;" />
+    <MESSAGE value="GOLD&#10;-Connection-Pooling integriert: 5/10 Shiro, 5/10 JPA&#10;[JawsDB = 10 free Connections]" />
+    <option name="LAST_COMMIT_MESSAGE" value="GOLD&#10;-Connection-Pooling integriert: 5/10 Shiro, 5/10 JPA&#10;[JawsDB = 10 free Connections]" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
