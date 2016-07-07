@@ -1,5 +1,6 @@
 package com.webtech2.project.business;
 
+import javax.annotation.PreDestroy;
 import javax.ejb.Stateful;
 import javax.persistence.*;
 
@@ -23,4 +24,10 @@ public class HibernateConnector {
         this.em.close();
     }
 
+    @PreDestroy
+    public void cleanUp(){
+        if(this.em!=null && this.em.isOpen()){
+            this.em.close();
+        }
+    }
 }

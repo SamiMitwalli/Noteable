@@ -30,7 +30,7 @@ public class JPActivator {
     static{
         try {
             shiroFactory = new IniSecurityManagerFactory("classpath:shiro.ini");
-            System.out.println("EntityManagerFactory - started");
+            System.out.println("ShiroFactory - started");
         } catch (Throwable ex) {
             throw new ExceptionInInitializerError(ex);
         }
