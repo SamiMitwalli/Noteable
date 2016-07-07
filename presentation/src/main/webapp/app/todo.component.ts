@@ -110,14 +110,6 @@ export class TodoComponent {
         );
     }
 
-    deleteAll() {
-        this._httpService.deleteNotes(this.userId).subscribe(
-            data => this.response = parseInt(data),
-            error => this.error = error,
-            () => console.log("Success")
-        );
-    }
-
     // TEST METHODEN
 
     test() {

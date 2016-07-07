@@ -1,11 +1,13 @@
 import {Component} from '@angular/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
+import {Observable} from 'rxjs/Rx';
 
 import {HTTPService} from "./http.service";
 
 import {TodoComponent} from './todo.component';
 import {LoginComponent} from './login.component';
 import {RegisterComponent} from './register.component';
+import {AdminComponent} from './admin.component';
 
 /*Hero example*/
 import {DashboardComponent} from './hero_example/dashboard.component';
@@ -38,6 +40,11 @@ import {HeroService} from './hero_example/hero.service';
         component: RegisterComponent
     },
     {
+        path: '/adminpanel',
+        name: 'AdminPanel',
+        component: AdminComponent
+    },
+    {
         path: '/todo',
         name: 'Todo',
         component: TodoComponent
@@ -64,10 +71,20 @@ export class AppComponent {
     title = 'Noteable';
     response:any;
     user:string;
+    time:any;
 //    mode = 'Observable';
 
     constructor(private _httpService:HTTPService,
                 private router:Router) {
+        Observable.interval(1000).subscribe(
+           x => { this.time = this.getCurrentTime()}
+        );
+    }
+
+    getCurrentTime()
+    {
+        var time = new Date();
+        return time.getHours()+":"+time.getMinutes()+":"+time.getSeconds();
     }
 
     ngOnInit() {

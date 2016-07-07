@@ -29,7 +29,7 @@ export class LoginComponent {
             () => {
                 if (this.angemeldet == "true") {
                     console.log("login successful");
-                    this.router.navigate(['Todo']);
+                    this.router.navigate(['AdminPanel']);
                 }
                 else {
                     alert("Login fehlgeschlagen: User oder Passwort falsch!");
