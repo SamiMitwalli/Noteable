@@ -127,22 +127,22 @@ export class HTTPService {
 
     // ADMIN AKTIONEN
 
-    deleteNotes(id:number) // success = 1 || error = null
+    deleteNotes() // success = 1 || error = null
     {
-        var neu = {"id": id};
-        var headers = new Headers();
-        headers.append('Content-Type', 'application/text');
-
         return this._http
-            .post('resources/access/admin/deleteNotes',
-                neu, {
-                    headers: headers
-                })
+            .get('resources/access/admin/deleteAllNotes')
             .map(response => response.text());
     }
 
     deleteUsers() {
-        return this._http.get("resources/access/admin/deleteUsers").map(res => res.text());
+        return this._http.get("resources/access/admin/deleteAllUsers").map(res => res.json());
+    }
+    allNotes() {
+        return this._http.get("resources/access/admin/readAllNotes").map(res => res.json());
+    }
+    allUsers()
+    {
+        return this._http.get("resources/access/admin/readAllUsers").map(res => res.json());
     }
 
     // TEST METHODEN

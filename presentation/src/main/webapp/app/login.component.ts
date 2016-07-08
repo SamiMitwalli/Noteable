@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {HTTPService} from "./http.service";
+import {UserData, USER} from './userData';
 
 @Component({
     selector: 'login',
@@ -16,8 +17,10 @@ export class LoginComponent {
     userId:number;
     angemeldet:string;
     remember:boolean;
+    user:UserData;
 
     constructor(private _httpService:HTTPService, private router:Router) {
+        this.user = USER;
         this.angemeldet = "false";
         this.remember = false;
     }
@@ -29,7 +32,7 @@ export class LoginComponent {
             () => {
                 if (this.angemeldet == "true") {
                     console.log("login successful");
-                    this.router.navigate(['Todo']);
+                    this.getUser();
                 }
                 else {
                     alert("Login fehlgeschlagen: User oder Passwort falsch!");
@@ -37,5 +40,19 @@ export class LoginComponent {
                 }
             }
         );
+    }
+
+    getUser() {
+        this._httpService.userinfo()
+            .subscribe(
+                response => this.user.name = response.loginName,
+                error => () => {
+                    console.log("nicht eingeloggt.")
+                },
+                () => {
+                    this.user.loggedIn = true;
+                    this.router.navigate(['Todo'])
+                }
+            );
     }
 }

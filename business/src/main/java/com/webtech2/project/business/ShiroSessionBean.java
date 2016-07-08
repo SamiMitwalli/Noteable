@@ -6,11 +6,10 @@ import com.webtech2.project.persistence.Notes_;
 import com.webtech2.project.persistence.Users_;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
-import org.apache.shiro.config.IniSecurityManagerFactory;
+import org.apache.shiro.cache.CacheManager;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
-import org.apache.shiro.util.Factory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import javax.annotation.PostConstruct;
@@ -289,6 +288,7 @@ public class ShiroSessionBean extends HibernateConnector{
             query.where(builder.isNull(root.get(Notes_.owner)));
         else//USER NOTES
             query.where(builder.equal(root.get(Notes_.owner), id ));
+        query.orderBy(builder.desc(root.get(Notes_.id)));
         List<Notes> notes = em.createQuery(query).getResultList();
         this.commit();
         return notes;
@@ -328,6 +328,8 @@ public class ShiroSessionBean extends HibernateConnector{
             return note.getId();
         }
         else {
+            if(em.isOpen())
+                em.close();
             return null;
         }
     }
@@ -346,6 +348,8 @@ public class ShiroSessionBean extends HibernateConnector{
         }
         catch (Exception e){
             log.info("couldn't delete notes\n"+e);
+            if(em.isOpen())
+                em.close();
             return null;
         }
         return (long)1;
@@ -353,8 +357,8 @@ public class ShiroSessionBean extends HibernateConnector{
     private boolean deleteAllNotes(){
         log.info("["+this.currentUser.getPrincipal()+"] deletes all notes");
         List<Notes> notes = this.readNotes();
-        this.init();
         try{
+            this.init();
             for(Notes note : notes){
                 log.info("deleting note ["+note.getId()+"]");
                 note = em.getReference(Notes.class, note.getId());
@@ -365,21 +369,18 @@ public class ShiroSessionBean extends HibernateConnector{
         }
         catch (Exception e){
             log.info("couldn't delete notes\n"+e);
+            if(em.isOpen())
+                em.close();
             return false;
         }
         return true;
     }
     /*USERS-DATABASE-QUERIES*/
     private Long createUser(Users user) {
-        if(user.getId()==null) {
             this.init();
             this.em.persist(user);
             this.commit();
             return user.getId();
-        }//eigentlich überflüssig im Context
-        else {
-            return this.updateUser(user);
-        }
     }
     private Users readUser(Long id){
         this.init();
@@ -423,6 +424,8 @@ public class ShiroSessionBean extends HibernateConnector{
             return user.getId();
         }
         else {
+            if(this.em.isOpen())
+                this.em.close();
             return null;
         }
     }
@@ -455,6 +458,8 @@ public class ShiroSessionBean extends HibernateConnector{
         }
         catch (Exception e){
             log.info("couldn't delete users\n"+e);
+            if(this.em.isOpen())
+                this.em.close();
             return false;
         }
         return true;
@@ -477,6 +482,7 @@ public class ShiroSessionBean extends HibernateConnector{
         query.where(builder.equal(root.get(Users_.loginName), loginName));
 
         List<Users> users = em.createQuery(query).getResultList();
+        this.commit();
         if(!users.isEmpty())
             return users.get(0);
         return null;
@@ -484,7 +490,6 @@ public class ShiroSessionBean extends HibernateConnector{
     /*SHIRO-SECURITYMANAGER-INITIALIZATION*/
     @PostConstruct
     public void onInit(){
-        SecurityManager securityManager = JPActivator.shiroFactory.getInstance();
-        SecurityUtils.setSecurityManager(securityManager);
+        SecurityUtils.setSecurityManager(JPActivator.shiroFactory.getInstance());
     }
 }

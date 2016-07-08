@@ -26,12 +26,11 @@ public class JPActivator {
             throw new ExceptionInInitializerError(ex);
         }
     }
-    //ShiroFactory
     public static final Factory<SecurityManager> shiroFactory;
-    static {
+    static{
         try {
             shiroFactory = new IniSecurityManagerFactory("classpath:shiro.ini");
-            System.out.println("shiroFactory - started");
+            System.out.println("ShiroFactory - started");
         } catch (Throwable ex) {
             throw new ExceptionInInitializerError(ex);
         }

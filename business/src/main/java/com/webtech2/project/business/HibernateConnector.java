@@ -1,6 +1,5 @@
 package com.webtech2.project.business;
 
-import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.ejb.Stateful;
 import javax.persistence.*;
@@ -9,13 +8,11 @@ import javax.persistence.*;
  *
  * Created by Sami Mitwalli on 20.06.2016.
  */
-@Stateful //Acts as Stateless SessionBean
+@Stateful
 public class HibernateConnector {
     EntityManager em;
     EntityManagerFactory emFactory = JPActivator.emFactory;
 
-    /*STARTUP-CONNECTION-TO-DATABASE*/
-    /*PERSISTENCE INIT,COMMIT*/
     public void init(){
         em = emFactory.createEntityManager();
         em.getTransaction().begin();
@@ -27,4 +24,10 @@ public class HibernateConnector {
         this.em.close();
     }
 
+    @PreDestroy
+    public void cleanUp(){
+        if(this.em!=null && this.em.isOpen()){
+            this.em.close();
+        }
+    }
 }

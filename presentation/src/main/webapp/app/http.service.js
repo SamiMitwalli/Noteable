@@ -98,18 +98,19 @@ var HTTPService = (function () {
             .map(function (response) { return response.text(); });
     };
     // ADMIN AKTIONEN
-    HTTPService.prototype.deleteNotes = function (id) {
-        var neu = { "id": id };
-        var headers = new http_2.Headers();
-        headers.append('Content-Type', 'application/text');
+    HTTPService.prototype.deleteNotes = function () {
         return this._http
-            .post('resources/access/admin/deleteNotes', neu, {
-            headers: headers
-        })
+            .get('resources/access/admin/deleteAllNotes')
             .map(function (response) { return response.text(); });
     };
     HTTPService.prototype.deleteUsers = function () {
-        return this._http.get("resources/access/admin/deleteUsers").map(function (res) { return res.text(); });
+        return this._http.get("resources/access/admin/deleteAllUsers").map(function (res) { return res.json(); });
+    };
+    HTTPService.prototype.allNotes = function () {
+        return this._http.get("resources/access/admin/readAllNotes").map(function (res) { return res.json(); });
+    };
+    HTTPService.prototype.allUsers = function () {
+        return this._http.get("resources/access/admin/readAllUsers").map(function (res) { return res.json(); });
     };
     // TEST METHODEN
     HTTPService.prototype.getNotes = function (url) {

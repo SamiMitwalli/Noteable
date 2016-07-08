@@ -11,10 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var http_service_1 = require("./http.service");
+var userData_1 = require('./userData');
 var LoginComponent = (function () {
     function LoginComponent(_httpService, router) {
         this._httpService = _httpService;
         this.router = router;
+        this.user = userData_1.USER;
         this.angemeldet = "false";
         this.remember = false;
     }
@@ -23,12 +25,22 @@ var LoginComponent = (function () {
         this._httpService.login(this.loginName, this.password, this.remember).subscribe(function (response) { return _this.angemeldet = response; }, function (error) { return alert("Anmeldung fehlgeschlagen!"); }, function () {
             if (_this.angemeldet == "true") {
                 console.log("login successful");
-                _this.router.navigate(['Todo']);
+                _this.getUser();
             }
             else {
                 alert("Login fehlgeschlagen: User oder Passwort falsch!");
                 console.log("login failed");
             }
+        });
+    };
+    LoginComponent.prototype.getUser = function () {
+        var _this = this;
+        this._httpService.userinfo()
+            .subscribe(function (response) { return _this.user.name = response.loginName; }, function (error) { return function () {
+            console.log("nicht eingeloggt.");
+        }; }, function () {
+            _this.user.loggedIn = true;
+            _this.router.navigate(['Todo']);
         });
     };
     LoginComponent = __decorate([

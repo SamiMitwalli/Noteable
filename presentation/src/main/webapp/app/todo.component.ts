@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {HTTPService} from "./http.service";
 import {} from 'bootbox';
 import {} from 'jquery';
+import {Router} from '@angular/router-deprecated';
 
 @Component({
     selector: 'todo',
@@ -13,16 +14,48 @@ export class TodoComponent {
     todos:any;
     content:string;
     response:any;
-    error:string;
-    userId:number;
-    owner:any;
     noteid:number;
     newTodo:string;
+    admin:any;
 
-    constructor(private _httpService:HTTPService) {
+    constructor(private _httpService:HTTPService, private router:Router) {
         //this.test();
         this.update();
-        this.newTodo = '';
+        this._httpService.userinfo().subscribe(
+            res => this.response = res,
+            err => this.admin = false,
+            () => {
+
+                if (this.response.loginName == "root") {
+                    this.admin = true;
+                }
+            }
+        );
+    }
+
+    adminSpace() {
+        this.router.navigate(['AdminPanel']);
+    }
+
+    addNote() {
+        this._httpService.createNote(this.newTodo).subscribe(
+            response => this.response = response,
+            error => console.log("add note failed"),
+            () => {
+                console.log("todo added successfully");
+                this.newTodo = "";
+                this.update();
+            }
+        );
+    }
+
+    update() {
+        console.log("loading notes...")
+        this._httpService.readNotes().subscribe(
+            response => this.todos = response,
+            error => console.log("loading failed"),
+            () => console.log("loading finished")
+        );
     }
 
     showEditDialog(id:string, content:string) {
@@ -41,7 +74,12 @@ export class TodoComponent {
             value: content,
             callback: function (result) {
                 if (result != null) {
-                    that.updateNote(parseInt(id), result);
+                    if (result == "") {
+                        alert("Fehler: Die Todo darf nicht leer sein!");
+                    }
+                    else {
+                        that.updateNote(parseInt(id), result);
+                    }
                 }
             }
         });
@@ -68,26 +106,6 @@ export class TodoComponent {
         });
     }
 
-    update() {
-        console.log("loading notes...")
-        this._httpService.readNotes().subscribe(
-            response => this.todos = response,
-            error => console.log("loading failed"),
-            () => console.log("loading finished")
-        );
-    }
-
-    addNote() {
-        this._httpService.createNote(this.newTodo).subscribe(
-            response => this.response = response,
-            error => console.log("add note failed"),
-            () => {
-                console.log("todo added successfully");
-                this.update()
-            }
-        );
-    }
-
     updateNote(noteId:number, content:string) {
         this._httpService.updateNote(noteId, content).subscribe(
             response => this.noteid = parseInt(response),
@@ -107,14 +125,6 @@ export class TodoComponent {
                 console.log("delete note successfully");
                 this.update();
             }
-        );
-    }
-
-    deleteAll() {
-        this._httpService.deleteNotes(this.userId).subscribe(
-            data => this.response = parseInt(data),
-            error => this.error = error,
-            () => console.log("Success")
         );
     }
 

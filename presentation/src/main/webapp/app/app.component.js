@@ -10,36 +10,46 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
+//import {Observable} from 'rxjs/Rx';
 var http_service_1 = require("./http.service");
 var todo_component_1 = require('./todo.component');
 var login_component_1 = require('./login.component');
 var register_component_1 = require('./register.component');
+var admin_component_1 = require('./admin.component');
+var userData_1 = require('./userData');
 /*Hero example*/
 var dashboard_component_1 = require('./hero_example/dashboard.component');
 var heroes_component_1 = require('./hero_example/heroes.component');
 var hero_detail_component_1 = require('./hero_example/hero-detail.component');
 var hero_service_1 = require('./hero_example/hero.service');
 var AppComponent = (function () {
-    //    mode = 'Observable';
     function AppComponent(_httpService, router) {
         this._httpService = _httpService;
         this.router = router;
         this.title = 'Noteable';
+        /*        Observable.interval(1000).subscribe(
+                   x => { this.time = this.getCurrentTime();
+                     }
+                );*/
     }
+    /*    getCurrentTime()
+        {
+            var time = new Date();
+            return time.toLocaleTimeString();//time.getHours()+":"+time.getMinutes()+":"+time.getSeconds();
+        }*/
     AppComponent.prototype.ngOnInit = function () {
+        this.user = userData_1.USER;
         this.getUser();
-    };
-    AppComponent.prototype.navTodo = function (router) {
-        if (this.user !== undefined) {
-            router.navigate(['Todo']);
-        }
     };
     AppComponent.prototype.getUser = function () {
         var _this = this;
         this._httpService.userinfo()
-            .subscribe(function (response) { return _this.user = response.loginName; }, function (error) { return function () {
+            .subscribe(function (response) { return _this.user.name = response.loginName; }, function (error) { return function () {
             console.log("nicht eingeloggt.");
-        }; }, function () { return _this.router.navigate(['Todo']); });
+        }; }, function () {
+            _this.user.loggedIn = true;
+            _this.router.navigate(['Todo']);
+        });
     };
     AppComponent.prototype.logout = function () {
         var _this = this;
@@ -47,7 +57,8 @@ var AppComponent = (function () {
         this._httpService.logout()
             .subscribe(function (response) { return success = response; }, function (error) { return console.log("logout failed"); }, function () {
             console.log("logout successfully");
-            _this.user = null;
+            _this.user.name = null;
+            _this.user.loggedIn = false;
             _this.router.navigate(['Login']);
         });
     };
@@ -74,6 +85,11 @@ var AppComponent = (function () {
                 path: '/register',
                 name: 'Register',
                 component: register_component_1.RegisterComponent
+            },
+            {
+                path: '/adminpanel',
+                name: 'AdminPanel',
+                component: admin_component_1.AdminComponent
             },
             {
                 path: '/todo',
