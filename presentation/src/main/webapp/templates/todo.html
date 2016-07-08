@@ -1,5 +1,8 @@
 <div class="page-header">
-    <h1>Meine ToDo's</h1>
+    <h1>Meine ToDo's</h1><br>
+    <div *ngIf="admin">
+        <button (click) = "adminSpace()" class="btn btn-default btn-lg">Adminbereich</button>
+    </div>
 </div>
 
 <div class="row">

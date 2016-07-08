@@ -1,5 +1,5 @@
 <div class="page-header" align="center">
-    <h2 align="center">Admin Bereich für root</h2><br>
+    <h2 align="center">Admin Bereich</h2><br>
     <button (click) = "getAllNotes()"  class="btn btn-default btn-lg">Alle Todo´s anzeigen</button>
 
     <button (click) = "deleteAllNotes()"  class="btn btn-default btn-lg">Alle Todo´s löschen</button>
@@ -7,6 +7,8 @@
     <button (click) = "getAllUsers()"  class="btn btn-default btn-lg">Alle User anzeigen</button>
 
     <button (click) = "deleteAllUsers()"  class="btn btn-default btn-lg">Alle User löschen</button>
+
+    <button (click) = "backToTodos()"  class="btn btn-default btn-lg">Zurück zu Todo´s</button>
     <p> </p>
 </div>
 <div *ngIf="alleuseranzeigen">
@@ -45,7 +47,6 @@
             <tr>
                 <th class="">#</th>
                 <th class="col-md-7">ToDo</th>
-                <th class="col-md-2">Besitzer</th>
                 <th></th>
             </tr>
             </thead>
@@ -53,11 +54,11 @@
             <tr *ngFor="let todo of todos">
                 <td>{{todo.id}}</td>
                 <td>{{todo.content}}</td>
-                <td>{{todo.owner_id}}</td>
             </tr>
             </tbody>
         </table>
     </div>
 </div>
+
 <!--
 <script src="../node_modules/bootbox/bootbox.min.js"></script>-->

@@ -25,11 +25,11 @@
             <ul class="nav navbar-nav">
                 <li><a [routerLink]="['Login']">Login</a></li>
                 <li><a [routerLink]="['Todo']">ToDo</a></li>
-                <li><a [routerLink]="['AdminPanel']">Adminbereich</a></li>
+                <li *ngIf="admin"><a [routerLink]="['AdminPanel']">Adminbereich</a></li>
             </ul>
-            <ul class="pull-right nav navbar-nav">
-                <li><a>Aktuelle Zeit: {{time}}</a></li>
-            </ul>
+            <p class="navbar-text navbar-right">
+                Aktuelle Zeit: {{time}}
+            </p>
         </div><!--/.nav-collapse -->
     </div>
 </nav>

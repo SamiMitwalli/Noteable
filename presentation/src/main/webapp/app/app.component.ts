@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component,Injectable} from '@angular/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
 import {Observable} from 'rxjs/Rx';
 
@@ -65,26 +65,29 @@ import {HeroService} from './hero_example/hero.service';
         component: HeroesComponent
     }
 ])
-
 export class AppComponent {
 
     title = 'Noteable';
-    response:any;
     user:string;
     time:any;
+
+    response:any;
 //    mode = 'Observable';
 
     constructor(private _httpService:HTTPService,
                 private router:Router) {
+
+        
         Observable.interval(1000).subscribe(
-           x => { this.time = this.getCurrentTime()}
+           x => { this.time = this.getCurrentTime();
+             }
         );
     }
 
     getCurrentTime()
     {
         var time = new Date();
-        return time.getHours()+":"+time.getMinutes()+":"+time.getSeconds();
+        return time.toLocaleTimeString();//time.getHours()+":"+time.getMinutes()+":"+time.getSeconds();
     }
 
     ngOnInit() {

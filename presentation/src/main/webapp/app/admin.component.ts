@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router-deprecated';
+import { ROUTER_DIRECTIVES,Router } from '@angular/router-deprecated';
 import {HTTPService} from "./http.service";
 
 @Component({
@@ -18,16 +18,19 @@ export class AdminComponent {
     name : any;
     
     
-    constructor(private _httpService:HTTPService)
+    constructor(private _httpService : HTTPService,
+                private router : Router)
+    {}
+
+    backToTodos()
     {
-        this.alletodosanzeigen = false;
-        this.alleuseranzeigen = false;
+        this.router.navigate(['Todo']);
     }
 
     getAllNotes()
     {
-        this.alletodosanzeigen = true;
-        this.alleuseranzeigen = false;
+        this.alletodosanzeigen=true;
+        this.alleuseranzeigen=false;
         this._httpService.allNotes().subscribe(
             response => this.todos = response,
             err => alert("Fehler"),
@@ -42,30 +45,28 @@ export class AdminComponent {
         this._httpService.deleteNotes().subscribe(
             response => console.log("success"),
             err => console.log("failed"),
-            () => {}
+            () => this.getAllNotes()
         );
-        this.getAllNotes();
     }
 
     getAllUsers(){
-        this.alletodosanzeigen = false;
-        this.alleuseranzeigen = true;
+        this.alletodosanzeigen=false;
+        this.alleuseranzeigen=true;
         this._httpService.allUsers().subscribe(
-            response => this.users = response,
-            err => console.log("failed"),
-            () => console.log("success")
+            res => this.users = res,
+            err => alert(err),
+            () => console.log("Success")
         );
     }
 
     deleteAllUsers()
     {
-        this.alletodosanzeigen = false;
-        this.alleuseranzeigen = true;
+        this.alletodosanzeigen=false;
+        this.alleuseranzeigen=true;
         this._httpService.deleteUsers().subscribe(
             response => console.log("success"),
             err => console.log("failed"),
-            () => {}
+            () => this.getAllUsers()
         );
-        this.getAllUsers();
     }
 }

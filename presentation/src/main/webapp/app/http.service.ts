@@ -142,7 +142,7 @@ export class HTTPService {
     }
     allUsers()
     {
-        return this._http.get("resources/access/admin/readAllUsers").map(res => res.json)
+        return this._http.get("resources/access/admin/readAllUsers").map(res => res.json());
     }
 
     // TEST METHODEN

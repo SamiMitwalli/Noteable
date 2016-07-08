@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {HTTPService} from "./http.service";
 import {} from 'bootbox';
 import {} from 'jquery';
+import {Router} from '@angular/router-deprecated';
 
 @Component({
     selector: 'todo',
@@ -18,11 +19,28 @@ export class TodoComponent {
     owner:any;
     noteid:number;
     newTodo:string;
+    admin:any;
 
-    constructor(private _httpService:HTTPService) {
+    constructor(private _httpService:HTTPService,private router:Router) {
         //this.test();
         this.update();
         this.newTodo = '';
+        this._httpService.userinfo().subscribe(
+            res => this.response = res,
+            err => this.admin = false,
+            () => {
+
+                if(this.response.loginName == "root")
+                {
+                    this.admin = true;
+                }
+            }
+        );
+    }
+
+    adminSpace()
+    {
+        this.router.navigate(['AdminPanel']);
     }
 
     showEditDialog(id:string, content:string) {
