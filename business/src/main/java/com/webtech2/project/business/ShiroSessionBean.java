@@ -258,8 +258,9 @@ public class ShiroSessionBean extends HibernateConnector{
     public List<Notes> readAllNotesREST(){
         List<Notes> notes = this.readNotes();
         //Bereinigung des Lazy-Fetching-Json-Mapping-Errors
+        Users user= new User();
         for(Notes note : notes){
-            note.setOwner(null);
+            note.setOwner(user.setId(note.getOwner()));
         }
         return notes;
     }
