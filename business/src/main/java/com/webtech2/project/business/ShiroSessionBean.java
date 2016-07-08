@@ -288,6 +288,7 @@ public class ShiroSessionBean extends HibernateConnector{
             query.where(builder.isNull(root.get(Notes_.owner)));
         else//USER NOTES
             query.where(builder.equal(root.get(Notes_.owner), id ));
+        query.orderBy(builder.desc(root.get(Notes_.id)));
         List<Notes> notes = em.createQuery(query).getResultList();
         this.commit();
         return notes;
