@@ -13,8 +13,6 @@ import {UserData, USER} from './userData';
 export class LoginComponent {
     loginName:string;
     password:string;
-    response:any;
-    userId:number;
     angemeldet:string;
     remember:boolean;
     user:UserData;

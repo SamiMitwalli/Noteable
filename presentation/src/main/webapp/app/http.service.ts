@@ -15,7 +15,7 @@ export class HTTPService {
     {
         var neu = {"content": content};
         var headers = new Headers();
-        headers.append('Content-Type', 'application/json');
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
 
         return this._http
             .post('resources/access/user/createNote',
@@ -34,7 +34,7 @@ export class HTTPService {
     {
         var neu = {"id": id, "content": content};
         var headers = new Headers();
-        headers.append('Content-Type', 'application/json');
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
 
         return this._http
             .post('resources/access/user/updateNote',
@@ -48,7 +48,7 @@ export class HTTPService {
     {
         var neu = {"id": id};
         var headers = new Headers();
-        headers.append('Content-Type', 'application/json');
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
 
         return this._http
             .post('resources/access/user/deleteNote',
@@ -68,7 +68,7 @@ export class HTTPService {
     {
         var neu = {"loginName": loginName, "password": password};
         var headers = new Headers();
-        headers.append('Content-Type', 'application/json');
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
 
         return this._http
             .post('resources/access/register',
@@ -82,7 +82,7 @@ export class HTTPService {
     {
         var neu = {"loginName": loginName, "password": password, "remember": remember};
         var headers = new Headers();
-        headers.append('Content-Type', 'application/json');
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
 
         return this._http
             .post('resources/access/login',

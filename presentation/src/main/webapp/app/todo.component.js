@@ -10,27 +10,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_service_1 = require("./http.service");
-var router_deprecated_1 = require('@angular/router-deprecated');
 var TodoComponent = (function () {
-    function TodoComponent(_httpService, router) {
-        var _this = this;
+    function TodoComponent(_httpService) {
         this._httpService = _httpService;
-        this.router = router;
         //this.test();
         this.update();
-        this._httpService.userinfo().subscribe(function (res) { return _this.response = res; }, function (err) { return _this.admin = false; }, function () {
-            if (_this.response.loginName == "root") {
-                _this.admin = true;
-            }
-        });
     }
-    TodoComponent.prototype.adminSpace = function () {
-        this.router.navigate(['AdminPanel']);
-    };
     TodoComponent.prototype.addNote = function () {
         var _this = this;
         this._httpService.createNote(this.newTodo).subscribe(function (response) { return _this.response = response; }, function (error) { return console.log("add note failed"); }, function () {
-            console.log("todo added successfully");
+            console.log("todo added");
             _this.newTodo = "";
             _this.update();
         });
@@ -38,7 +27,7 @@ var TodoComponent = (function () {
     TodoComponent.prototype.update = function () {
         var _this = this;
         console.log("loading notes...");
-        this._httpService.readNotes().subscribe(function (response) { return _this.todos = response; }, function (error) { return console.log("loading failed"); }, function () { return console.log("loading finished"); });
+        this._httpService.readNotes().subscribe(function (response) { return _this.todos = response; }, function (error) { return console.log("loading failed"); }, function () { return console.log("ready"); });
     };
     TodoComponent.prototype.showEditDialog = function (id, content) {
         var that = this;
@@ -95,22 +84,23 @@ var TodoComponent = (function () {
     TodoComponent.prototype.deleteNote = function (id) {
         var _this = this;
         this._httpService.deleteNote(id).subscribe(function (response) { return _this.noteid = parseInt(response); }, function (error) { return console.log("delete note failed"); }, function () {
-            console.log("delete note successfully");
+            console.log("delete note successful");
             _this.update();
         });
     };
     // TEST METHODEN
     TodoComponent.prototype.test = function () {
         var _this = this;
-        this._httpService.getNotes("http://jsonplaceholder.typicode.com/todos").subscribe(function (data) { return _this.todos = data; }, function (error) { return alert("Something went wrong"); }, function () { return console.log("Finished "); });
+        this._httpService.getNotes("http://jsonplaceholder.typicode.com/todos").subscribe(function (data) { return _this.todos = data; }, function (error) { return alert("Something went wrong"); }, function () { return console.log("ready"); });
     };
     TodoComponent = __decorate([
         core_1.Component({
             selector: 'todo',
             templateUrl: 'templates/todo.html',
+            styles: ["\n    .todo-text {\n      font-size: 1.25em;\n    }\n  "],
             providers: [http_service_1.HTTPService]
         }), 
-        __metadata('design:paramtypes', [http_service_1.HTTPService, router_deprecated_1.Router])
+        __metadata('design:paramtypes', [http_service_1.HTTPService])
     ], TodoComponent);
     return TodoComponent;
 }());

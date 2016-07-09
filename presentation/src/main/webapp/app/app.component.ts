@@ -11,20 +11,12 @@ import {AdminComponent} from './admin.component';
 
 import {UserData, USER} from './userData';
 
-/*Hero example*/
-import {DashboardComponent} from './hero_example/dashboard.component';
-import {HeroesComponent} from './hero_example/heroes.component';
-import {HeroDetailComponent} from './hero_example/hero-detail.component';
-import {HeroService} from './hero_example/hero.service';
-
 @Component({
     selector: 'my-app',
     templateUrl: '/templates/header.html',
-//  styleUrls: ['app/app.component.css'],
     directives: [ROUTER_DIRECTIVES],
     providers: [
         ROUTER_PROVIDERS,
-        HeroService,
         HTTPService
     ]
 })
@@ -42,7 +34,7 @@ import {HeroService} from './hero_example/hero.service';
         component: RegisterComponent
     },
     {
-        path: '/adminpanel',
+        path: '/admin',
         name: 'AdminPanel',
         component: AdminComponent
     },
@@ -51,21 +43,6 @@ import {HeroService} from './hero_example/hero.service';
         name: 'Todo',
         component: TodoComponent
     },
-    {
-        path: '/dashboard',
-        name: 'Dashboard',
-        component: DashboardComponent
-    },
-    {
-        path: '/detail/:id',
-        name: 'HeroDetail',
-        component: HeroDetailComponent
-    },
-    {
-        path: '/heroes',
-        name: 'Heroes',
-        component: HeroesComponent
-    }
 ])
 
 export class AppComponent implements OnInit {
@@ -115,7 +92,7 @@ export class AppComponent implements OnInit {
                 response => success = response,
                 error => console.log("logout failed"),
                 () => {
-                    console.log("logout successfully");
+                    console.log("logout successful");
                     this.user.name = null;
                     this.user.loggedIn = false;
                     this.router.navigate(['Login'])

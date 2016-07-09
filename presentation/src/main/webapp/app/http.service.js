@@ -20,7 +20,7 @@ var HTTPService = (function () {
     HTTPService.prototype.createNote = function (content) {
         var neu = { "content": content };
         var headers = new http_2.Headers();
-        headers.append('Content-Type', 'application/json');
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
         return this._http
             .post('resources/access/user/createNote', neu, {
             headers: headers
@@ -33,7 +33,7 @@ var HTTPService = (function () {
     HTTPService.prototype.updateNote = function (id, content) {
         var neu = { "id": id, "content": content };
         var headers = new http_2.Headers();
-        headers.append('Content-Type', 'application/json');
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
         return this._http
             .post('resources/access/user/updateNote', neu, {
             headers: headers
@@ -43,7 +43,7 @@ var HTTPService = (function () {
     HTTPService.prototype.deleteNote = function (id) {
         var neu = { "id": id };
         var headers = new http_2.Headers();
-        headers.append('Content-Type', 'application/json');
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
         return this._http
             .post('resources/access/user/deleteNote', neu, {
             headers: headers
@@ -57,7 +57,7 @@ var HTTPService = (function () {
     HTTPService.prototype.register = function (loginName, password) {
         var neu = { "loginName": loginName, "password": password };
         var headers = new http_2.Headers();
-        headers.append('Content-Type', 'application/json');
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
         return this._http
             .post('resources/access/register', neu, {
             headers: headers
@@ -67,7 +67,7 @@ var HTTPService = (function () {
     HTTPService.prototype.login = function (loginName, password, remember) {
         var neu = { "loginName": loginName, "password": password, "remember": remember };
         var headers = new http_2.Headers();
-        headers.append('Content-Type', 'application/json');
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
         return this._http
             .post('resources/access/login', neu, {
             headers: headers

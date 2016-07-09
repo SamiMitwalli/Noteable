@@ -1,43 +1,40 @@
-<div class="page-header">
-    <h1>Meine ToDo's</h1><br>
-    <div *ngIf="admin">
-        <button (click)="adminSpace()" class="btn btn-default btn-lg">Adminbereich</button>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-lg-8">
-        <form class="input-group input-group-lg">
-            <input type="text" [(ngModel)]="newTodo" placeholder="Neue ToDo" class="form-control input-lg">
-      <span class="input-group-btn">
-        <button (click)="addNote()" [disabled]="!newTodo" class="btn btn-success btn-lg">Hinzufügen</button>
-      </span>
-        </form>
-    </div>
-</div>
-<br>
 <div class="container">
-    <table class="table table-hover col-md-6">
+    <div class="page-header">
+        <h1>Meine TODOs</h1>
+    </div>
+    <!--Note hinzufügen-->
+    <div class="row">
+        <div class="col-lg-8">
+            <form class="input-group input-group-lg">
+                <input type="text" [(ngModel)]="newTodo" placeholder="Neue TODO" class="form-control input-lg">
+      <span class="input-group-btn">
+        <button (click)="addNote()" [disabled]="!newTodo" class="btn btn-primary btn-lg">Hinzufügen</button>
+      </span>
+            </form>
+        </div>
+    </div>
+    <br>
+    <table class="table table-striped">
         <thead>
         <tr>
             <th class="">#</th>
-            <th class="col-md-3">ToDo</th>
-            <th></th>
+            <th class="col-md-8 col-sm-8 col-xs-8">TODO</th>
+            <th class="col-md-4 col-sm-4 col-xs-4 text-right">Bearbeiten</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let todo of todos">
             <td>{{todo.id}}</td>
-            <td>{{todo.content}}</td>
+            <td class="todo-text">{{todo.content}}</td>
             <td class="text-right">
-                <div class="btn-group" role="group" aria-label="todo_buttons">
-                    <button type="button" class="btn btn-primary" (click)="showEditDialog(todo.id, todo.content)">
-                        <span class="glyphicon glyphicon-pencil"></span> Bearbeiten
-                    </button>
-                    <button type="button" class="btn btn-danger" (click)="showDeleteDialog(todo.id, todo.content)">
-                        <span class="glyphicon glyphicon-trash"></span> Löschen
-                    </button>
-                </div>
+                <button (click)="showEditDialog(todo.id, todo.content)" type="button" class="btn btn-success"
+                        title="Bearbeiten">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </button>
+                <button (click)="showDeleteDialog(todo.id, todo.content)" type="button" class="btn btn-danger"
+                        title="Löschen">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
             </td>
         </tr>
         </tbody>

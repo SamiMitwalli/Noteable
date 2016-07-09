@@ -4,7 +4,6 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
                                 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 
-
 <persistence-unit name="noteable">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>com.webtech2.project.persistence.Notes</class>
@@ -24,7 +23,6 @@
 
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
-
 
             <property name="hibernate.show_sql" value="false"/>
             <property name="hibernate.format_sql" value="false"/>

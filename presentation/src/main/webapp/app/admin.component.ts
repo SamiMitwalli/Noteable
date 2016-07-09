@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES,Router } from '@angular/router-deprecated';
+import {Component} from '@angular/core';
+import {ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
 import {HTTPService} from "./http.service";
 
 @Component({
     selector: 'admin',
-    templateUrl : 'templates/adminPanel.html',
+    templateUrl: 'templates/adminPanel.html',
     directives: [ROUTER_DIRECTIVES],
-    providers :[HTTPService]
+    providers: [HTTPService]
 })
 
 export class AdminComponent {
@@ -15,22 +15,20 @@ export class AdminComponent {
     alletodosanzeigen:boolean;
     todos:any;
     users:any;
-    name : any;
-    
-    
-    constructor(private _httpService : HTTPService,
-                private router : Router)
-    {}
+    name:any;
 
-    backToTodos()
-    {
+
+    constructor(private _httpService:HTTPService,
+                private router:Router) {
+    }
+
+    backToTodos() {
         this.router.navigate(['Todo']);
     }
 
-    getAllNotes()
-    {
-        this.alletodosanzeigen=true;
-        this.alleuseranzeigen=false;
+    getAllNotes() {
+        this.alletodosanzeigen = true;
+        this.alleuseranzeigen = false;
         this._httpService.allNotes().subscribe(
             response => this.todos = response,
             err => alert("Fehler"),
@@ -38,8 +36,7 @@ export class AdminComponent {
         );
     }
 
-    deleteAllNotes()
-    {
+    deleteAllNotes() {
         this.alletodosanzeigen = true;
         this.alleuseranzeigen = false;
         this._httpService.deleteNotes().subscribe(
@@ -49,9 +46,9 @@ export class AdminComponent {
         );
     }
 
-    getAllUsers(){
-        this.alletodosanzeigen=false;
-        this.alleuseranzeigen=true;
+    getAllUsers() {
+        this.alletodosanzeigen = false;
+        this.alleuseranzeigen = true;
         this._httpService.allUsers().subscribe(
             res => this.users = res,
             err => alert(err),
@@ -59,14 +56,13 @@ export class AdminComponent {
         );
     }
 
-    deleteAllUsers()
-    {
-        this.alletodosanzeigen=false;
-        this.alleuseranzeigen=true;
+    deleteAllUsers() {
+        this.alletodosanzeigen = false;
+        this.alleuseranzeigen = true;
         this._httpService.deleteUsers().subscribe(
-            response => console.log("success"),
+            response => console.log("deleting all users..."),
             err => console.log("failed"),
-            () => this.getAllUsers()
+            () => console.log("ready")
         );
     }
 }

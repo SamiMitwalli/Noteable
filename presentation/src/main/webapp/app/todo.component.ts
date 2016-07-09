@@ -2,11 +2,15 @@ import {Component} from '@angular/core';
 import {HTTPService} from "./http.service";
 import {} from 'bootbox';
 import {} from 'jquery';
-import {Router} from '@angular/router-deprecated';
 
 @Component({
     selector: 'todo',
     templateUrl: 'templates/todo.html',
+    styles: [`
+    .todo-text {
+      font-size: 1.25em;
+    }
+  `],
     providers: [HTTPService]
 })
 
@@ -16,25 +20,10 @@ export class TodoComponent {
     response:any;
     noteid:number;
     newTodo:string;
-    admin:any;
 
-    constructor(private _httpService:HTTPService, private router:Router) {
+    constructor(private _httpService:HTTPService) {
         //this.test();
         this.update();
-        this._httpService.userinfo().subscribe(
-            res => this.response = res,
-            err => this.admin = false,
-            () => {
-
-                if (this.response.loginName == "root") {
-                    this.admin = true;
-                }
-            }
-        );
-    }
-
-    adminSpace() {
-        this.router.navigate(['AdminPanel']);
     }
 
     addNote() {
@@ -42,7 +31,7 @@ export class TodoComponent {
             response => this.response = response,
             error => console.log("add note failed"),
             () => {
-                console.log("todo added successfully");
+                console.log("todo added");
                 this.newTodo = "";
                 this.update();
             }
@@ -54,7 +43,7 @@ export class TodoComponent {
         this._httpService.readNotes().subscribe(
             response => this.todos = response,
             error => console.log("loading failed"),
-            () => console.log("loading finished")
+            () => console.log("ready")
         );
     }
 
@@ -122,7 +111,7 @@ export class TodoComponent {
             response => this.noteid = parseInt(response),
             error => console.log("delete note failed"),
             () => {
-                console.log("delete note successfully");
+                console.log("delete note successful");
                 this.update();
             }
         );
@@ -134,7 +123,7 @@ export class TodoComponent {
         this._httpService.getNotes("http://jsonplaceholder.typicode.com/todos").subscribe(
             data => this.todos = data,
             error => alert("Something went wrong"),
-            () => console.log("Finished ")
+            () => console.log("ready")
         );
     }
 }

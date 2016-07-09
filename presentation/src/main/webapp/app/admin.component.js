@@ -38,10 +38,9 @@ var AdminComponent = (function () {
         this._httpService.allUsers().subscribe(function (res) { return _this.users = res; }, function (err) { return alert(err); }, function () { return console.log("Success"); });
     };
     AdminComponent.prototype.deleteAllUsers = function () {
-        var _this = this;
         this.alletodosanzeigen = false;
         this.alleuseranzeigen = true;
-        this._httpService.deleteUsers().subscribe(function (response) { return console.log("success"); }, function (err) { return console.log("failed"); }, function () { return _this.getAllUsers(); });
+        this._httpService.deleteUsers().subscribe(function (response) { return console.log("deleting all users..."); }, function (err) { return console.log("failed"); }, function () { return console.log("ready"); });
     };
     AdminComponent = __decorate([
         core_1.Component({

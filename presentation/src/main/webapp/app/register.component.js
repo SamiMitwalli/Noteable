@@ -21,7 +21,7 @@ var RegisterComponent = (function () {
         if (this.password1 === this.password2) {
             this._httpService.register(this.loginName, this.password1).subscribe(function (response) { return _this.response = response; }, function (error) { return console.log("register failed"); }, function () {
                 if (_this.response != "") {
-                    alert("Registrierung erfolgreich abgeschlossen!");
+                    alert("Registrierung erfolgreich abgeschlossen!\nSie können sich nun einloggen.");
                     _this.router.navigate(['Login']);
                 }
                 else {

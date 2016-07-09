@@ -8,27 +8,28 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand">ToDo-o-matic</a>
+            <a href="/" class="navbar-brand"><span class="glyphicon glyphicon-check"></span> Noteable</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+            <!--Userpanel-->
             <ul [hidden]="!user.loggedIn" class="nav navbar-nav">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         <span class="glyphicon glyphicon-user" style="color:white"></span> Willkommen, {{user.name}}
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li class="divider"></li>
+                        <!--                        <li><a href="#">Action</a></li>
+                                                <li class="divider"></li>-->
                         <li><a (click)="logout()"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
                     </ul>
                 </li>
             </ul>
-            <ul class="nav navbar-nav">
-<!--                <li><a [routerLink]="['Login']">Login</a></li>
-                <li><a [routerLink]="['Todo']">ToDo</a></li>-->
-                <li *ngIf="admin"><a [routerLink]="['AdminPanel']">Adminbereich</a></li>
+            <ul *ngIf="user.name == 'root'" class="nav navbar-nav">
+                <li [class.active]="router.isRouteActive(router.generate(['Todo']))"><a
+                        [routerLink]="['Todo']">TODOs</a></li>
+                <li [class.active]="router.isRouteActive(router.generate(['AdminPanel']))"><a
+                        [routerLink]="['AdminPanel']" style="color:#db687d">Administration</a></li>
             </ul>
-            <p class="navbar-text navbar-right">{{time}}</p>
         </div><!--/.nav-collapse -->
     </div>
 </nav>

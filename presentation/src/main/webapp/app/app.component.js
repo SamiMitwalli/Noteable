@@ -17,11 +17,6 @@ var login_component_1 = require('./login.component');
 var register_component_1 = require('./register.component');
 var admin_component_1 = require('./admin.component');
 var userData_1 = require('./userData');
-/*Hero example*/
-var dashboard_component_1 = require('./hero_example/dashboard.component');
-var heroes_component_1 = require('./hero_example/heroes.component');
-var hero_detail_component_1 = require('./hero_example/hero-detail.component');
-var hero_service_1 = require('./hero_example/hero.service');
 var AppComponent = (function () {
     function AppComponent(_httpService, router) {
         this._httpService = _httpService;
@@ -56,7 +51,7 @@ var AppComponent = (function () {
         var success;
         this._httpService.logout()
             .subscribe(function (response) { return success = response; }, function (error) { return console.log("logout failed"); }, function () {
-            console.log("logout successfully");
+            console.log("logout successful");
             _this.user.name = null;
             _this.user.loggedIn = false;
             _this.router.navigate(['Login']);
@@ -66,11 +61,9 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'my-app',
             templateUrl: '/templates/header.html',
-            //  styleUrls: ['app/app.component.css'],
             directives: [router_deprecated_1.ROUTER_DIRECTIVES],
             providers: [
                 router_deprecated_1.ROUTER_PROVIDERS,
-                hero_service_1.HeroService,
                 http_service_1.HTTPService
             ]
         }),
@@ -87,7 +80,7 @@ var AppComponent = (function () {
                 component: register_component_1.RegisterComponent
             },
             {
-                path: '/adminpanel',
+                path: '/admin',
                 name: 'AdminPanel',
                 component: admin_component_1.AdminComponent
             },
@@ -96,21 +89,6 @@ var AppComponent = (function () {
                 name: 'Todo',
                 component: todo_component_1.TodoComponent
             },
-            {
-                path: '/dashboard',
-                name: 'Dashboard',
-                component: dashboard_component_1.DashboardComponent
-            },
-            {
-                path: '/detail/:id',
-                name: 'HeroDetail',
-                component: hero_detail_component_1.HeroDetailComponent
-            },
-            {
-                path: '/heroes',
-                name: 'Heroes',
-                component: heroes_component_1.HeroesComponent
-            }
         ]), 
         __metadata('design:paramtypes', [http_service_1.HTTPService, router_deprecated_1.Router])
     ], AppComponent);
