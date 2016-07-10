@@ -19,7 +19,7 @@ var TodoComponent = (function () {
     TodoComponent.prototype.addNote = function () {
         var _this = this;
         this._httpService.createNote(this.newTodo).subscribe(function (response) { return _this.response = response; }, function (error) { return console.log("add note failed"); }, function () {
-            console.log("todo added");
+            console.log("todo " + _this.newTodo + " added");
             _this.newTodo = "";
             _this.update();
         });
@@ -84,7 +84,7 @@ var TodoComponent = (function () {
     TodoComponent.prototype.deleteNote = function (id) {
         var _this = this;
         this._httpService.deleteNote(id).subscribe(function (response) { return _this.noteid = parseInt(response); }, function (error) { return console.log("delete note failed"); }, function () {
-            console.log("delete note successful");
+            console.log("delete note " + _this.noteid + " successful");
             _this.update();
         });
     };

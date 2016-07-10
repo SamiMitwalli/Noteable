@@ -27,42 +27,52 @@ export class AdminComponent {
     }
 
     getAllNotes() {
+        console.log("loading notes...");
         this.alletodosanzeigen = true;
         this.alleuseranzeigen = false;
         this._httpService.allNotes().subscribe(
             response => this.todos = response,
-            err => alert("Fehler"),
-            () => console.log("Erfolg")
+            err => alert("failed"),
+            () => console.log("ready")
         );
     }
 
     deleteAllNotes() {
+        console.log("deleting all notes...");
         this.alletodosanzeigen = true;
         this.alleuseranzeigen = false;
         this._httpService.deleteNotes().subscribe(
-            response => console.log("success"),
+            response => {},
             err => console.log("failed"),
-            () => this.getAllNotes()
+            () => {
+                console.log("success");
+                this.getAllNotes()
+            }
         );
     }
 
     getAllUsers() {
+        console.log("loading users...");
         this.alletodosanzeigen = false;
         this.alleuseranzeigen = true;
         this._httpService.allUsers().subscribe(
             res => this.users = res,
             err => alert(err),
-            () => console.log("Success")
+            () => console.log("ready")
         );
     }
 
     deleteAllUsers() {
+        console.log("deleting all users...");
         this.alletodosanzeigen = false;
         this.alleuseranzeigen = true;
         this._httpService.deleteUsers().subscribe(
-            response => console.log("deleting all users..."),
+            response => {},
             err => console.log("failed"),
-            () => console.log("ready")
+            () => {
+                console.log("success");
+                this.getAllUsers()
+            }
         );
     }
 }

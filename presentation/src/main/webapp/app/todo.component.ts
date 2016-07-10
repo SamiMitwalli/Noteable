@@ -31,7 +31,7 @@ export class TodoComponent {
             response => this.response = response,
             error => console.log("add note failed"),
             () => {
-                console.log("todo added");
+                console.log("todo "+this.newTodo+" added");
                 this.newTodo = "";
                 this.update();
             }
@@ -111,7 +111,7 @@ export class TodoComponent {
             response => this.noteid = parseInt(response),
             error => console.log("delete note failed"),
             () => {
-                console.log("delete note successful");
+                console.log("delete note "+this.noteid+" successful");
                 this.update();
             }
         );

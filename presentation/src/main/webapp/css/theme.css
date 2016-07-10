@@ -7,6 +7,10 @@ a:hover {
     cursor: pointer;
 }
 
+a:hover, a:active, a:focus {
+    outline: none;
+}
+
 .navbar ul li {
     font-weight: bold;
 }

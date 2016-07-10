@@ -21,26 +21,37 @@ var AdminComponent = (function () {
     };
     AdminComponent.prototype.getAllNotes = function () {
         var _this = this;
+        console.log("loading notes...");
         this.alletodosanzeigen = true;
         this.alleuseranzeigen = false;
-        this._httpService.allNotes().subscribe(function (response) { return _this.todos = response; }, function (err) { return alert("Fehler"); }, function () { return console.log("Erfolg"); });
+        this._httpService.allNotes().subscribe(function (response) { return _this.todos = response; }, function (err) { return alert("failed"); }, function () { return console.log("ready"); });
     };
     AdminComponent.prototype.deleteAllNotes = function () {
         var _this = this;
+        console.log("deleting all notes...");
         this.alletodosanzeigen = true;
         this.alleuseranzeigen = false;
-        this._httpService.deleteNotes().subscribe(function (response) { return console.log("success"); }, function (err) { return console.log("failed"); }, function () { return _this.getAllNotes(); });
+        this._httpService.deleteNotes().subscribe(function (response) { }, function (err) { return console.log("failed"); }, function () {
+            console.log("success");
+            _this.getAllNotes();
+        });
     };
     AdminComponent.prototype.getAllUsers = function () {
         var _this = this;
+        console.log("loading users...");
         this.alletodosanzeigen = false;
         this.alleuseranzeigen = true;
-        this._httpService.allUsers().subscribe(function (res) { return _this.users = res; }, function (err) { return alert(err); }, function () { return console.log("Success"); });
+        this._httpService.allUsers().subscribe(function (res) { return _this.users = res; }, function (err) { return alert(err); }, function () { return console.log("ready"); });
     };
     AdminComponent.prototype.deleteAllUsers = function () {
+        var _this = this;
+        console.log("deleting all users...");
         this.alletodosanzeigen = false;
         this.alleuseranzeigen = true;
-        this._httpService.deleteUsers().subscribe(function (response) { return console.log("deleting all users..."); }, function (err) { return console.log("failed"); }, function () { return console.log("ready"); });
+        this._httpService.deleteUsers().subscribe(function (response) { }, function (err) { return console.log("failed"); }, function () {
+            console.log("success");
+            _this.getAllUsers();
+        });
     };
     AdminComponent = __decorate([
         core_1.Component({
